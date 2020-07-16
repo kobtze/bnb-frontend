@@ -1,0 +1,23 @@
+Ori
+PropertyPreview
+!PropertyList
+
+Dolev
+Details
+
+
+Kobi
+Property Data (6 Houses)
+
+
+
+Image Gallery
+Reservation (just button > alert!)
+Amenities
+DatePicker (קומפ' טיפשה)
+ReviewScore (Element UI)
+Review
+ReviewPreview
+Map
+
+PropertyFilter
