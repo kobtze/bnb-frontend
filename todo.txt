@@ -1,17 +1,20 @@
 Ori
-PropertyPreview
-!PropertyList
+App: List / Preview
+
 
 Dolev
-Details
+Details: Scores
+
 
 Kobi
-Property Data (5 Houses)
+Details: Amenities
+
+
+
 
 
 Image Gallery
 Reservation (just button > alert!)
-Amenities
 DatePicker (קומפ' טיפשה)
 ReviewScore (Element UI)
 Review
