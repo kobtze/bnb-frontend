@@ -3,6 +3,8 @@
     <h1>House Details:</h1>
     <p>ID: {{houseToShow._id}}</P>
     <p>Name: {{houseToShow.name}}</P>
+    <!-- <p>Imgs: {{houseToShow.imgUrls}}</p> -->
+    <image-gallery :images="houseToShow.imgUrls" />
     <p>Price: {{houseToShow.price}}</P>
     <p>Type: {{houseToShow.type}}</P>
     <p>description: {{houseToShow.description}}</P>
@@ -13,7 +15,8 @@
 
 <script>
 
-import {houseService} from '../services/house.service.js'
+import {houseService} from '../services/house.service.js';
+import ImageGallery from '@/components/ImageGallery.vue';
 
 export default {
     data(){
@@ -22,7 +25,7 @@ export default {
         }
     },
     components: {
-
+        ImageGallery,
     },
      methods: {
     async loadHouse(){
