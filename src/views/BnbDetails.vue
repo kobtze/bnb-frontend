@@ -11,6 +11,7 @@
     <p>capacity: {{houseToShow.capacity}}</P>
     <amenities :amenities="houseToShow.amenities" />
     
+    <review-list :reviews="houseToShow.reviews" :scores="houseToShow.scores"/>
   </div>
 </template>
 
@@ -21,6 +22,7 @@ import {houseService} from '../services/house.service.js';
 import ImageGallery from '@/components/ImageGallery.vue';
 import Amenities from '@/components/Amenities.vue';
 
+import ReviewList from '@/components/ReviewList.vue';
 export default {
     name: 'BnbDetails',
     data(){
@@ -31,6 +33,7 @@ export default {
     components: {
         ImageGallery,
         Amenities,
+        ReviewList
     },
      methods: {
     async loadHouse(){
