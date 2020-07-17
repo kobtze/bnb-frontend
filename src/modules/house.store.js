@@ -25,7 +25,7 @@ export default {
         },
         setHouses(state, { houses }) {
             state.houses = houses
-            // console.log('mutations setHouses:',houses);
+                // console.log('mutations setHouses:',houses);
         },
         removeHouse(state, { id }) {
             const idx = state.houses.findIndex(house => house._id === id);
@@ -44,12 +44,11 @@ export default {
             // commit({ type: 'setIsLoading', isLoading: true })
             try {
                 const houses = await houseService.query(state.filterBy)
-                // console.log('actions loadHouses:',houses);
+                    // console.log('actions loadHouses:',houses);
                 commit({ type: 'setHouses', houses })
-                // commit({ type: 'setIsLoading', isLoading: false })
+                    // commit({ type: 'setIsLoading', isLoading: false })
                 return houses
-            }
-            catch(err) {
+            } catch (err) {
                 console.log('Store.loadHouses error:', err);
             }
         },
@@ -57,8 +56,7 @@ export default {
             try {
                 await houseService.remove(id)
                 commit({ type: 'removeHouse', id })
-            }
-            catch(err) {
+            } catch (err) {
                 console.log('Store.removeHouse error:', err);
             }
         },
@@ -67,10 +65,9 @@ export default {
             // if (!house._id) house.createdAt = Date.now();
             try {
                 await houseService.save(house)
-                    commit({ type, house })
-                    return house;
-                    }
-            catch(err) {
+                commit({ type, house })
+                return house;
+            } catch (err) {
                 console.log('Store.saveHouse error:', err);
             }
         }

@@ -27,12 +27,15 @@ export default {
             return imgsArray;
         },
         imgHrefs() {
-            const map1 = this.images.map(image => {
-                 image.href = image
-                 return image.href
+            var imgsArray = this.images.map(image => {
+                {
+                // title: i,
+                // description: `desc ${i}`,
+                href: image
+                }
             })
             console.log(map1,'map1 !!!');
-            return map1 
+            return imgsArray;
         },
     },
     components: {

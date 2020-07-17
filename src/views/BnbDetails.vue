@@ -9,7 +9,7 @@
     <p>Type: {{houseToShow.type}}</P>
     <p>description: {{houseToShow.description}}</P>
     <p>capacity: {{houseToShow.capacity}}</P>
-    
+    <review-list :reviews="houseToShow.reviews" :scores="houseToShow.scores"/>
   </div>
 </template>
 
@@ -17,7 +17,7 @@
 
 import {houseService} from '../services/house.service.js';
 import ImageGallery from '@/components/ImageGallery.vue';
-
+import ReviewList from '@/components/ReviewList.vue';
 export default {
     data(){
         return {
@@ -26,6 +26,7 @@ export default {
     },
     components: {
         ImageGallery,
+        ReviewList
     },
      methods: {
     async loadHouse(){
