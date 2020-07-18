@@ -12,7 +12,7 @@
     <amenities :amenities="houseToShow.amenities" />
     <house-reviews :reviews="houseToShow.reviews" :scores="houseToShow.scores"/>
     <div class="google-map"><google-map :location="houseToShow.location" ></google-map></div>
-
+    <date-picker />
   </div>
 </template>
 
@@ -23,6 +23,8 @@ import GoogleMap from '@/components/GoogleMap.vue';
 import ImageGallery from '@/components/ImageGallery.vue';
 import Amenities from '@/components/Amenities.vue';
 import HouseReviews from '@/components/HouseReviews.vue';
+import DatePicker from '@/components/DatePicker.vue';
+
 export default {
     name: 'BnbDetails',
     data(){
@@ -35,6 +37,7 @@ export default {
         Amenities,
         HouseReviews,
         GoogleMap,
+        DatePicker,
     },
      methods: {
     async loadHouse(){
