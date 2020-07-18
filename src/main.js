@@ -8,7 +8,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 import '@/styles/main.scss'
 // vue-cover-gallery
-import 'bootstrap'; 
+import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // fontAwesome
@@ -16,9 +16,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 Vue.config.productionTip = false
 Vue.use(Element)
- 
+
 new Vue({
-  router,
-  store,
-  render: h => h(App)
+    router,
+    store,
+    render: h => h(App)
 }).$mount('#app')
