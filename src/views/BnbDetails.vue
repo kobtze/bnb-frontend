@@ -10,7 +10,7 @@
     <p>description: {{houseToShow.description}}</P>
     <p>capacity: {{houseToShow.capacity}}</P>
     <amenities :amenities="houseToShow.amenities" />
-    
+    <date-picker />
     <review-list :reviews="houseToShow.reviews" :scores="houseToShow.scores"/>
   </div>
 </template>
@@ -21,7 +21,7 @@ import {houseService} from '../services/house.service.js';
 
 import ImageGallery from '@/components/ImageGallery.vue';
 import Amenities from '@/components/Amenities.vue';
-
+import DatePicker from '@/components/DatePicker.vue';
 import ReviewList from '@/components/ReviewList.vue';
 export default {
     name: 'BnbDetails',
@@ -33,6 +33,7 @@ export default {
     components: {
         ImageGallery,
         Amenities,
+        DatePicker,
         ReviewList
     },
      methods: {
