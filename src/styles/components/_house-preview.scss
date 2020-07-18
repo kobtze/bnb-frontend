@@ -1,3 +1,42 @@
 .house-preview{
-    width: 300px;
+    width: 100%;
+   
+    p{
+      text-align: left;
+      text-overflow: ellipsis; 
+      overflow: hidden; 
+      white-space: nowrap;
+      }
+
+      //Default Styling Of Element-Ui Card
+            .time {
+                font-size: 13px;
+                color: #999;
+                }
+            
+            .bottom {
+              margin-top: 13px;
+              line-height: 12px;
+            }
+            
+            .button {
+              padding: 0;
+              float: right;
+            }
+            
+            .image {
+              width: 100%;
+              display: block;
+            }
+            
+            .clearfix:before,
+            .clearfix:after {
+              display: table;
+              content: "";
+            }
+            
+            .clearfix:after {
+              clear: both;
+            }
+      
 }
