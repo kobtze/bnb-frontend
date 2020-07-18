@@ -13,6 +13,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // fontAwesome
 
+import * as VueGoogleMaps from 'vue2-google-maps'
+
+Vue.use(VueGoogleMaps, {
+    load: {
+        key: 'AIzaSyC5PQRy3g0RF1dODi4z8AwJ3bfxQ4lmJ-g',
+        libraries: 'places',
+
+    },
+
+
+})
 
 Vue.config.productionTip = false
 Vue.use(Element)

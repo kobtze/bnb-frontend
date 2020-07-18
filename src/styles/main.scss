@@ -9,8 +9,9 @@
 @import 'basics/_layout';
 @import 'basics/_reset';
 // VIEWS
-
-
 // COMPONENTS
 @import 'components/_house-preview';
-@import 'components/_review-list';
+@import 'components/_house-reviews';
+@import 'components/_google-map';
+// VIEWS
+@import 'views/_bnb-details';
