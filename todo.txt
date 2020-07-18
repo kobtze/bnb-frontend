@@ -1,24 +1,28 @@
 Ori
+---
 App: List / Preview
 
 
 Dolev
-Details: Scores
+-----
+Map
 
 
 Kobi
-Details: Amenities
-
-
-
-
-
-Image Gallery
-Reservation (just button > alert!)
+----
 DatePicker (קומפ' טיפשה)
-ReviewScore (Element UI)
+Reservation (just button > alert!)
+
+
+More
+----
 Review
 ReviewPreview
-Map
-
 PropertyFilter
+
+
+Done
+----
+Image Gallery
+Details: Amenities
+Details: Scores
