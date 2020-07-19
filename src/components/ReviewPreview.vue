@@ -1,15 +1,19 @@
 <template>
-<li>
-    <p>name: {{review.byUser}}</P>
-    <p>at: {{review.createdAt}}</P>
-    <p>comment: {{review.description}}</P>
- </li>
+  <section>
+      <div class="flex">
+          <img :src="review.byUser.imgUrl" alt="">
+          <div>
+            <p>{{review.byUser.name}}</p>
+            <p>{{review.createdAt}}</p>
+          </div>
+      </div>
+      <p>{{review.description}}</p>
+  </section>
 </template>
 
 <script>
 export default {
-   name: 'ReviewPreview',
-    props: ['review'],
+props:['review']
 }
 </script>
 
