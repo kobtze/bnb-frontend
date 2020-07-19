@@ -11,8 +11,8 @@
   <GmapMarker
     :position="markers"
     :clickable="true"
-    :draggable="true"
-    @click="center=markers"/>
+    :draggable="false"
+    />
 </GmapMap>
   </section>
 </template>

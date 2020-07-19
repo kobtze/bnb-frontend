@@ -1,16 +1,30 @@
 <template>
-  <section>
-      <h1>welcome to our homepage!</h1>
+  <section class="bnb-home-page">
+      <img src="@/assets/img/telAviv.jpg" alt=""> 
+      <house-filter></house-filter>
+  
   </section>
+
 </template>
 
 <script>
+import houseFilter from "@/components/HouseFilter.vue";
+
 export default {
 
+  components:{
+    houseFilter
+  }
 }
 </script>
 
-<style>
 
+
+
+
+<style>
+img{
+  width: 100vw;
+}
 </style>
 

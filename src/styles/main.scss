@@ -10,10 +10,13 @@
 @import 'basics/_layout';
 // VIEWS
 @import 'views/_bnb-details';
+@import 'views/_bnb-home-page';
 // COMPONENTS
+@import 'components/_house-filter';
 @import 'components/_house-list';
 @import 'components/_house-preview';
 @import 'components/_house-reviews';
 @import 'components/_google-map';
 @import 'components/_preview-carousel';
 @import 'components/_house-reviews';
+@import 'components/_main-nav';
