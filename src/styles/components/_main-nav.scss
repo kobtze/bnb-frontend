@@ -1,0 +1,98 @@
+/* HEADER */
+
+* {
+    box-sizing: border-box;
+}
+
+.main-header {
+    height: 150px;
+}
+
+.logo-word {
+    font-size: 1.875rem;
+    color: rgb(255, 56, 92);
+    letter-spacing: 1.5px;
+    font-weight: 3;
+    line-height: 1.1;
+}
+
+.menu-open .main-nav {
+    transform: translateX(0);
+    box-shadow: -6px 0px 14px rgba(0, 0, 0, 0.2);
+}
+
+.menu-open .screen {
+    visibility: visible;
+    opacity: 1;
+}
+
+.main-nav {
+    width: 50%
+}
+
+.btn-menu {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    background: transparent;
+    border: 1px solid #DDDDDD;
+    color: #222222;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    margin: 0px;
+    outline: none;
+    overflow: visible;
+    padding: 5px 5px 5px 12px;
+    text-align: inherit;
+    user-select: auto;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-radius: 21px;
+    position: relative;
+    vertical-align: middle;
+    transition: box-shadow 0.2s ease;
+    z-index: 1;
+}
+
+.btn-container {
+    display: inline;
+    position: relative;
+}
+
+.profile-picture {
+    background-color: currentcolor;
+    display: block;
+    width: 40%;
+    border-radius: 50%;
+}
+
+.logo-symbol {
+    color: rgb(255, 56, 92);
+    display: inline;
+}
+
+li a {
+    color: #222222 !important;
+}
+
+.notifications {
+    background-color: var(--header-brand-color, #FF385C) !important;
+    background-color: rgb(255, 56, 92) !important;
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 1.5px !important;
+    position: absolute !important;
+    z-index: 1 !important;
+    color: rgb(255, 255, 255) !important;
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    height: 16px !important;
+    left: 100% !important;
+    line-height: 16px !important;
+    margin-left: -14px !important;
+    min-width: 16px !important;
+    text-align: center !important;
+    top: -2px !important;
+    border-radius: 9px !important;
+    padding: 0px 5px !important;
+}

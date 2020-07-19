@@ -1,7 +1,8 @@
 <template>
   <section>
-    <h1>Hello Bnbapp!</h1>
+ 
     <!-- <pre>{{houses}}</pre> -->
+    <main-nav></main-nav>
     <house-list :houses="houses" />
   </section>
 </template>
@@ -10,6 +11,7 @@
 <script>
 import HouseFilter from "@/components/HouseFilter.vue";
 import HouseList from "@/components/HouseList.vue";
+import MainNav from "@/components/MainNav.vue";
 
 export default {
     // data() {
@@ -25,7 +27,8 @@ export default {
   },
   components: {
     HouseList,
-    HouseFilter
+    HouseFilter,
+    MainNav, 
   }
 };
 </script>
