@@ -1,6 +1,6 @@
 <template>
   <div class="block">
-    <el-carousel :autoplay="false" trigger="click">
+    <el-carousel height="200px" :autoplay="false" trigger="click">
       <el-carousel-item v-for="img in imgs" :key="img">
         <img class="carousel-img" :src="img" />
       </el-carousel-item>
