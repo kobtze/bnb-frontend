@@ -10,19 +10,21 @@
     <p>description: {{houseToShow.description}}</P>
     <p>capacity: {{houseToShow.capacity}}</P>
     <amenities :amenities="houseToShow.amenities" />
-    
-    <review-list :reviews="houseToShow.reviews" :scores="houseToShow.scores"/>
+    <house-reviews :reviews="houseToShow.reviews" :scores="houseToShow.scores"/>
+    <div class="google-map"><google-map :location="houseToShow.location" ></google-map></div>
+    <date-picker />
   </div>
 </template>
 
 <script>
 
 import {houseService} from '../services/house.service.js';
-
+import GoogleMap from '@/components/GoogleMap.vue';
 import ImageGallery from '@/components/ImageGallery.vue';
 import Amenities from '@/components/Amenities.vue';
+import HouseReviews from '@/components/HouseReviews.vue';
+import DatePicker from '@/components/DatePicker.vue';
 
-import ReviewList from '@/components/ReviewList.vue';
 export default {
     name: 'BnbDetails',
     data(){
@@ -33,7 +35,9 @@ export default {
     components: {
         ImageGallery,
         Amenities,
-        ReviewList
+        HouseReviews,
+        GoogleMap,
+        DatePicker,
     },
      methods: {
     async loadHouse(){

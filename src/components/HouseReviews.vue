@@ -1,6 +1,6 @@
 <template>
   <section class="scores flex column">
-    <h4>⭐{{scores.rating.toFixed(2)}} ({{reviews.length}} reviews)</h4>
+    <h4> {{scores.rating.toFixed(2)}} ({{reviews.length}} reviews)</h4>
       <section class="score-list flex justify-center space-between">
 
          <div class=" left">
@@ -14,13 +14,17 @@
             Location<el-progress :percentage="(scores.location/5)*100" color="#000000" :format="fiveStarsFormat" ></el-progress>
             Value <el-progress :percentage="(scores.value/5)*100" color="#000000" :format="fiveStarsFormat"></el-progress>
          </div>
- </section>
-       
+       </section>
+       <review-list :reviews="reviews" />
+
+  </section>
 </template>
 
 <script>
+
+import ReviewList from "@/components/ReviewList.vue";
 export default {
- name: "reviewScores",
+  name: "HouseReviews",
   props: ['reviews','scores'],
   methods: {
     //making 5 to be the 100% 
@@ -29,9 +33,11 @@ export default {
       },
 
   },
-}
+  components: {
+    ReviewList
+  }
+};
 </script>
 
 <style>
-
 </style>
