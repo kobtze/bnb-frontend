@@ -1,0 +1,13 @@
+.house-details {
+    p.name {
+        font-size: rem(26px);
+    }
+    p.description {
+        color: $clr2;
+        font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+        font-weight: 400 !important;
+        font-size: rem(16px) !important;
+        line-height: 24px !important;
+        word-break: break-word !important;
+    }
+}

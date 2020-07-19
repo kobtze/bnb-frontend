@@ -4,10 +4,10 @@
 @import 'setup/_typography';
 @import 'setup/_variables';
 // BASICS
-@import 'basics/_base';
+// @import 'basics/_reset';
 @import 'basics/_helpers';
+@import 'basics/_base';
 @import 'basics/_layout';
-@import 'basics/_reset';
 // VIEWS
 @import 'views/_bnb-details';
 // COMPONENTS

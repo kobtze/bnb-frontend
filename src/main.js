@@ -3,30 +3,25 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
+
+// Element UI
 import Element from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css';
+// import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(Element)
 
-import '@/styles/main.scss'
-// vue-cover-gallery
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-// fontAwesome
-
+// VueGoogleMaps
 import * as VueGoogleMaps from 'vue2-google-maps'
-
 Vue.use(VueGoogleMaps, {
     load: {
         key: 'AIzaSyC5PQRy3g0RF1dODi4z8AwJ3bfxQ4lmJ-g',
         libraries: 'places',
-
     },
-
-
 })
 
+// SASS
+import '@/styles/main.scss'
+
 Vue.config.productionTip = false
-Vue.use(Element)
 
 new Vue({
     router,

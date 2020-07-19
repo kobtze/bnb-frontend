@@ -21,7 +21,7 @@
 </template>
 
 <script>
-
+import 'element-ui/lib/theme-chalk/index.css';
 import ReviewList from "@/components/ReviewList.vue";
 export default {
   name: "HouseReviews",

@@ -1,11 +1,15 @@
 <template>
   <section>
-    <h2>Image Gallery</h2>
     <Gallery :images="imgNewKey"></Gallery>
   </section>
 </template>
 
 <script>
+
+// vue-cover-gallery
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Gallery from "vue-cover-gallery"
 
 export default {

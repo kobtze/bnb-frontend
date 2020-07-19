@@ -1,18 +1,18 @@
 <template>
-  <div v-if="houseToShow"  class="house-details">
-    <h1>House Details:</h1>
-    <p>ID: {{houseToShow._id}}</P>
-    <p>Name: {{houseToShow.name}}</P>
-    <!-- <p>Imgs: {{houseToShow.imgUrls}}</p> -->
-    <image-gallery :images="houseToShow.imgUrls" />
-    <p>Price: {{houseToShow.price}}</P>
-    <p>Type: {{houseToShow.type}}</P>
-    <p>description: {{houseToShow.description}}</P>
-    <p>capacity: {{houseToShow.capacity}}</P>
-    <amenities :amenities="houseToShow.amenities" />
-    <house-reviews :reviews="houseToShow.reviews" :scores="houseToShow.scores"/>
-    <div class="google-map"><google-map :location="houseToShow.location" ></google-map></div>
-    <date-picker />
+  <div v-if="houseToShow" class="house-details" :id="houseToShow._id">
+    <!-- <div class="bnb-container"> -->
+        <p class="name">{{houseToShow.name}}</P>
+        <!-- <p>Imgs: {{houseToShow.imgUrls}}</p> -->
+        <image-gallery :images="houseToShow.imgUrls" />
+        <p>Price: {{houseToShow.price}}</P>
+        <p>Type: {{houseToShow.type}}</P>
+        <p class="description">description: {{houseToShow.description}}</P>
+        <p>capacity: {{houseToShow.capacity}}</P>
+        <amenities :amenities="houseToShow.amenities" />
+        <house-reviews :reviews="houseToShow.reviews" :scores="houseToShow.scores"/>
+        <div class="google-map"><google-map :location="houseToShow.location" ></google-map></div>
+        <date-picker />
+    <!-- </div> -->
   </div>
 </template>
 

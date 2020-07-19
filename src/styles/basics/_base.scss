@@ -2,12 +2,22 @@
     box-sizing: border-box;
 }
 
-html {
-    font-family: Roboto;
-    color: $clr3;
-}
 
 body {
     margin: 0;
+    font-family: $font-stack;
+    color: $clr2;
 }
 
+h1 {
+    font-size: rem(26px);
+}
+
+a {
+    color: inherit;
+}
+
+a:hover {
+    color: inherit;
+    text-decoration: inherit;
+}

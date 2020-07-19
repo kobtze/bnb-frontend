@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import 'element-ui/lib/theme-chalk/index.css';
 export default {
  name: "reviewScores",
   props: ['reviews','scores'],
