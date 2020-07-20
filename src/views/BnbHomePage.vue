@@ -1,8 +1,7 @@
 <template>
   <section class="bnb-home-page">
-
     <div class="hero-container">
-
+      <home-page-navbar></home-page-navbar>
       <house-filter></house-filter>
       
       <div class="home-page-content p-under-filter flex space-around align-center">
@@ -24,12 +23,14 @@
 <script>
 import houseFilter from "@/components/HouseFilter.vue";
 import homePagePromotion from "@/components/HomePagePromotion.vue";
+import homePageNavbar from "@/components/HomePageNavbar.vue";
 
 export default {
 
   components:{
     houseFilter,
-    homePagePromotion
+    homePagePromotion,
+    homePageNavbar
   }
 }
 </script>

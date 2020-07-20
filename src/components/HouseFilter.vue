@@ -3,7 +3,7 @@
 <p>Find places to stay in Tel Aviv-Yafo on Airbnb</p>
 <p>Discover entire homes and private rooms perfect for any trip.</p>
 <section class="destination-picker">
-  <el-input placeholder="Destination" v-model="destination"></el-input>
+  <el-input placeholder="LOCATION" v-model="destination"></el-input>
 </section>
 
   <section class="date-picker-container flex">
@@ -22,7 +22,10 @@
         </el-select>
   </section>
 
-     <el-button class="search-btn">Search</el-button>
+     <el-button class="search-btn"> 
+   <svg style="fill:none;height:14px;width:14px;stroke:currentColor;stroke-width:4;overflow:visible" aria-hidden="true" role="presentation" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g fill="none"><path d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"></path></g></svg> 
+   <span> Search</span> 
+       </el-button>
 
 </section>
 </template>

@@ -1,19 +1,13 @@
 .house-filter{
-    // position: absolute;
-    // left: 200px;
-    // top: 200px;
-    // z-index: 1000;
-
+    font-family: Circular;
     background-color: rgb(255, 255, 255);
     width: 510px;
-    height: 452px;
     padding: 32px;
     border: 1px solid rgb(255, 255, 255);
-    border-radius: 10px;
+    border-radius: 12px;
 
      ::placeholder{
     color: $clr3;
-    font-weight: 600;
     }
 
     p{
@@ -26,7 +20,6 @@
     p:first-child{
     font-size: 2rem;
     color: $clr2;
-    font-weight: 600;
     }
 
     .destination-picker > *{
@@ -35,23 +28,45 @@
  
     }
 
-    .date-picker-container  > * {
-    width: 50%;
-    margin-bottom: 10px;
-  
+    .date-picker-container  {
+
+        > * {
+        flex-grow: 1;
+        margin-bottom: 10px;
+        &:nth-child(even){
+        margin-left: 8px;
+        }   
+        }
     }
 
    .guest-number-container {
-    > *{
-        width: 50%;
+    > * {
+        flex-grow: 1;
         margin-bottom: 10px;
+        &:nth-child(even){
+        margin-left: 8px;
     }   
+ 
+   }
    }
 
    .search-btn{
     width: 100%;
+    padding: 15px;
+    font-size: 1rem;
     color:white;
     background-color: $clr1;
-    padding: 15px 25px;
+    border-radius: 12px;
+
+    svg{
+    display: inline-block;
+
+    }
    }
+
+   input{
+    padding:27px 10px;
+    border-radius: 10px;
+}
+    
 }

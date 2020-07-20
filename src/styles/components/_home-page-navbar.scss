@@ -1,0 +1,29 @@
+.home-page-navbar {
+    color: white;
+
+    div{
+        height: 80px;
+        width: 133px;
+
+        svg:first-child{
+            margin-right: 10px;
+        }
+    }
+
+    ul{
+        width: 344px;
+    }
+
+    li{
+     
+        &:hover{
+            border-bottom: 1px solid white;
+        }
+    }
+
+    a {
+    color: white; 
+    font-size: 14px;  
+}
+
+}
