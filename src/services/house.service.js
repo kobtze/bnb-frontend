@@ -11,8 +11,10 @@ function _getUrl(id = '') {
 }
 
 function query(filterBy) {
-    return httpService.get(_getUrl())
+    const { name, checkIn, checkOut, guestCount, location } = filterBy;
+    return httpService.get(_getUrl() + `?name=${name}&checkIn=${checkIn}&checkOut=${checkOut}&guestCount=${guestCount}&location=${location}`)
 }
+
 
 function getById(id) {
     return httpService.get(_getUrl(id))

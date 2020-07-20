@@ -6,6 +6,7 @@ export default {
         isLoading: false,
         houses: [],
         filterBy: {
+            name: '',
             checkIn: null,
             checkOut: null,
             guestCount: null,

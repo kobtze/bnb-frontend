@@ -3,7 +3,7 @@
 <p>Find places to stay in Tel Aviv-Yafo on Airbnb</p>
 <p>Discover entire homes and private rooms perfect for any trip.</p>
 <section class="destination-picker">
-  <el-input placeholder="LOCATION" v-model="destination"></el-input>
+  <el-input placeholder="LOCATION" @input="setFilter" v-model="filterBy.name" type="search"></el-input>
 </section>
 
   <section class="date-picker-container flex">
@@ -33,6 +33,10 @@
   export default {
     data() {
       return {
+
+         filterBy: {
+        name: '',
+      },
          options: [
         {
           value: '1',
@@ -58,7 +62,10 @@
     methods: {
       onSubmit() {
         console.log('submit!');
-      }
+      },
+      setFilter() {
+      this.$emit("filter", this.filterBy);
+    },
     }
   }
 </script>
