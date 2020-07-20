@@ -7,7 +7,13 @@ $clr4: #DDDDDD;  //border / background variation
 $clr5: #484848;  //txt variation
 
 $font-stack: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+$font-stack-alt: Montserrat, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 
 $break-narrow: 740px;
+$max-width-narrow: 660px;
+
 $break-normal: 1120px;
+$max-width-normal: 960px;
+
 $break-wide: 1440px;
+$max-width-wide: 1220px;

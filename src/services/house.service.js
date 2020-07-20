@@ -1,16 +1,19 @@
 const axios = require('axios');
-
+import httpService from './http.service';
 export const houseService = {
     query,
-    getById
+    getById,
+}
+
+
+function _getUrl(id = '') {
+    return `house/${id}`;
 }
 
 function query(filterBy) {
-    return axios.get('http://localhost:3001/house')
-        .then(res => res.data)
+    return httpService.get(_getUrl())
 }
 
 function getById(id) {
-    return axios.get(`http://localhost:3001/house/${id}`)
-        .then(res => res.data)
+    return httpService.get(_getUrl(id))
 }
