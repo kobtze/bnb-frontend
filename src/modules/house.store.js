@@ -1,8 +1,9 @@
-import { houseService } from '../services/house.service';
+import { houseService } from '@/services/house.service';
 
 export default {
     strict: true,
     state: {
+        isLoading: false,
         houses: [],
         filterBy: {
             checkIn: null,
@@ -17,9 +18,15 @@ export default {
         },
         housesCount(state) {
             return state.housesLength;
-        }
+        },
+        isLoading(state) {
+            return state.isLoading;
+        },
     },
     mutations: {
+        setIsLoading(state, { isLoading }) {
+            state.isLoading = isLoading
+        },
         setFilter(state, { filterBy }) {
             state.filterBy = filterBy;
         },
@@ -41,12 +48,11 @@ export default {
     },
     actions: {
         async loadHouses({ commit, state }) {
-            // commit({ type: 'setIsLoading', isLoading: true })
+            commit({ type: 'setIsLoading', isLoading: true })
             try {
                 const houses = await houseService.query(state.filterBy)
-                    // console.log('actions loadHouses:',houses);
                 commit({ type: 'setHouses', houses })
-                    // commit({ type: 'setIsLoading', isLoading: false })
+                commit({ type: 'setIsLoading', isLoading: false })
                 return houses
             } catch (err) {
                 console.log('Store.loadHouses error:', err);
