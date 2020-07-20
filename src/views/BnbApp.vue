@@ -1,9 +1,9 @@
 <template>
   <section>
- 
-    <!-- <pre>{{houses}}</pre> -->
-    <main-nav></main-nav>
-    <house-list :houses="houses" />
+    <main-nav/>
+    <div class="container">
+        <house-list :houses="houses" />
+    </div>
   </section>
 </template>
 
