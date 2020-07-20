@@ -1,7 +1,7 @@
 <template>
-<section class="house-filter ">
-<p>Vacation rentals in Tel Aviv District</p>
-<p>Find and book unique accommodations on Airbnb</p>
+<section class="house-filter home-page-content">
+<p>Find places to stay in Tel Aviv-Yafo on Airbnb</p>
+<p>Discover entire homes and private rooms perfect for any trip.</p>
 <section class="destination-picker">
   <el-input placeholder="Destination" v-model="destination"></el-input>
 </section>

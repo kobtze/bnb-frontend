@@ -7,9 +7,9 @@
       <router-link to="/app">App</router-link>
     </div>
 
-    <div class="main-layout">
+    <!-- <div class="main-layout"> -->
         <router-view/>
-    </div>
+    <!-- </div> -->
 
   </div>
   
