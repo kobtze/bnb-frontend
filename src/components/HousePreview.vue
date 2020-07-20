@@ -1,12 +1,11 @@
 <template >
   <li class="house-preview flex column">
     <el-row>
-      <el-card :body-style="{ padding: '0px' }">
+      <el-card :body-style="{ padding: '0px' }" shadow="never">
+        <preview-carousel :imgs="imgs"></preview-carousel>
         <router-link :to="{path: `/details/${house._id}`}">
-          <preview-carousel :imgs="imgs"></preview-carousel>
           <div class="prev-text">
             <div class="prev-scores">
-              <!-- <span class="prev-scores-span"> -->
               <span class="prev-star">
                 <svg
                   viewBox="0 0 1000 1000"
@@ -20,15 +19,15 @@
                   />
                 </svg>
               </span>
-              <!-- </span> -->
-              {{house.scores.rating}} ({{house.reviews.length}})
+              <span class="rating">{{house.scores.rating}}</span>
+              <span class="review-count">({{house.reviews.length}})</span>
             </div>
-            <p>{{house.type}}</p>
-            <!-- <p>{{getGuests}}</p> -->
-            <p>{{house.name}}</p>
-            <p>
-              <span class="bold">${{house.price}}</span> / night
-            </p>
+            <div class="prev-type">{{house.type}}</div>
+            <div class="prev-name">{{house.name}}</div>
+            <div class="prev-price">
+              <span class="bold">${{house.price}}</span>
+              / night
+            </div>
           </div>
         </router-link>
       </el-card>

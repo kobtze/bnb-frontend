@@ -1,8 +1,7 @@
 <template>
   <div v-if="houseToShow" class="house-details" :id="houseToShow._id">
-    <!-- <div class="bnb-container"> -->
+    <section class="container">
         <p class="name">{{houseToShow.name}}</P>
-        <!-- <p>Imgs: {{houseToShow.imgUrls}}</p> -->
         <image-gallery :images="houseToShow.imgUrls" />
         <p>Price: {{houseToShow.price}}</P>
         <p>Type: {{houseToShow.type}}</P>
@@ -12,7 +11,7 @@
         <house-reviews :reviews="houseToShow.reviews" :scores="houseToShow.scores"/>
         <div class="google-map"><google-map :location="houseToShow.location" ></google-map></div>
         <date-picker />
-    <!-- </div> -->
+    </section>
   </div>
 </template>
 
