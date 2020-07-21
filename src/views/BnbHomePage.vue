@@ -2,7 +2,7 @@
   <section class="bnb-home-page">
     <div class="hero-container">
       <home-page-navbar></home-page-navbar>
-      <house-filter></house-filter>
+     <house-filter @setFilter="setFilter"/>
       
       <div class="home-page-content p-under-filter flex space-around align-center">
         <p> Earn up to $2,995/month hosting your place in Tel Aviv </p>
@@ -24,14 +24,21 @@
 import houseFilter from "@/components/HouseFilter.vue";
 import homePagePromotion from "@/components/HomePagePromotion.vue";
 import homePageNavbar from "@/components/HomePageNavbar.vue";
-
 export default {
 
   components:{
     houseFilter,
     homePagePromotion,
     homePageNavbar
-  }
+  },
+   methods: {
+    setFilter(filterBy) {
+      console.log('filterBy', filterBy)
+      this.$store.commit({type: "setFilter", filterBy: _.cloneDeep(filterBy)});
+      this.$store.dispatch({ type: "loadHouses" });
+    }
+  },
+
 }
 </script>
 

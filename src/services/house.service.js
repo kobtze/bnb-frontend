@@ -10,9 +10,10 @@ function _getUrl(id = '') {
     return `house/${id}`;
 }
 
+
 function query(filterBy) {
-    const { name, checkIn, checkOut, guestCount, location } = filterBy;
-    return httpService.get(_getUrl() + `?name=${name}&checkIn=${checkIn}&checkOut=${checkOut}&guestCount=${guestCount}&location=${location}`)
+    const { location, checkIn, checkOut, adultNumber, childrenNumber } = filterBy;
+    return httpService.get(_getUrl() + `?location=${location}&checkIn=${checkIn}&checkOut=${checkOut}&adultNumber=${adultNumber}&childrenNumber=${childrenNumber}`)
 }
 
 
