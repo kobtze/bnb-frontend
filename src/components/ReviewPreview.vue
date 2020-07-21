@@ -1,19 +1,30 @@
 <template>
-  <section>
-      <div class="flex">
+  <section class="review-preview">
+
+      <div class="reviewer-details flex">
           <img :src="review.byUser.imgUrl" alt="">
-          <div>
+
+          <div class="flex column">
             <p>{{review.byUser.name}}</p>
-            <p>{{review.createdAt}}</p>
+            <p class="review-time">{{getTime}}</p>
           </div>
+
       </div>
       <p>{{review.description}}</p>
   </section>
 </template>
 
 <script>
+var moment = require('moment'); // require
 export default {
-props:['review']
+props:['review'],
+
+
+computed:{
+ getTime(){
+    return (moment(this.review.createdAt).format("MMM Do")) 
+ }
+},
 }
 </script>
 

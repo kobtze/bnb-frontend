@@ -1,0 +1,11 @@
+.review-list{
+
+    ul{
+        padding: 0px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(225px,1fr));
+        grid-gap:15px;
+        padding-inline-start: 0px; // fix for default setting
+        
+    }
+}

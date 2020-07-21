@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="amenities">
         <h3>Amenities</h3>
         <ul>
             <Amenity
