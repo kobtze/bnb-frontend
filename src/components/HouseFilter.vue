@@ -3,20 +3,20 @@
 
     <p>Find places to stay in Tel Aviv-Yafo on Airbnb</p>
     <p>Discover entire homes and private rooms perfect for any trip.</p>
-<form  @keyup.enter="setFilter" @submit.prevent="setFilter">
+<form @keyup.enter="search">
 
     <section class="destination-picker">
-      <el-input placeholder="LOCATION" @input="setFilter" v-model="filterBy.location" type="search"></el-input>
+      <el-input placeholder="LOCATION"  v-model="filterBy.location" type="search" @input="setFilter"></el-input>
     </section>
 
     <section class="date-picker-container flex">
-      <el-date-picker v-model="filterBy.checkIn" type="date" placeholder="CHECK IN"></el-date-picker>
+      <el-date-picker v-model="filterBy.checkIn" type="date" placeholder="CHECK IN" @input="setFilter"></el-date-picker>
 
-      <el-date-picker v-model="filterBy.checkOut" type="date" placeholder="CHECK OUT"></el-date-picker>
+      <el-date-picker v-model="filterBy.checkOut" type="date" placeholder="CHECK OUT" @input="setFilter"></el-date-picker>
     </section>
 
     <section class="guest-number-container flex">
-      <el-select v-model="filterBy.adultNumber" placeholder="ADULTS">
+      <el-select v-model="filterBy.adultNumber" placeholder="ADULTS" @input="setFilter">
         <el-option
           v-for="item in options"
           :key="item.value"
@@ -25,7 +25,7 @@
         ></el-option>
       </el-select>
 
-      <el-select v-model="filterBy.childrenNumber" placeholder="CHILDREN">
+      <el-select v-model="filterBy.childrenNumber" placeholder="CHILDREN" @input="setFilter">
         <el-option
           v-for="item in options"
           :key="item.value"
@@ -35,7 +35,7 @@
       </el-select>
     </section>
 
-    <el-button class="search-btn">
+    <el-button @click="search" class="search-btn">
       <svg
         style="fill:none;height:14px;width:14px;stroke:currentColor;stroke-width:4;overflow:visible"
         aria-hidden="true"
@@ -90,7 +90,8 @@ export default {
     };
   },
   methods: {
-    onSubmit() {
+    search() {
+      this.$router.push('/app')
       console.log("submit!");
     },
     setFilter() {

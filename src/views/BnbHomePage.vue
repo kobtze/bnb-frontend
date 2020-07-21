@@ -33,7 +33,6 @@ export default {
   },
    methods: {
     setFilter(filterBy) {
-      console.log('filterBy', filterBy)
       this.$store.commit({type: "setFilter", filterBy: _.cloneDeep(filterBy)});
       this.$store.dispatch({ type: "loadHouses" });
     }

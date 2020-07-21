@@ -53,7 +53,6 @@ export default {
             // commit({ type: 'setIsLoading', isLoading: true })
             try {
                 const houses = await houseService.query(state.filterBy)
-                console.log(houses, 'houses');
                 commit({ type: 'setHouses', houses })
                     // commit({ type: 'setIsLoading', isLoading: false })
                 return houses

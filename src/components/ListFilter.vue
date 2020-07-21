@@ -2,10 +2,10 @@
   <section class="list-filter ">
 
    
-<form class="flex" @keyup.enter="setFilter" @submit.prevent="setFilter">
+<form class="flex" @keyup.enter="search" @submit="search">
 
     <section class="destination-picker">
-      <el-input placeholder="LOCATION"  @input="setFilter" v-model="filterBy.location" type="search"></el-input>
+      <el-input placeholder="LOCATION"  v-model="filterBy.location" type="search"></el-input>
     </section>
 
     <section class="date-picker-container flex">
@@ -35,7 +35,7 @@
       </el-select>
     </section>
 
-    <el-button class="search-btn">
+    <el-button @click="search" class="search-btn">
       <svg
         style="fill:none;height:14px;width:14px;stroke:currentColor;stroke-width:4;overflow:visible"
         aria-hidden="true"
@@ -90,8 +90,9 @@ export default {
     };
   },
   methods: {
-    onSubmit() {
-      console.log("submit!");
+    search() {
+      //  this.router.push('/app');
+      console.log("search!!!!!!!");
     },
     setFilter() {
     //  console.log("filterBy", this.filterBy);
