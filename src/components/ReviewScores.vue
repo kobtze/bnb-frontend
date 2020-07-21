@@ -1,9 +1,9 @@
 <template>
   <section class="scores flex column">
     <h4>⭐{{scores.rating.toFixed(2)}} ({{reviews.length}} reviews)</h4>
-      <section class="score-list flex justify-center space-between">
+      <section class="score-list flex">
 
-         <div class=" left">
+         <div class="left">
             <!-- (scores.'something'/5)*100 is for feeling the ranking line as it computed from 100% -->
             Cleanliness<el-progress class="change" :percentage="(scores.cleanliness/5)*100"  color="#000000" :format="fiveStarsFormat" ></el-progress>
             Communication<el-progress :percentage="(scores.cleanliness/5)*100" color="#000000" :format="fiveStarsFormat"></el-progress>

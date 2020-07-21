@@ -12,6 +12,8 @@
 @import 'views/_bnb-details';
 @import 'views/_bnb-home-page';
 // COMPONENTS
+@import 'components/_review-list';
+@import 'components/_review-preview';
 @import 'components/_house-filter';
 @import 'components/_list-filter';
 @import 'components/_house-list';
@@ -22,6 +24,9 @@
 @import 'components/_house-reviews';
 @import 'components/_main-nav';
 @import 'components/_home-page-promotion';
+@import 'components/_home-page-popular-dest';
+@import 'components/_home-page-suggestions';
 @import 'components/_home-page-navbar';
 @import 'components/_image-gallery';
 @import 'components/_prev-scores';
+@import 'components/_amenities';
