@@ -17,32 +17,18 @@
     .prev-scores {
         margin-top: 10px;
         margin-bottom: 6px;
-        -webkit-box-align: center !important;
-        -ms-flex-align: center !important;
-        font-size: 14px !important;
-        line-height: 18px !important;
-        -webkit-align-items: center !important;
-        align-items: center !important;
-        display: -webkit-inline-box !important;
-        display: -moz-inline-box !important;
-        display: -ms-inline-flexbox !important;
-        display: -webkit-inline-flex !important;
-        display: inline-flex !important;
-        width: 100% !important;
+        font-size: 14px;
+        line-height: 18px;
+        align-items: center;
+        display: inline-flex;
+        width: 100%;
     }
 
     .prev-scores-span {
-        -webkit-box-align: center !important;
-        -ms-flex-align: center !important;
-        -webkit-align-items: center !important;
-        align-items: center !important;
-        display: -webkit-box !important;
-        display: -moz-box !important;
-        display: -ms-flexbox !important;
-        display: -webkit-flex !important;
-        display: flex !important;
-        font-size: 14px !important;
-        line-height: 18px !important;
+        align-items: center ;
+        display: flex; 
+        font-size: 14px;
+        line-height: 18px;
     }
 
     .prev-star {

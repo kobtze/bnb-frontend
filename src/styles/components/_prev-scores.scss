@@ -1,0 +1,23 @@
+.prev-scores {
+    margin-top: 10px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    line-height: 18px;
+    align-items: center;
+    display: inline-flex;
+    // width: 100%;
+    
+    .prev-star {
+        color: $clr1 !important;
+        align-items: center !important;
+        display: flex !important;
+        margin-right: 4px !important;
+    }
+    .rating {
+        color: $clr2;
+        margin-right: 2px;
+    }
+    .review-count {
+        color: $clr3
+    }
+}
