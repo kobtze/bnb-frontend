@@ -1,7 +1,9 @@
 <template>
-<section class="house-filter home-page-content">
-<p>Find places to stay in Tel Aviv-Yafo on Airbnb</p>
+<section class="house-filter home-page-content" >
+
+<p> Find places to stay in Tel Aviv-Yafo on Airbnb</p>
 <p>Discover entire homes and private rooms perfect for any trip.</p>
+
 <section class="destination-picker">
   <el-input placeholder="LOCATION" v-model="destination"></el-input>
 </section>
@@ -33,6 +35,7 @@
   export default {
     data() {
       return {
+        isHomePage:false,
          options: [
         {
           value: '1',
@@ -59,6 +62,9 @@
       onSubmit() {
         console.log('submit!');
       }
-    }
+    },
+  //     watch: {
+  //   '$route.params': this.isHomePage = false
+  // },
   }
 </script>
