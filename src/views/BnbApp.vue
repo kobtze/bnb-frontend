@@ -2,7 +2,7 @@
   <section>
     <main-nav />
     <div class="container">
-      <house-filter @filter="setFilter" />
+      <!-- <house-filter @filter="setFilter" /> -->
       <house-list :houses="houses" />
     </div>
   </section>

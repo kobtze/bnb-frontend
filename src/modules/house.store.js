@@ -6,11 +6,11 @@ export default {
         isLoading: false,
         houses: [],
         filterBy: {
-            name: '',
+            location: '',
             checkIn: null,
             checkOut: null,
-            guestCount: null,
-            location: null,
+            adultNumber: null,
+            childrenNumber: null,
         }
     },
     getters: {
@@ -49,11 +49,12 @@ export default {
     },
     actions: {
         async loadHouses({ commit, state }) {
-            commit({ type: 'setIsLoading', isLoading: true })
+         
+            // commit({ type: 'setIsLoading', isLoading: true })
             try {
                 const houses = await houseService.query(state.filterBy)
                 commit({ type: 'setHouses', houses })
-                commit({ type: 'setIsLoading', isLoading: false })
+                // commit({ type: 'setIsLoading', isLoading: false })
                 return houses
             } catch (err) {
                 console.log('Store.loadHouses error:', err);

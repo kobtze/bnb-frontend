@@ -1,20 +1,22 @@
 <template>
   <section class="house-filter home-page-content">
+
     <p>Find places to stay in Tel Aviv-Yafo on Airbnb</p>
     <p>Discover entire homes and private rooms perfect for any trip.</p>
+<form  @keyup.enter="setFilter" @submit.prevent="setFilter">
 
     <section class="destination-picker">
-      <el-input placeholder="LOCATION" @input="setFilter" v-model="filterBy.name" type="search"></el-input>
+      <el-input placeholder="LOCATION" @input="setFilter" v-model="filterBy.location" type="search"></el-input>
     </section>
 
     <section class="date-picker-container flex">
-      <el-date-picker v-model="checkIn" type="date" placeholder="CHECK IN"></el-date-picker>
+      <el-date-picker v-model="filterBy.checkIn" type="date" placeholder="CHECK IN"></el-date-picker>
 
-      <el-date-picker v-model="checkOut" type="date" placeholder="CHECK OUT"></el-date-picker>
+      <el-date-picker v-model="filterBy.checkOut" type="date" placeholder="CHECK OUT"></el-date-picker>
     </section>
 
     <section class="guest-number-container flex">
-      <el-select v-model="adultNumber" placeholder="ADULTS">
+      <el-select v-model="filterBy.adultNumber" placeholder="ADULTS">
         <el-option
           v-for="item in options"
           :key="item.value"
@@ -23,7 +25,7 @@
         ></el-option>
       </el-select>
 
-      <el-select v-model="childrenNumber" placeholder="CHILDREN">
+      <el-select v-model="filterBy.childrenNumber" placeholder="CHILDREN">
         <el-option
           v-for="item in options"
           :key="item.value"
@@ -49,16 +51,19 @@
       </svg>
       <span>Search</span>
     </el-button>
+</form>
   </section>
 </template>
 <script>
 export default {
   data() {
     return {
-      isHomePage: false,
-
       filterBy: {
-        name: ""
+        location: "",
+        checkIn: "",
+        checkOut: "",
+        adultNumber: "",
+        childrenNumber: ""
       },
       options: [
         {
@@ -81,10 +86,7 @@ export default {
           value: "5",
           label: "5"
         }
-      ],
-      destination: "",
-      adultNumber: "",
-      childrenNumber: ""
+      ]
     };
   },
   methods: {
@@ -92,7 +94,8 @@ export default {
       console.log("submit!");
     },
     setFilter() {
-      this.$emit("filter", this.filterBy);
+    //  console.log("filterBy", this.filterBy);
+      this.$emit("setFilter", this.filterBy);
     }
   }
 };
