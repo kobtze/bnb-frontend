@@ -10,7 +10,7 @@
           </div>
 
       </div>
-      <p>{{review.description}}</p>
+      <p class="review-description">{{review.description}}</p>
   </section>
 </template>
 

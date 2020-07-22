@@ -1,20 +1,26 @@
-// .scores {
-//     width: 70%;
-//     margin: 0 auto;
-// }
+.score-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(225px,1fr));
+    grid-gap:10%;
+   
+    section{
+        margin:0px 0px 16px 0px;
+    }
 
-.score-list>* {
-    width: 50%;
+    p{
+    line-height: 20px;
+    margin: 0px;
+    }
+
 }
 
-.left>* {
-    line-height: normal;
-}
 
-.right>* {
-    line-height: normal;
-}
-
-h4 {
+h2 {
     text-align: start;
+    padding-bottom: 32px;
 }
+
+
+ .el-progress {
+ width: 180px;
+ }
