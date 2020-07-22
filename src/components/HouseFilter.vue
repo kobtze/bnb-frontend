@@ -114,7 +114,7 @@ export default {
       console.log("submit!");
     },
     setFilter() {
-      console.log('setFilter .filterBy:',this.filterBy );
+      console.log('setFilter.filterBy:',this.filterBy );
       //  console.log("filterBy", this.filterBy);
       this.$emit("setFilter", this.filterBy);
     }
