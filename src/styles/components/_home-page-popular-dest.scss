@@ -2,14 +2,14 @@
 
 padding-top: 10px;
 
-.img-container {
-    .card{
-        width: 100%;
-        border-radius: 15px;
+    .img-container {
+        .card{
+            width: 100%;
+            border-radius: 15px;
+        }
+    .card:not(:first-child){
+    margin-left: 10px;
     }
-   .card:not(:first-child){
-   margin-left: 10px;
-   }
-    
-}
+        
+    }
 }
