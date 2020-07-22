@@ -1,6 +1,6 @@
 <template>
   <section class="scores flex column">
-    <h4> {{scores.rating.toFixed(2)}} ({{reviews.length}} reviews)</h4>
+    <h3 class="house-reviews"> {{scores.rating.toFixed(2)}} ({{reviews.length}} reviews)</h3>
       <section class="score-list flex justify-center space-between">
 
          <div class=" left">

@@ -5,12 +5,40 @@
 
 body {
     margin: 0;
-    font-family: $font-stack;
     color: $clr2;
+    font-family: $font-stack;
+    font-size: rem(16px);
+    font-weight: 400;
+    line-height: 20px;
 }
 
-h1 {
+h1 { // note: in details use class below
+    font-size: rem(32px);
+    font-weight: 800;
+    line-height: rem(36px);
+}
+
+h1.alt { // h1 in details page
     font-size: rem(26px);
+    font-weight: 600;
+    line-height: rem(30px);
+}
+
+h2 { // note: in details h3 is used as secondary heading
+    font-size: rem(26px);
+    font-weight: 600;
+    line-height: rem(30px);
+}
+
+h3 { // secondary heading for details page
+    font-size: rem(22px);
+    font-weight: 600;
+    line-height: rem(26px);
+}
+
+h4 { // Footer: ABOUT, COMMUNITY, HOST, SUPPORT
+    font-size: rem(12px);
+    font-weight: 700;
 }
 
 a {

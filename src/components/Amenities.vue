@@ -1,6 +1,6 @@
 <template>
     <section class="amenities">
-        <h3>Amenities</h3>
+        <h3 class="amenities">Amenities</h3>
         <ul>
             <Amenity
                 v-for="amenity in amenities"
