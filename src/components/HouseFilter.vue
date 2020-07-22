@@ -1,5 +1,5 @@
 <template>
-  <section class="house-filter home-page-content">
+  <section :class="{ isFlat: isFilterFlatten }" class="house-filter home-page-content">
     <p>Find places to stay in Tel Aviv-Yafo on Airbnb</p>
     <p>Discover entire homes and private rooms perfect for any trip.</p>
     <form @keyup.enter="onSubmit">
@@ -71,6 +71,7 @@
 export default {
   name: "HouseFilter",
   props: ["isFilterFlatten"],
+  
   data() {
     return {
       filterBy: {
