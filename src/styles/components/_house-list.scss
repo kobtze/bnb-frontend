@@ -1,5 +1,4 @@
 .house-list{
-  //  max-width: 960px;
     margin:0 auto;
     .house-list-ul{
         display: grid;
@@ -17,8 +16,9 @@
             grid-template-columns: repeat(1, minmax(225px,1fr));
         }
     }
-    }
+ 
     li{
     margin: 0 auto;
     // margin-bottom: 15px;
     }
+}
