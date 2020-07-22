@@ -1,4 +1,4 @@
-.house-filter{
+.house-filter {
     font-family: Circular;
     background-color: rgb(255, 255, 255);
     // width: 510px;   //only if additional p underneath
@@ -6,70 +6,56 @@
     padding: 32px;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 12px;
-
-     ::placeholder{
-    color: $clr3;
+     ::placeholder {
+        color: $clr3;
     }
-
-    p{
-    margin:0px 0px 20px 0px;
-    font-size: 1rem;
-    line-height: 1;
-    text-align: left; 
-    color: $clr3;
+    p {
+        margin: 0px 0px 20px 0px;
+        font-size: 1rem;
+        line-height: 1;
+        text-align: left;
+        color: $clr3;
     }
-
-    p:first-child{
-    margin:0px 0px 8px 0px;
-    font-size: 2rem;
-    color: $clr2;
+    p:first-child {
+        margin: 0px 0px 8px 0px;
+        font-size: 2rem;
+        color: $clr2;
     }
-
-    .destination-picker > *{
-    width: 100%;
-    margin-bottom: 10px;
- 
-    }
-
-    .date-picker-container  {
-
-        > * {
-        flex-grow: 1;
+    .destination-picker>* {
+        width: 100%;
         margin-bottom: 10px;
-        &:nth-child(even){
-        margin-left: 8px;
-        }   
+    }
+    .date-picker-container {
+        >* {
+            flex-grow: 1;
+            margin-bottom: 10px;
+            &:nth-child(even) {
+                margin-left: 8px;
+            }
         }
     }
-
-   .guest-number-container {
-    > * {
-        flex-grow: 1;
-        margin-bottom: 10px;
-        &:nth-child(even){
-        margin-left: 8px;
-    }   
- 
-   }
-   }
-
-   .search-btn{
-    width: 100%;
-    padding: 15px;
-    font-size: 1rem;
-    color:white;
-    background-color: $clr1;
-    border-radius: 12px;
-
-    svg{
-    display: inline-block;
-
+    .guest-number-container {
+        >* {
+            flex-grow: 1;
+            margin-bottom: 10px;
+            &:nth-child(even) {
+                margin-left: 8px;
+            }
+        }
     }
-   }
-
-   input{
-    padding:27px 10px;
-    border-radius: 10px;
-}
-
+    .search-btn {
+        width: 100%;
+        padding: 15px;
+        font-size: 1rem;
+        color: white;
+        background-color: $clr1;
+        border-radius: 12px;
+        svg {
+            display: inline-block;
+        }
+    }
+    input {
+        padding: 27px 10px;
+        border-radius: 10px;
+    }
 }
