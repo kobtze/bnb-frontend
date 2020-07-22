@@ -8,7 +8,6 @@
           placeholder="LOCATION"
           v-model="filterBy.location"
           type="search"
-          @input="setFilter"
         ></el-input>
       </section>
 
@@ -17,19 +16,17 @@
           v-model="filterBy.checkIn"
           type="date"
           placeholder="CHECK IN"
-          @input="setFilter"
         ></el-date-picker>
 
         <el-date-picker
           v-model="filterBy.checkOut"
           type="date"
           placeholder="CHECK OUT"
-          @input="setFilter"
         ></el-date-picker>
       </section>
 
       <section class="guest-number-container flex">
-        <el-select v-model="filterBy.adultNumber" placeholder="ADULTS" @input="setFilter">
+        <el-select v-model="filterBy.adultNumber" placeholder="ADULTS">
           <el-option
             v-for="item in options"
             :key="item.value"
@@ -38,7 +35,7 @@
           ></el-option>
         </el-select>
 
-        <el-select v-model="filterBy.childrenNumber" placeholder="CHILDREN" @input="setFilter">
+        <el-select v-model="filterBy.childrenNumber" placeholder="CHILDREN">
           <el-option
             v-for="item in options"
             :key="item.value"
@@ -110,6 +107,7 @@ export default {
   },
   methods: {
     onSubmit() {
+      this.setFilter()
       this.$router.push("/app");
       console.log("submit!");
     },
@@ -121,5 +119,3 @@ export default {
   }
 };
 </script>
-
-
