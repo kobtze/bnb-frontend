@@ -2,7 +2,7 @@
   <section class="bnb-home-page">
     <div class="hero-container">
       <home-page-navbar></home-page-navbar>
-        <house-filter @filter="setFilter" :isFilterFlatten="isFilterFlatten"/> 
+        <house-filter @setFilter="setFilter" :isFilterFlatten="isFilterFlatten"/> 
       
       <!-- <div class="home-page-content p-under-filter flex space-around align-center">
         <p> Earn up to $2,995/month hosting your place in Tel Aviv </p>

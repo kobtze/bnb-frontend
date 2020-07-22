@@ -2,7 +2,7 @@
   <section>
     <main-nav />
     <div class="container">
-      <house-filter @filter="setFilter" :isFilterFlatten="isFilterFlatten"/> 
+      <house-filter @setFilter="setFilter" :isFilterFlatten="isFilterFlatten"/> 
       <house-list :houses="houses" />
     </div>
   </section>
@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     setFilter(filterBy) {
-      console.log('filterby',filterby);
+      console.log('filterby',filterBy);
       this.$store.commit({
         type: "setFilter",
         filterBy: _.cloneDeep(filterBy)
