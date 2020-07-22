@@ -31,6 +31,7 @@ export default {
   },
   methods: {
     setFilter(filterBy) {
+      console.log('filterby',filterby);
       this.$store.commit({
         type: "setFilter",
         filterBy: _.cloneDeep(filterBy)

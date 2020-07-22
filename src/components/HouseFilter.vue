@@ -7,7 +7,6 @@
         <el-input
           placeholder="LOCATION"
           v-model="filterBy.location"
-          
           type="search"
           @input="setFilter"
         ></el-input>
@@ -106,7 +105,7 @@ export default {
     };
   },
   created() {
-    console.log('isFilterFlatten',this.isFilterFlatten);
+    console.log("isFilterFlatten", this.isFilterFlatten);
     this.setFilter();
   },
   methods: {
@@ -115,6 +114,7 @@ export default {
       console.log("submit!");
     },
     setFilter() {
+      console.log('setFilter .filterBy:',this.filterBy );
       //  console.log("filterBy", this.filterBy);
       this.$emit("setFilter", this.filterBy);
     }
