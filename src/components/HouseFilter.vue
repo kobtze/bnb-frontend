@@ -1,5 +1,5 @@
 <template>
-  <section class="house-filter at-list home-page-content">
+  <section class="house-filter home-page-content">
 
     <p>Find places to stay in Tel Aviv-Yafo on Airbnb</p>
     <p>Discover entire homes and private rooms perfect for any trip.</p>
