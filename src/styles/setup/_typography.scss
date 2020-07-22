@@ -1,6 +1,45 @@
+// @font-face {
+//     font-family: Circular;
+//     src: url(~@/assets/fonts/circular/Circular.ttf);
+// }
+
 @font-face {
     font-family: Circular;
-    src: url(~@/assets/fonts/circular/Circular.ttf);
+    unicode-range: U+0000-03FF, U+0500-058F, U+0700-074F, U+0780-FAFF,
+        U+FE00-FE6F, U+FF00-EFFFF, U+FFFFE-10FFFF;
+    font-weight: normal;
+    font-style: normal;
+    src: url(~@/assets/fonts/circular/Airbnb_Cereal-Book.woff2)
+            format("woff2"),
+        url(~@/assets/fonts/circular/Airbnb_Cereal-Book.woff)
+            format("woff");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Circular;
+    unicode-range: U+0000-03FF, U+0500-058F, U+0700-074F, U+0780-FAFF,
+        U+FE00-FE6F, U+FF00-EFFFF, U+FFFFE-10FFFF;
+    font-weight: 600;
+    font-style: normal;
+    src: url(~@/assets/fonts/circular/Airbnb_Cereal-Medium.woff2)
+            format("woff2"),
+        url(~@/assets/fonts/circular/Airbnb_Cereal-Medium.woff)
+            format("woff");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Circular;
+    unicode-range: U+0000-03FF, U+0500-058F, U+0700-074F, U+0780-FAFF,
+        U+FE00-FE6F, U+FF00-EFFFF, U+FFFFE-10FFFF;
+    font-weight: 800;
+    font-style: normal;
+    src: url(~@/assets/fonts/circular/Airbnb_Cereal-Bold.woff2)
+            format("woff2"),
+        url(~@/assets/fonts/circular/Airbnb_Cereal-Bold.woff)
+            format("woff");
+    font-display: swap;
 }
 
 @font-face {

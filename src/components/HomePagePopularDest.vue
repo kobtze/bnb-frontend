@@ -26,7 +26,7 @@
 
 
             <el-card class="card" :body-style="{ padding: '0px' }">
-            <img src="https://static.timesofisrael.com/www/uploads/2020/02/Untitled-4-6-640x400.jpg" class="image">
+            <img src="https://israel.travel/wp-content/uploads/2019/03/jaffa-inside-min.jpg" class="image">
             <div style="padding: 14px;">
                 <p>Tel Aviv</p>
                 <div class="bottom clearfix">
