@@ -1,9 +1,10 @@
 <template>
-  <section class="house-filter home-page-content">
+  <section class="house-filter at-list home-page-content">
 
     <p>Find places to stay in Tel Aviv-Yafo on Airbnb</p>
     <p>Discover entire homes and private rooms perfect for any trip.</p>
-<form @keyup.enter="search">
+    
+<form @keyup.enter="search" >
 
     <section class="destination-picker">
       <el-input placeholder="LOCATION"  v-model="filterBy.location" type="search" @input="setFilter"></el-input>
@@ -11,7 +12,6 @@
 
     <section class="date-picker-container flex">
       <el-date-picker v-model="filterBy.checkIn" type="date" placeholder="CHECK IN" @input="setFilter"></el-date-picker>
-
       <el-date-picker v-model="filterBy.checkOut" type="date" placeholder="CHECK OUT" @input="setFilter"></el-date-picker>
     </section>
 
@@ -56,6 +56,7 @@
 </template>
 <script>
 export default {
+   
   data() {
     return {
       filterBy: {

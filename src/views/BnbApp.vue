@@ -2,7 +2,8 @@
   <section>
     <main-nav />
     <div class="container">
-      <list-filter @filter="setFilter" /> 
+      <!-- <list-filter @filter="setFilter" />  -->
+      <!-- <list-second-filter @filter="setFilter" />  -->  
       <house-list :houses="houses" />
     </div>
   </section>
@@ -10,7 +11,8 @@
 
 
 <script>
-import ListFilter from "@/components/ListFilter.vue";
+//import ListFilter from "@/components/ListFilter.vue";   Checking alt
+import ListSecondFilter from "@/components/ListSecondFilter.vue";
 import HouseList from "@/components/HouseList.vue";
 import MainNav from "@/components/MainNav.vue";
 
@@ -38,7 +40,8 @@ export default {
 
   components: {
     HouseList,
-    ListFilter,
+   // ListFilter,
+    ListSecondFilter,
     MainNav
   }
 };
