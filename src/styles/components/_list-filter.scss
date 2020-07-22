@@ -1,10 +1,9 @@
-.list-filter{
+.list-filter {
     // border: 1px solid $clr3;
     // border-radius: 12px;
     padding: 0px;
     margin: 0px;
-
-    form{
+    form {
         border: 1px solid $clr3;
         border-radius: 12px;
         padding: 0px;
@@ -18,45 +17,33 @@
         background-color: transparent;
         cursor: pointer;
     }
-
     .destination-picker {
         flex-grow: 2;
     }
-
-    .list-filter .el-input__inner{
+    .list-filter .el-input__inner {
         width: 120px;
     }
-    .el-input__inner{
+    .el-input__inner {
         background-color: transparent;
         border: none;
-
         padding: 32px 48px;
         border: 2px solid transparent;
         border-radius: 12px;
-        &:hover{
-             border: 2.5px solid $clr5;
-     
-
+        &:hover {
+            border: 2.5px solid $clr5;
         }
     }
-
-
-    .search-btn{
+    .search-btn {
         width: max-content;
         padding: 15px;
         margin: 10px;
         font-size: 1rem;
-        color:white;
+        color: white;
         background-color: $clr1;
         border-radius: 12px;
-        svg{
-        display: inline-block;
-        margin-right:5px ;
+        svg {
+            display: inline-block;
+            margin-right: 5px;
         }
-       }
-    
-  }
-
-
-
-
+    }
+}

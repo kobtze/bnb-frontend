@@ -2,7 +2,7 @@
   <section class="list-filter">
 
    
-<form class="flex" @keyup.enter="search" @submit="search">
+<form class="flex" @keyup.enter="search">
 
       <input class="destination-picker" placeholder="LOCATION"  v-model="filterBy.location" type="search">
 
@@ -17,7 +17,7 @@
       
 
     <section class="guest-number-container flex">
-      <el-select v-model="filterBy.adultNumber" placeholder="ADULTS">
+      <el-select  v-model="filterBy.adultNumber" placeholder="ADULTS">
         <el-option
           v-for="item in options"
           :key="item.value"
@@ -36,7 +36,7 @@
       </el-select>
     </section>
 
-    <el-button @click="search" class="search-btn">
+    <el-button @click="setFilter" class="search-btn">
       <svg
         style="fill:none;height:14px;width:14px;stroke:currentColor;stroke-width:4;overflow:visible"
         aria-hidden="true"
@@ -90,10 +90,11 @@ export default {
       ]
     };
   },
+ 
   methods: {
     search() {
-      //  this.router.push('/app');
-      console.log("search!!!!!!!");
+       this.router.push('/app');
+   
     },
     setFilter() {
     //  console.log("filterBy", this.filterBy);

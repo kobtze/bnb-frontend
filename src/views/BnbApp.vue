@@ -2,8 +2,7 @@
   <section>
     <main-nav />
     <div class="container">
-      <!-- <list-filter @filter="setFilter" />  -->
-      <!-- <list-second-filter @filter="setFilter" />  -->  
+      <house-filter @filter="setFilter" :isFilterFlatten="isFilterFlatten"/> 
       <house-list :houses="houses" />
     </div>
   </section>
@@ -11,16 +10,18 @@
 
 
 <script>
-//import ListFilter from "@/components/ListFilter.vue";   Checking alt
-import ListSecondFilter from "@/components/ListSecondFilter.vue";
+import HouseFilter from "@/components/HouseFilter.vue";
 import HouseList from "@/components/HouseList.vue";
 import MainNav from "@/components/MainNav.vue";
 
 export default {
-  // data() {
-  //     housesToShow
-  // },
+  data() {
+    return{
+      isFilterFlatten:'',
+    }
+  },
   created() {
+    this.isFilterFlatten=true;
     this.$store.dispatch({ type: "loadHouses" });
   },
   computed: {
@@ -40,8 +41,7 @@ export default {
 
   components: {
     HouseList,
-   // ListFilter,
-    ListSecondFilter,
+    HouseFilter,
     MainNav
   }
 };

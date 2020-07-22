@@ -3,6 +3,7 @@
     .house-list-ul{
         display: grid;
         grid-template-columns: repeat(3, minmax(225px,1fr));
+        //         grid-template-columns: repeat(auto-fill, minmax(225px,1fr));
         grid-gap:15px;
         padding-inline-start: 0px; // fix for default setting
 
