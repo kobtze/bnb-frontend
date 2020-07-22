@@ -3,8 +3,7 @@
     <section class="container">
 
         <section class="details-header">
-            <div class="house-name">{{houseToShow.name}}</div>
-            <!-- <p class="rating">{{houseToShow.scores.rating}}</p> -->
+            <h1 class="alt">{{houseToShow.name}}</h1>
             <div class="second-row">
                 <prev-scores :scores="houseToShow.scores.rating" :reviewcount="houseToShow.reviews.length" />
                 <span class="seperator" aria-hidden="true">·</span>
@@ -13,47 +12,58 @@
         </section>
 
         <image-gallery :images="houseToShow.imgUrls" />
+
         <div class="details-main">
             <div class="content-column">
-                <div class="content-header">
-                    {{houseToShow.type}} hosted by {{houseToShow.host.name}}
-                </div>
-                <div class="content-secondary-header">{{houseToShow.capacity}} guests</div>
-                <!-- <p>{{houseToShow.type}}</P> -->
-                <div class="content-desc">{{houseToShow.description}}</div>
-                <amenities :amenities="houseToShow.amenities" />
-            </div>
-            <div class="booking-column">
-                <div class="booking-sticky">
-                    <div style="border: 1px solid rgb(221, 221, 221); border-radius: 12px; padding: 24px; box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;">
-                        <div>
-                            <div class="1st-row-price-rating">
-                                <span class="_pgfqnw">$73</span>
-                                <span class="_1l0ezq0">/ night</span>
-                                <span class="_bq6krt">4.80 (70)</span>
-                            </div>
-                            <div class="2nd-row-checkin-chekout">
-                                <div class="_7eq2v2">Check-in</div>
-                                <div class="_7eq2v2">Checkout</div>
-                            </div>
-                            <div class="3rd-row-check-availabilty">
-                                <form action="/payments/book?hosting_id=31430309" method="post">
-                                    <input type="hidden" name="s" value="undefined">
-                                    <input type="hidden" name="hosting_id" value="31430309">
-                                    <input type="hidden" name="guest_currency" value="USD">
-                                    <input type="hidden" name="checkin" value="undefined">
-                                    <input type="hidden" name="checkout" value="undefined">
-                                    <input type="hidden" name="number_of_guests" value="1">
-                                    <input type="hidden" name="selected_cancellation_policy_id" value="undefined">
-                                    <button data-testid="homes-pdp-cta-btn" type="submit" class="_1ot1we5p">
-                                        <span class="_163rr5i">
-                                            <span class="_19di23v" style="background-position: calc((100 - var(--mouse-x, 0)) * 1%) calc((100 - var(--mouse-y, 0)) * 1%); --mouse-x:17.49; --mouse-y:11.4583;"></span></span><span class="_tcp689">Check availability </span>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
+
+                <section>
+                    <h3 class="content-header">
+                        {{houseToShow.type}} hosted by {{houseToShow.host.name}}
+                    </h3>
+                    <div class="content-secondary-header">
+                        {{houseToShow.capacity}} guests
                     </div>
-                </div>
+                </section>
+
+                <section class="content-desc">
+                    {{houseToShow.description}}
+                </section>
+                
+                <amenities :amenities="houseToShow.amenities" />
+
+            </div>
+
+            <div class="booking-column">
+
+                <section class="booking-sticky">
+                    <div style="border: 1px solid rgb(221, 221, 221); border-radius: 12px; padding: 24px; box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;">
+
+                        <div class="price-rating">
+                            <span class="">$73</span>
+                            <span class="">/ night</span>
+                            <span class="">4.80 (70)</span>
+                        </div>
+
+                        <div class="checkin-chekout">
+                            <div class="">Check-in</div>
+                            <div class="">Checkout</div>
+                        </div>
+
+                        <div class="call-to-action">
+                            <form action="" method="post">
+                                <input type="hidden" name="house_id" value="">
+                                <input type="hidden" name="guest_currency" value="USD">
+                                <input type="hidden" name="checkin" value="undefined">
+                                <input type="hidden" name="checkout" value="undefined">
+                                <input type="hidden" name="number_of_guests" value="1">
+                                <button type="submit" class="">
+                                <span class="">Check availability </span>
+                                </button>
+                            </form>
+                        </div>
+                        
+                    </div>
+                </section>
             </div>
         </div>
         <house-reviews :reviews="houseToShow.reviews" :scores="houseToShow.scores"/>
