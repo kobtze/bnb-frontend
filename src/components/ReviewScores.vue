@@ -5,14 +5,14 @@
 
          <div class="left">
             <!-- (scores.'something'/5)*100 is for feeling the ranking line as it computed from 100% -->
-            Cleanliness<el-progress class="change" :percentage="(scores.cleanliness/5)*100"  color="#000000" :format="fiveStarsFormat" ></el-progress>
-            Communication<el-progress :percentage="(scores.cleanliness/5)*100" color="#000000" :format="fiveStarsFormat"></el-progress>
-            Checkin<el-progress :percentage="(scores.checkin/5)*100" color="#000000" :format="fiveStarsFormat"></el-progress>
+            <p>Cleanliness</p> <el-progress class="change" :percentage="(scores.cleanliness/5)*100"  color="#000000" :format="fiveStarsFormat" ></el-progress>
+            <p>Communication</p> <el-progress :percentage="(scores.cleanliness/5)*100" color="#000000" :format="fiveStarsFormat"></el-progress>
+            <p>Checkin</p><el-progress :percentage="(scores.checkin/5)*100" color="#000000" :format="fiveStarsFormat"></el-progress>
          </div>
          <div class="right">
-            Accuracy<el-progress  :percentage="(scores.accuracy/5)*100" color="#000000" :format="fiveStarsFormat"></el-progress>
-            Location<el-progress :percentage="(scores.location/5)*100" color="#000000" :format="fiveStarsFormat" ></el-progress>
-            Value <el-progress :percentage="(scores.value/5)*100" color="#000000" :format="fiveStarsFormat"></el-progress>
+            <p>Accuracy</p><el-progress  :percentage="(scores.accuracy/5)*100" color="#000000" :format="fiveStarsFormat"></el-progress>
+            <p>Location</p><el-progress :percentage="(scores.location/5)*100" color="#000000" :format="fiveStarsFormat" ></el-progress>
+            <p>Value</p><el-progress :percentage="(scores.value/5)*100" color="#000000" :format="fiveStarsFormat"></el-progress>
          </div>
  </section>
        

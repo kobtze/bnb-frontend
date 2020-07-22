@@ -18,7 +18,7 @@ export default {
             return state.houses;
         },
         housesCount(state) {
-            return state.housesLength;
+            return state.houses.length;
         },
         isLoading(state) {
             return state.isLoading;
@@ -58,6 +58,7 @@ export default {
                 return houses
             } catch (err) {
                 console.log('Store.loadHouses error:', err);
+                throw err
             }
         },
         async removeHouse({ commit }, { id }) {

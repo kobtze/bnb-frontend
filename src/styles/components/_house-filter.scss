@@ -73,3 +73,54 @@
 }
 
 }
+
+///////
+
+.house-filter.isFlat {
+    background-color: transparent;
+    height: 70px; 
+    padding: 0px;
+    border: 1px solid $clr4;
+ 
+    & * {
+        background-color:none;
+        height: 70px;
+        width: max-content;
+        cursor: pointer;
+    }
+    p {
+    display: none;    
+    }
+
+    form {
+    display: flex;
+    width: max-content;
+    height: 70px;
+    background-color: transparent;
+    
+    }
+
+   .date-picker-container * {
+    margin: 0px;
+
+        input{
+            width: 150px;
+        }
+   }
+   
+   .guest-number-container * {
+    margin: 0px;
+
+    input{
+        width: 150px;
+    }
+   }
+    .search-btn{
+        width: 100px;
+
+       }
+    
+    
+    }
+
+
