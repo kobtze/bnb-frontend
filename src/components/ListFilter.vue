@@ -1,12 +1,13 @@
 <template>
-  <section class="list-filter ">
+  <section class="list-filter">
 
    
 <form class="flex" @keyup.enter="search">
 
-    <section class="destination-picker">
-      <el-input placeholder="LOCATION"  v-model="filterBy.location" type="search"></el-input>
-    </section>
+      <input class="destination-picker" placeholder="LOCATION"  v-model="filterBy.location" type="search">
+
+      <button @click="isShowDates = !isShowDates">CHECK IN</button>
+      <button @click="isShowDates = !isShowDates">CHECK OUT</button>
 
     <section class="date-picker-container flex">
       <el-date-picker clear-icon  v-model="filterBy.checkIn" prefix-icon="none" type="date" placeholder="CHECK IN"></el-date-picker>
