@@ -1,9 +1,5 @@
 /* HEADER */
 
-* {
-    // box-sizing: border-box; // already in _base
-}
-
 .main-header {
     height: 150px;
 }
@@ -95,4 +91,71 @@ li a {
     top: -2px !important;
     border-radius: 9px !important;
     padding: 0px 5px !important;
+}
+
+.menu-modal {
+    width: 300px;
+    height: 215px;
+    background-color: white;
+    border: 1px solid rgba(230, 227, 227, 0.5);
+    border-radius: 20px;
+    position: absolute;
+    z-index: 3000;
+    top: 52px;
+    right: -104px;
+}
+
+.login,
+.logout {
+    font: inherit;
+    margin-top: 16px;
+    line-height: normal;
+    margin-left: 10px;
+    width: 98%;
+    margin-left: 2px;
+    height: 50px;
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(228, 238, 237, 0.568);
+        ;
+    }
+}
+
+.post-modal {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    z-index: 2999;
+    .login-modal {
+        margin: 0 auto;
+        width: 300px;
+        height: 215px;
+        background-color: white;
+        border: 1px solid rgba(230, 227, 227, 0.5);
+        border-radius: 20px;
+        position: absolute;
+        z-index: 3000;
+        top: 52px;
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    &:hover {
+        cursor: pointer;
+    }
 }
