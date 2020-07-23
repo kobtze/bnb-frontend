@@ -15,15 +15,15 @@
 
          <div class="left">
               <!-- (scores.'something'/5)*100 is for feeling the ranking line as it computed from 100% -->
-              <section class="flex space-between align-center">   <p>Cleanliness</p>  <el-progress stroke-width="4" :percentage="(scores.cleanliness/5)*100"  color="#000000" :format="fiveStarsFormat"></el-progress>  </section>
-               <section class="flex space-between align-center">  <p>Communication</p> <el-progress stroke-width="4" :percentage="(scores.cleanliness/5)*100" color="#000000" :format="fiveStarsFormat"></el-progress> </section>
-               <section class="flex space-between align-center">  <p>Checkin</p>  <el-progress stroke-width="4" :percentage="(scores.checkin/5)*100" color="#000000" :format="fiveStarsFormat"></el-progress> </section>
+              <section class="flex space-between align-center">   <p>Cleanliness</p>  <el-progress :stroke-width="4" :percentage="(scores.cleanliness/5)*100"  color="#000000" :format="fiveStarsFormat"></el-progress>  </section>
+               <section class="flex space-between align-center">  <p>Communication</p> <el-progress :stroke-width="4" :percentage="(scores.cleanliness/5)*100" color="#000000" :format="fiveStarsFormat"></el-progress> </section>
+               <section class="flex space-between align-center">  <p>Checkin</p>  <el-progress :stroke-width="4" :percentage="(scores.checkin/5)*100" color="#000000" :format="fiveStarsFormat"></el-progress> </section>
          </div>
 
          <div class="right">
-           <section class="flex space-between align-center">   <p>Accuracy</p> <el-progress stroke-width="4" :percentage="(scores.accuracy/5)*100" color="#000000"  :format="fiveStarsFormat"></el-progress> </section>
-            <section class="flex space-between align-center">   <p>Location</p>  <el-progress stroke-width="4" :percentage="(scores.location/5)*100" color="#000000" :format="fiveStarsFormat" ></el-progress> </section>
-             <section class="flex space-between align-center">  <p>Value</p> <el-progress stroke-width="4" :percentage="(scores.value/5)*100" color="#000000" :format="fiveStarsFormat"></el-progress> </section>
+           <section class="flex space-between align-center">   <p>Accuracy</p> <el-progress :stroke-width="4" :percentage="(scores.accuracy/5)*100" color="#000000"  :format="fiveStarsFormat"></el-progress> </section>
+            <section class="flex space-between align-center">   <p>Location</p>  <el-progress :stroke-width="4"  :percentage="(scores.location/5)*100" color="#000000" :format="fiveStarsFormat" ></el-progress> </section>
+             <section class="flex space-between align-center">  <p>Value</p> <el-progress :stroke-width="4" :percentage="(scores.value/5)*100" color="#000000" :format="fiveStarsFormat"></el-progress> </section>
          </div>
 
        </section>
