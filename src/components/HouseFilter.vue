@@ -1,7 +1,7 @@
 <template>
   <section :class="{ isFlat: isFilterFlatten }" class="house-filter home-page-content">
 
-    <h1>Find places to stay in Tel Aviv-Yafo on Airbnb</h1>
+    <p>Find places to stay in Tel Aviv-Yafo on Airbnb</p>
     <p>Discover entire homes and private rooms perfect for any trip.</p>
 
     <form @keyup.enter="onSubmit">
