@@ -1,5 +1,4 @@
 .house-preview {
-    font-family: $font-stack;
     font-size: rem(15px);
     width: 100% !important;
     height: 100% !important;
@@ -94,5 +93,13 @@
 
     .clearfix:after {
         clear: both;
+    }
+
+    //modifications for card & carousel
+    .el-card{
+        border: none;
+    }
+    .el-carousel, .el-carousel--horizontal{
+        border-radius: 8px;
     }
 }
