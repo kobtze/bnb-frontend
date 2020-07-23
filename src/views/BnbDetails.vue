@@ -67,7 +67,8 @@
             </div>
         </div>
         <house-reviews :reviews="houseToShow.reviews" :scores="houseToShow.scores"/>
-        <div class="google-map"><google-map :location="houseToShow.location" ></google-map></div>
+
+        <google-map :location="houseToShow.location"></google-map>
         <date-picker />
     </section>
   </div>

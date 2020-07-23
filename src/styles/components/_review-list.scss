@@ -1,11 +1,23 @@
 .review-list{
-
+    
     ul{
-        padding: 0px;
+      
         display: grid;
         grid-template-columns: repeat(2, minmax(225px,1fr));
-        grid-gap:10%;
         padding-inline-start: 0px; // fix for default setting
+        // padding: 0px 8px;
+        // margin-right: 8.333%;
         
+    }
+    button{
+        padding: 13px 23px;
+        background-color: transparent;
+        border:1px solid black;
+        border-radius: 8px;
+        font-size: 16px;
+        font-family: Circular;
+        font-weight: 600;
+        outline: none;
+        cursor: pointer;
     }
 }
