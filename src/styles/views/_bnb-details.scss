@@ -83,6 +83,23 @@
         z-index: 1 !important;
         padding-right: 1px !important;
         padding-bottom: 48px;
+
+        //ori design
+        padding: 24px;
+       
+        button{
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            color:white;
+            background-color: $clr1;
+            border: none;
+            border-radius: 8px;
+        }
+
+        
     }
 }
 
