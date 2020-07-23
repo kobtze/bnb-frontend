@@ -10,6 +10,7 @@
       {{scores.rating.toFixed(2)}} ({{reviews.length}} reviews)
     </h2>
 
+
       <section class="score-list ">
 
          <div class="left">
