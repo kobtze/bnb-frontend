@@ -1,6 +1,6 @@
 <template>
 
-  <section class="home-page-suggestions home-page-content">
+  <section class="home-page-suggestions container">
      <h2>Vacation rentals for every style</h2>
   
     <section class="img-container flex">

@@ -1,8 +1,11 @@
 .score-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(225px,1fr));
-    grid-gap:10%;
-   
+    
+    .left, .right{
+        padding: 0px 8px;
+        margin-right: 8.333%;
+    }
     section{
         margin:0px 0px 16px 0px;
     }
@@ -12,15 +15,10 @@
     margin: 0px;
     }
 
+    .el-progress {
+        width: 180px;
+    }
+       
 }
 
 
-h2 {
-    text-align: start;
-    padding-bottom: 32px;
-}
-
-
- .el-progress {
- width: 180px;
- }

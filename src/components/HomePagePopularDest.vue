@@ -1,6 +1,6 @@
 <template>
 
-  <section class="home-page-popular-dest home-page-content ">
+  <section class="home-page-popular-dest container">
 
      <h2>Destinations for future trips</h2>
   

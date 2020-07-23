@@ -1,16 +1,22 @@
 .house-filter{
-    font-family: Circular;
+
     background-color: rgb(255, 255, 255);
     // width: 510px;   //only if additional p underneath
     width: 420px;
     padding: 32px;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 12px;
-
+    // margin-left:0px;
+    // margin-right:0px;
+    
      ::placeholder{
     color: $clr3;
     }
-
+ 
+    h1{
+        margin-top: 0px;
+        margin-bottom: 22px;
+    }
     p{
     margin:0px 0px 20px 0px;
     font-size: 1rem;
@@ -81,46 +87,65 @@
     height: 70px; 
     padding: 0px;
     border: 1px solid $clr4;
- 
-    & * {
-        background-color:none;
-        height: 70px;
-        width: max-content;
-        cursor: pointer;
+    width: 100%;
+    
+    input{
+        border: 2px solid $clr4; 
+        &:hover{
+           border: 3px solid $clr4; 
+        }
     }
-    p {
+
+    span.el-input__prefix, span.el-input__suffix {
+        display:none;
+    }
+  
+    & * {
+        height: 70px;
+        width: 100%;
+        background-color:none;
+        cursor: pointer;
+        
+    }
+
+    p, h1{
     display: none;    
     }
 
     form {
     display: flex;
-    width: max-content;
     height: 70px;
     background-color: transparent;
-    
     }
 
    .date-picker-container * {
-    margin: 0px;
 
-        input{
-            width: 150px;
-        }
+    margin: 0px;
+    .el-icon-date:before {
+    content: "";
+    }
+    .el-input__inner{
+    padding: 10px;
+    }
+
+
    }
-   
+
    .guest-number-container * {
+
     margin: 0px;
 
-    input{
-        width: 150px;
+    .el-icon-arrow-up:before{
+    content: "";
     }
-   }
-    .search-btn{
-        width: 100px;
 
-       }
-    
-    
+   }
+
+    .search-btn{
+    width: 100px;
+   
     }
+   
+}
 
 
