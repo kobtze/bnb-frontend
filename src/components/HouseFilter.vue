@@ -1,28 +1,21 @@
 <template>
   <section :class="{ isFlat: isFilterFlatten }" class="house-filter home-page-content">
+
     <h1>Find places to stay in Tel Aviv-Yafo on Airbnb</h1>
     <p>Discover entire homes and private rooms perfect for any trip.</p>
+
     <form @keyup.enter="onSubmit">
+      
       <section class="destination-picker">
-        <el-input
-          placeholder="LOCATION"
-          v-model="filterBy.location"
-          type="search"
-        ></el-input>
+        <el-input placeholder="LOCATION" v-model="filterBy.location" type="search"></el-input>
       </section>
 
       <section class="date-picker-container flex">
-        <el-date-picker
-          v-model="filterBy.checkIn"
-          type="date"
-          placeholder="CHECK IN"
-        ></el-date-picker>
+        <el-date-picker v-model="filterBy.checkIn" type="date" placeholder="CHECK IN"> </el-date-picker>
 
         <el-date-picker
-          v-model="filterBy.checkOut"
-          type="date"
-          placeholder="CHECK OUT"
-        ></el-date-picker>
+          v-model="filterBy.checkOut" type="date" placeholder="CHECK OUT">  
+        </el-date-picker>
       </section>
 
       <section class="guest-number-container flex">
