@@ -1,19 +1,20 @@
 <template>
-  <div v-if="houseToShow" class="house-details" :id="houseToShow._id">
-    <section class="container">
-      <section class="details-header">
-        <h1 class="alt">{{houseToShow.name}}</h1>
-        <div class="second-row">
-          <prev-scores
-            :scores="houseToShow.scores.rating"
-            :reviewcount="houseToShow.reviews.length"
-          />
-          <span class="seperator" aria-hidden="true">·</span>
-          <div class="location">{{houseToShow.location.name}}</div>
-        </div>
-      </section>
+  <section>
+    <main-nav />
 
-      <image-gallery :images="houseToShow.imgUrls" />
+    <div v-if="houseToShow" class="house-details" :id="houseToShow._id">
+      <section class="container">
+        <section class="details-header">
+          <h1 class="alt">{{houseToShow.name}}</h1>
+          <div class="second-row">
+            <prev-scores
+              :scores="houseToShow.scores.rating"
+              :reviewcount="houseToShow.reviews.length"
+            />
+            <span class="seperator" aria-hidden="true">·</span>
+            <div class="location">{{houseToShow.location.name}}</div>
+          </div>
+        </section>
 
       <div class="details-main">
         <div class="content-column">
@@ -26,47 +27,74 @@
                 <img class="host-img" :src="houseToShow.host.imgUrl" alt="">
           </section>
 
-          <section class="content-desc">{{houseToShow.description}}</section>
+        <div class="details-main">
+          <div class="content-column">
+            <section>
+              <h3 class="content-header">{{houseToShow.type}} hosted by {{houseToShow.host.name}}</h3>
+              <div class="content-secondary-header">{{houseToShow.capacity}} guests</div>
+            </section>
 
-          <amenities :amenities="houseToShow.amenities" />
-        </div>
+            <section class="content-desc">{{houseToShow.description}}</section>
 
-        <div class="booking-column">
-          <section class="booking-sticky">
-            <!-- <div>   style="border: 1px solid rgb(221, 221, 221); border-radius: 12px; padding: 24px; box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;"</div> -->
-            <div>
-              <div class="price-rating flex space-between align-center">
-                <p><span class="price">${{houseToShow.price}}</span> / night</p>
-                <prev-scores :scores="houseToShow.scores.rating" :reviewcount="houseToShow.reviews.length"/>
+            <amenities :amenities="houseToShow.amenities" />
+          </div>
+
+          <div class="booking-column">
+            <section class="booking-sticky">
+              <div
+                style="border: 1px solid rgb(221, 221, 221); border-radius: 12px; padding: 24px; box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;"
+              >
+                <div class="price-rating">
+                  <span class>$73</span>
+                  <span class>/ night</span>
+                  <span class>4.80 (70)</span>
+                </div>
+
+                <div class="checkin-chekout">
+                  <div class>Check-in</div>
+                  <div class>Checkout</div>
+                </div>
+                <section class="date-picker-container flex">
+                  <el-date-picker
+                    v-model="checkIn"
+                    class="check-in"
+                    type="date"
+                    placeholder="CHECK-IN"
+                  ></el-date-picker>
+                  <el-date-picker
+                    v-model="checkOut"
+                    class="check-out"
+                    type="date"
+                    placeholder="CHECKOUT"
+                  ></el-date-picker>
+                </section>
+                <div class="call-to-action">
+                  <form action method="post">
+                    <input type="hidden" name="house_id" value />
+                    <input type="hidden" name="guest_currency" value="USD" />
+                    <input type="hidden" name="checkin" value="undefined" />
+                    <input type="hidden" name="checkout" value="undefined" />
+                    <input type="hidden" name="number_of_guests" value="1" />
+                    <button type="submit" class>
+                      <span class>Check availability</span>
+                    </button>
+                  </form>
+                </div>
               </div>
-
-              <section class="date-picker-container flex">
-                <el-date-picker v-model="checkIn" class="check-in"  type="date" placeholder="CHECK-IN"></el-date-picker>
-                <el-date-picker v-model="checkOut" class="check-out" type="date" placeholder="CHECKOUT"></el-date-picker>
-              </section>
-
-        <section class="guest-number-container">
-      <button @click="isShowInputs = !isShowInputs"> GUESTS {{getGuestNum}}</button>
-            <div class="guests-inputs-container" v-if="isShowInputs">
-                <div class="input-div flex align-center space-between">  <p> ADULTS </p>   <el-input-number @click="getGuestNum"  class="flex align-center" v-model="guests.adultNumber" placeholder="ADULTS" :min="1" :max="10"></el-input-number> </div>
-                <div class="input-div flex align-center space-between">  <p> CHILDREN </p>   <el-input-number @click="getGuestNum" v-model="guests.childrenNumber" placeholder="CHILDREN" :min="0" :max="10"></el-input-number> </div>
-            </div>
-    </section> 
-              <button>Check Availability</button>
-
-            </div>
-          </section>
+            </section>
+          </div>
         </div>
-      </div>
-      <house-reviews :reviews="houseToShow.reviews" :scores="houseToShow.scores" />
+        <house-reviews :reviews="houseToShow.reviews" :scores="houseToShow.scores" />
 
-      <google-map :location="houseToShow.location"></google-map>
-      <date-picker />
-    </section>
-  </div>
+        <google-map :location="houseToShow.location"></google-map>
+        <date-picker />
+      </section>
+    </div>
+  </section>
 </template>
 
 <script>
+import MainNav from "@/components/MainNav.vue";
 import { houseService } from "../services/house.service.js";
 import PrevScores from "@/components/PrevScores.vue";
 import ImageGallery from "@/components/ImageGallery.vue";
@@ -79,15 +107,15 @@ export default {
   name: "BnbDetails",
   data() {
     return {
-      isShowInputs:false,
-      checkIn:'',
-      checkOut:'',
-      guests:{
-        adultNumber:1,
-        childrenNumber:0,
+      isShowInputs: false,
+      checkIn: "",
+      checkOut: "",
+      guests: {
+        adultNumber: 1,
+        childrenNumber: 0
       },
-    
-      houseToShow: null,
+
+      houseToShow: null
     };
   },
   components: {
@@ -97,6 +125,7 @@ export default {
     HouseReviews,
     DatePicker,
     GoogleMap,
+    MainNav
   },
   methods: {
     async loadHouse() {
@@ -106,17 +135,17 @@ export default {
       } catch (err) {
         console.log("didnt get any house");
       }
-    },
+    }
   },
-    computed:{
-        getGuestNum(){
-          let guestNumber = this.guests.adultNumber + this.guests.childrenNumber;
-          return guestNumber;
-        }
-    },
+  computed: {
+    getGuestNum() {
+      let guestNumber = this.guests.adultNumber + this.guests.childrenNumber;
+      return guestNumber;
+    }
+  },
   created() {
     this.loadHouse();
-  },
+  }
 };
 </script>
 
