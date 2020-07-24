@@ -13,18 +13,54 @@ import ReviewPreview from "@/components/ReviewPreview.vue";
 export default {
  name: "ReviewList",
  props: ['reviews'],
- fakeReviews:[],
+ isReviewsAdded: false,
 
   methods:{
   addReviews() {
-const fakeReview = { "_id" : "fake101", "createdAt": Date.now(), 
-  "byUser": { 
-    "imgUrl": "https://res.cloudinary.com/dinlnfywr/image/upload/v1595532211/download_nqnvgz.jpg",
-    "name": "Donald J Trump", 
-  },
-  "description": "This was Amazing. Great Place! Highly recommend. Make AirBnB Great Again!"
-  }
-  this.reviews.push(fakeReview)
+
+    if (this.isReviewsAdded){
+        this.reviews.splice(-4,4)
+    }  else {
+
+    const fakeReviews = 
+    [
+    { 
+     "_id" : "fake101", "createdAt":  Date.now(),
+     "byUser": { 
+     "imgUrl": "https://res.cloudinary.com/dinlnfywr/image/upload/v1595532211/download_nqnvgz.jpg",
+     "name": "Donald", 
+     },
+     "description": "THIS WAS AMAZING.TREMENDOUS VACATION. GREAT PLACE! HIGHLY RECOMMEND. MAKE AMERICA GREAT AGAIN!"
+    },
+    { 
+     "_id" : "fake102", "createdAt": Date.now(), 
+     "byUser": { 
+     "imgUrl": "https://res.cloudinary.com/dinlnfywr/image/upload/v1595535388/download_jwjvnt.jpg",
+     "name": "Barack", 
+     },
+     "description": "Had a blast Thank you for your hospitality. Yes we can!"
+    },
+    { 
+     "_id" : "fake103", "createdAt": Date.now(), 
+     "byUser": { 
+     "imgUrl": "https://res.cloudinary.com/dinlnfywr/image/upload/v1595536853/download-1_srmhoh.jpg",
+     "name": "Vladimir", 
+     },
+     "description": "Da!"
+    },
+    { 
+     "_id" : "fake104", "createdAt": Date.now(), 
+     "byUser": { 
+     "imgUrl": "https://res.cloudinary.com/dinlnfywr/image/upload/v1595536961/download-2_wkilio.jpg",
+     "name": "Angela", 
+     },
+     "description": "Was ist der Unterschied zwischen einem Saxen und einem Ausländer? Den Ausländer versteht man, wenn er Deutsch spricht."
+    },
+
+  ]
+    fakeReviews.forEach(review => this.reviews.push(review))
+   }
+      this.isReviewsAdded = !this.isReviewsAdded
   }
   },
     components: {

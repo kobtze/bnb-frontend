@@ -85,7 +85,12 @@ export default {
   name: "BnbDetails",
   data() {
     return {
-      houseToShow: null
+      isShowInputs:false,
+      guests:{
+        adultNumber:1,
+        childrenNumber:0,
+      },
+      houseToShow: null,
     };
   },
   components: {
@@ -107,11 +112,16 @@ export default {
         console.log("didnt get any house");
       }
     },
- 
   },
+    computed:{
+        getGuestNum(){
+          let guestNumber = this.guests.adultNumber + this.guests.childrenNumber;
+          return guestNumber;
+        }
+    },
   created() {
     this.loadHouse();
-  }
+  },
 };
 </script>
 

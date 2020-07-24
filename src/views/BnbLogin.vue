@@ -1,7 +1,13 @@
 <template>
   <section class>
     <div v-if="loggedInUser">
-      <h1>Welcome loggedInUser!</h1>
+      <h1>Welcome {{loggedInUser.fullName}}</h1>
+      <!-- <p>{{loggedInUser}}</p> -->
+        
+        <p>{{orders}}</p>
+
+      <!-- Orders per user -->
+
       <form class="flex column" @submit.prevent="doLogout">
         <button>Logout</button>
       </form>
@@ -39,10 +45,17 @@ export default {
   computed: {
     loggedInUser() {
       return this.$store.getters.loggedInUser;
+    },
+    orders() {
+        return this.$store.getters.orders;
     }
   },
   created() {
     console.log("this.loggedInUser", this.loggedInUser);
+    this.$store.dispatch({ type: "loadOrders"});
+  },
+  mounted() {
+    console.log("Orders (all):", this.orders);
   },
   methods: {
     async doLogin() {

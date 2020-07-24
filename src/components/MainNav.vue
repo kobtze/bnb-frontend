@@ -64,27 +64,20 @@
                   alt
                 />
 
-                <div class="notifications">3</div>
-              </button>
-              <div v-show="toggleMenu" class="menu-modal">
-                <div class="login" @click="onToggleScreen">Login</div>
-                <div class="logout" @click="onToggleMenu">Sign up</div>
-                <div class="logout" @click="onToggleMenu">Logout</div>
-              </div>
-              <div v-show="toggleScreen" class="post-modal">
-                <div class="login-modal">
-                  <div class="form-group">
-                    <label for="usrname">
-                      <span class="glyphicon glyphicon-user"></span> Username
-                    </label>
-                    <input type="text" class="form-control" id="usrname" placeholder="Enter email" />
-                  </div>
-                  <div class="form-group">
-                    <label for="psw">
-                      <span class="glyphicon glyphicon-eye-open"></span> Password
-                    </label>
-                    <input type="text" class="form-control" id="psw" placeholder="Enter password" />
-                  </div>
+              <div class="notifications">3</div>
+            </button>
+            <div v-show="toggleMenu" class="menu-modal">
+              <div class="login" @click="onToggleScreen">Login</div>
+              <div class="logout" @click="onToggleMenu">Sign up</div>
+              <div class="logout" @click="onToggleMenu">Logout</div>
+            </div>
+            <div v-show="toggleScreen" class="post-modal">
+              <div class="login-modal">
+                <div class="form-group">
+                  <label for="usrname">
+                    <span class="glyphicon glyphicon-user"></span> Username
+                  </label>
+                  <input type="text" class="form-control" id="usrname" placeholder="Enter email" />
                 </div>
                 <div class="close-modal" @click.stop="onToggleScreen">
                   <svg
@@ -120,6 +113,14 @@ export default {
       toggleScreen: false,
       toggleMenu: false
     };
+  },
+  created() {
+    console.log("this.loggedInUser", this.loggedInUser);
+  },
+  computed: {
+    loggedInUser() {
+      return this.$store.getters.loggedInUser;
+    }
   },
   methods: {
     onToggleScreen() {
