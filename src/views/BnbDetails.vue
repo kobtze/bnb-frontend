@@ -27,12 +27,6 @@
                 <img class="host-img" :src="houseToShow.host.imgUrl" alt="">
           </section>
 
-        <div class="details-main">
-          <div class="content-column">
-            <section>
-              <h3 class="content-header">{{houseToShow.type}} hosted by {{houseToShow.host.name}}</h3>
-              <div class="content-secondary-header">{{houseToShow.capacity}} guests</div>
-            </section>
 
             <section class="content-desc">{{houseToShow.description}}</section>
 
@@ -89,6 +83,7 @@
         <google-map :location="houseToShow.location"></google-map>
         <date-picker />
       </section>
+      
     </div>
   </section>
 </template>
