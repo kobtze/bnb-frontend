@@ -1,13 +1,13 @@
 .house-filter{
 
+    outline:none;
     background-color: rgb(255, 255, 255);
     // width: 510px;   //only if additional p underneath
     width: 420px;
     padding: 32px;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 12px;
-    // margin-left:0px;
-    // margin-right:0px;
+
     
      ::placeholder{
     color: $clr3;
@@ -86,19 +86,39 @@
     background-color: transparent;
     height: 70px; 
     padding: 0px;
-    border: 1px solid $clr4;
+    // border: 1px solid $clr4;
     width: 100%;
     
+    
     input{
-        border: 2px solid $clr4; 
-        &:hover{
-           border: 3px solid $clr4; 
-        }
+        border: transparent;
+        // border: 1px solid $clr4; 
+        // border-radius: 0px;
+        // &:hover{
+        // border: 1px solid $clr5; 
+        // }
+ 
     }
+
+    .destination-picker{
+
+        input{
+        padding-left: 40px;
+
+        }
+
+        .el-input__inner{
+            border:none;
+        border-radius: 100px 0px 0px 100px;
+    }
+    }
+
 
     span.el-input__prefix, span.el-input__suffix {
         display:none;
     }
+
+
   
     & * {
         height: 70px;
@@ -114,8 +134,20 @@
 
     form {
     display: flex;
-    height: 70px;
+    height: 100%;
     background-color: transparent;
+
+    border: 1px solid $clr4;
+    border-radius: 500px;
+   
+    
+    .el-input__inner{
+     height: 94%;
+     align-self: center;
+     &:hover{
+     border: 2px solid black;
+     }
+     }
     }
 
    .date-picker-container * {
@@ -124,15 +156,9 @@
     .el-icon-date:before {
     content: "";
     }
-    .el-input__inner{
-    padding: 10px;
-    }
-
-
    }
 
    .guest-number-container * {
-
     margin: 0px;
 
     .el-icon-arrow-up:before{
@@ -142,7 +168,15 @@
    }
 
     .search-btn{
-    width: 100px;
+       margin: 10px;
+    
+    span.search{
+    visibility:hidden;
+    }
+
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
    
     }
    

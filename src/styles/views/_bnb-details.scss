@@ -110,15 +110,17 @@
             border-radius: 8px;
             cursor: pointer;
         }
- 
+
         input{
             border:transparent;
             font-size: 10px;
             font-weight: 600;
             font-family: Circular;
             color: $clr3;
+          
             cursor: pointer;
-    
+
+            
         }
         .el-input--prefix .el-input__inner{
             padding: 25px 0px 25px 20px;

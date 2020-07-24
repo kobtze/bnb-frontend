@@ -41,10 +41,17 @@
                   <span class>4.80 (70)</span>
                 </div>
 
+<<<<<<< HEAD
                 <div class="checkin-chekout">
                   <div class>Check-in</div>
                   <div class>Checkout</div>
                 </div>
+=======
+              <section class="date-picker-container flex">
+                <el-date-picker v-model="checkIn" class="check-in"  type="date" placeholder="CHECK-IN"></el-date-picker>
+                <el-date-picker v-model="checkOut" class="check-out" type="date" placeholder="CHECKOUT"></el-date-picker>
+              </section>
+>>>>>>> 4db09460dfd2cf593f81f15651bbab1ef5a8788a
 
                 <div class="call-to-action">
                   <form action method="post">
@@ -86,10 +93,13 @@ export default {
   data() {
     return {
       isShowInputs:false,
+      checkIn:'',
+      checkOut:'',
       guests:{
         adultNumber:1,
         childrenNumber:0,
       },
+    
       houseToShow: null,
     };
   },
