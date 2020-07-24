@@ -1,7 +1,7 @@
 <template>
   <section>
     <main-nav />
-    
+
     <div v-if="houseToShow" class="house-details" :id="houseToShow._id">
       <section class="container">
         <section class="details-header">
@@ -41,18 +41,24 @@
                   <span class>4.80 (70)</span>
                 </div>
 
-<<<<<<< HEAD
                 <div class="checkin-chekout">
                   <div class>Check-in</div>
                   <div class>Checkout</div>
                 </div>
-=======
-              <section class="date-picker-container flex">
-                <el-date-picker v-model="checkIn" class="check-in"  type="date" placeholder="CHECK-IN"></el-date-picker>
-                <el-date-picker v-model="checkOut" class="check-out" type="date" placeholder="CHECKOUT"></el-date-picker>
-              </section>
->>>>>>> 4db09460dfd2cf593f81f15651bbab1ef5a8788a
-
+                <section class="date-picker-container flex">
+                  <el-date-picker
+                    v-model="checkIn"
+                    class="check-in"
+                    type="date"
+                    placeholder="CHECK-IN"
+                  ></el-date-picker>
+                  <el-date-picker
+                    v-model="checkOut"
+                    class="check-out"
+                    type="date"
+                    placeholder="CHECKOUT"
+                  ></el-date-picker>
+                </section>
                 <div class="call-to-action">
                   <form action method="post">
                     <input type="hidden" name="house_id" value />
@@ -92,15 +98,15 @@ export default {
   name: "BnbDetails",
   data() {
     return {
-      isShowInputs:false,
-      checkIn:'',
-      checkOut:'',
-      guests:{
-        adultNumber:1,
-        childrenNumber:0,
+      isShowInputs: false,
+      checkIn: "",
+      checkOut: "",
+      guests: {
+        adultNumber: 1,
+        childrenNumber: 0
       },
-    
-      houseToShow: null,
+
+      houseToShow: null
     };
   },
   components: {
@@ -110,8 +116,7 @@ export default {
     HouseReviews,
     DatePicker,
     GoogleMap,
-    MainNav,
-  
+    MainNav
   },
   methods: {
     async loadHouse() {
@@ -121,17 +126,17 @@ export default {
       } catch (err) {
         console.log("didnt get any house");
       }
-    },
+    }
   },
-    computed:{
-        getGuestNum(){
-          let guestNumber = this.guests.adultNumber + this.guests.childrenNumber;
-          return guestNumber;
-        }
-    },
+  computed: {
+    getGuestNum() {
+      let guestNumber = this.guests.adultNumber + this.guests.childrenNumber;
+      return guestNumber;
+    }
+  },
   created() {
     this.loadHouse();
-  },
+  }
 };
 </script>
 
