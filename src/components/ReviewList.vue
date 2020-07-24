@@ -38,7 +38,7 @@ export default {
      "imgUrl": "https://res.cloudinary.com/dinlnfywr/image/upload/v1595535388/download_jwjvnt.jpg",
      "name": "Barack", 
      },
-     "description": "Had a blast Thank you for your hospitality. Yes we can!"
+     "description": "Had a blast thank you for your hospitality. Your place is quite cool and I know a thing or two about cool. keep up the good work and don't forget - Yes we can!"
     },
     { 
      "_id" : "fake103", "createdAt": Date.now(), 

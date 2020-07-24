@@ -1,14 +1,15 @@
 .home-page-popular-dest{
 
-padding-top: 10px;
+padding-top: 10px 0px;
 
     .img-container {
-        .card{
+        section{
             width: 100%;
             border-radius: 15px;
+          cursor: pointer;
         }
-    .card:not(:first-child){
-    margin-left: 10px;
+    section:not(:first-child){
+          margin-left: 10px;
     }
         
     }

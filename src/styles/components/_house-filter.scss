@@ -1,6 +1,5 @@
 .house-filter{
 
-    outline:none;
     background-color: rgb(255, 255, 255);
     // width: 510px;   //only if additional p underneath
     width: 420px;
@@ -9,14 +8,15 @@
     border-radius: 12px;
 
     
-     ::placeholder{
+    ::placeholder{
     color: $clr3;
     }
  
     h1{
-        margin-top: 0px;
-        margin-bottom: 22px;
+    margin-top: 0px;
+    margin-bottom: 22px;
     }
+
     p{
     margin:0px 0px 20px 0px;
     font-size: 1rem;
@@ -34,7 +34,6 @@
     .destination-picker > *{
     width: 100%;
     margin-bottom: 10px;
- 
     }
 
     .date-picker-container  {
@@ -42,34 +41,35 @@
         > * {
         flex-grow: 1;
         margin-bottom: 10px;
-        &:nth-child(even){
-        margin-left: 8px;
-        }   
+
+            &:nth-child(even){
+            margin-left: 8px;
+            }   
         }
     }
 
    .guest-number-container {
-    > * {
-        flex-grow: 1;
-        margin-bottom: 10px;
-        &:nth-child(even){
-        margin-left: 8px;
-    }   
- 
-   }
-   }
+        > * {
+            flex-grow: 1;
+            margin-bottom: 10px;
+            &:nth-child(even){
+            margin-left: 8px;
+            }   
+        }
+    }
 
    .search-btn{
     width: 100%;
-    padding: 15px;
+    padding: 18px;
     font-size: 1rem;
     color:white;
     background-color: $clr1;
-    border-radius: 12px;
+    border-radius: 10px;
+
 
     svg{
     display: inline-block;
-
+    margin-right: 5px;
     }
    }
 
@@ -80,24 +80,17 @@
 
 }
 
-///////
+//////////////////////
 
 .house-filter.isFlat {
     background-color: transparent;
     height: 70px; 
     padding: 0px;
-    // border: 1px solid $clr4;
     width: 100%;
     
-    
+
     input{
-        border: transparent;
-        // border: 1px solid $clr4; 
-        // border-radius: 0px;
-        // &:hover{
-        // border: 1px solid $clr5; 
-        // }
- 
+    border: transparent;
     }
 
     .destination-picker{
@@ -107,10 +100,11 @@
 
         }
 
-        .el-input__inner{
-            border:none;
-        border-radius: 100px 0px 0px 100px;
-    }
+            .el-input__inner{
+            border: transparent;
+            border-radius: 100px ;
+            
+            }
     }
 
 
@@ -118,8 +112,6 @@
         display:none;
     }
 
-
-  
     & * {
         height: 70px;
         width: 100%;
@@ -136,50 +128,59 @@
     display: flex;
     height: 100%;
     background-color: transparent;
-
     border: 1px solid $clr4;
     border-radius: 500px;
-   
+    max-width: 850px;
+    margin: 0 auto;
     
-    .el-input__inner{
-     height: 94%;
-     align-self: center;
-     &:hover{
-     border: 2px solid black;
-     }
-     }
+        .el-input__inner{
+        height: 94%;
+        align-self: center;
+
+            &:hover{
+            border: 1px solid transparent;
+            border-radius: 100px;
+            background-color: rgb(241, 241, 241);
+
+            }
+       }
     }
 
    .date-picker-container * {
-
     margin: 0px;
-    .el-icon-date:before {
-    content: "";
-    }
+
+        .el-icon-date:before {
+        content: "";
+        }
    }
 
    .guest-number-container * {
     margin: 0px;
 
-    .el-icon-arrow-up:before{
-    content: "";
-    }
+        .el-icon-arrow-up:before{
+        content: "";
+        }
 
    }
 
     .search-btn{
-       margin: 10px;
-    
-    span.search{
-    visibility:hidden;
+    margin: 10px;
+    width: 46px;
+    height: 46px;
+    border-radius: 100px;
+    padding: 15px;
+
+        span.search{
+        visibility:hidden;
+        }
     }
 
-    width: 50px;
-    height: 50px;
-    border-radius: 100px;
-   
+    .el-input--suffix .el-input__inner , .el-input--prefix .el-input__inner{
+        padding:0px 0px 0px 5px;
+        width: max-content;
+        text-align: center;
+
     }
-   
 }
 
 

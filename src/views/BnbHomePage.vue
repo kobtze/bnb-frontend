@@ -15,7 +15,7 @@
 
     <homePageSuggestions/>
     <homePagePromotion></homePagePromotion>
-    <homePagePopularDest/>
+    <homePagePopularDest @setFilter="setFilter"/>
       
           
     

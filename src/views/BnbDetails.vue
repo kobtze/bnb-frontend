@@ -17,9 +17,13 @@
 
       <div class="details-main">
         <div class="content-column">
-          <section>
-            <h3 class="content-header">{{houseToShow.type}} hosted by {{houseToShow.host.name}}</h3>
-            <div class="content-secondary-header">{{houseToShow.capacity}} guests</div>
+
+          <section class="host-house-details flex space-between">
+              <section>
+                <h3 class="content-header">{{houseToShow.type}} hosted by {{houseToShow.host.name}}</h3>
+                <div class="content-secondary-header">{{houseToShow.capacity}} guests</div>
+              </section>
+                <img class="host-img" :src="houseToShow.host.imgUrl" alt="">
           </section>
 
           <section class="content-desc">{{houseToShow.description}}</section>
