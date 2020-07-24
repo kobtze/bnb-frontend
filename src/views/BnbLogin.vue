@@ -2,10 +2,11 @@
   <section class>
     <div v-if="loggedInUser">
       <h1>Welcome {{loggedInUser.fullName}}</h1>
-      <!-- <p>{{loggedInUser}}</p> -->
+      <p>{{loggedInUser}}</p>
         
         <p>{{orders}}</p>
-
+        {{getHostOrders}}
+        {{getGuestOrders}}
       <!-- Orders per user -->
 
       <form class="flex column" @submit.prevent="doLogout">
@@ -36,6 +37,11 @@ export default {
   name: "login-page",
   data() {
     return {
+      currUser:'',
+      allOrders:'',
+      guestOrders:'',
+      ownerOrders:'',
+
       loginCred: {},
       signupCred: {},
       msg: "",
@@ -44,10 +50,24 @@ export default {
   },
   computed: {
     loggedInUser() {
-      return this.$store.getters.loggedInUser;
+      const user = this.$store.getters.loggedInUser;
+      this.currUser = user
+      return user
     },
     orders() {
-        return this.$store.getters.orders;
+        const orders = this.$store.getters.orders;
+        this.allOrders = orders;
+        return orders
+    },
+
+    getHostOrders(){
+      const orders = this.allOrders.filter(order => order.host.id === this.currUser._id)
+      return orders
+    },
+    getGuestOrders(){
+      const orders = this.allOrders.filter(order => order.guest.id === this.currUser._id)
+      console.log('host orders::::' ,orders);
+      return orders
     }
   },
   created() {

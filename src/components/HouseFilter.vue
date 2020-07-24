@@ -52,7 +52,7 @@
             />
           </g>
         </svg>
-        <span>Search</span>
+        <span class="search">Search</span>
       </el-button>
     </form>
   </section>

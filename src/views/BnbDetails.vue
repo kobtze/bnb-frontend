@@ -37,8 +37,8 @@
               </div>
 
               <section class="date-picker-container flex">
-                <el-date-picker class="check-in"  type="date" placeholder="CHECK-IN"></el-date-picker>
-                <el-date-picker class="check-out" type="date" placeholder="CHECKOUT"></el-date-picker>
+                <el-date-picker v-model="checkIn" class="check-in"  type="date" placeholder="CHECK-IN"></el-date-picker>
+                <el-date-picker v-model="checkOut" class="check-out" type="date" placeholder="CHECKOUT"></el-date-picker>
               </section>
 
         <section class="guest-number-container">
@@ -76,10 +76,13 @@ export default {
   data() {
     return {
       isShowInputs:false,
+      checkIn:'',
+      checkOut:'',
       guests:{
         adultNumber:1,
         childrenNumber:0,
       },
+    
       houseToShow: null,
     };
   },
