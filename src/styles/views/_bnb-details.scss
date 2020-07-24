@@ -3,6 +3,7 @@
     padding-top: 24px;
 }
 
+
 .second-row {
     align-items: baseline !important;
     display: flex !important;
@@ -54,9 +55,7 @@
         padding-bottom: 24px;
     }
 
-    section:last-child {
-        padding-bottom: 48px;
-    }
+
 }
 
 // THIS is where the magic happens:
@@ -81,27 +80,145 @@
         position: sticky !important;
         top: 80px !important;
         z-index: 1 !important;
-        padding-right: 1px !important;
-        padding-bottom: 48px;
+        // padding-right: 1px !important;
+        // padding-bottom: 48px;
+        border:1px solid $clr4;
+        border-radius: 12px;
+        margin-bottom: 48px;
+        padding:24px;
+
 
         //ori design
-        padding: 24px;
-       
+        p{
+           
+            font-size: 14px;
+            font-weight: 400; 
+        }
+        span.price{
+            font-size: 16px;
+            font-weight: 600;
+        }
         button{
             width: 100%;
             padding: 15px;
             margin-top: 10px;
             font-size: 1rem;
-            font-weight: 600;
+            font-weight: 400;
             color:white;
             background-color: $clr1;
             border: none;
             border-radius: 8px;
+            cursor: pointer;
+        }
+ 
+        input{
+            border:transparent;
+            font-size: 10px;
+            font-weight: 600;
+            font-family: Circular;
+            color: $clr3;
+            cursor: pointer;
+  
+        }
+        .el-input--prefix .el-input__inner{
+            padding: 10px 0px 10px 20px;
+            text-align: left;
+            border: transparent;
+            background-color: transparent;
+            font-size: 12px;
+            font-weight: 600;
+            font-family: Circular;
+        }
+        .el-input__icon.el-icon-date{
+          display: none;
+        }
+        .date-picker-container{
+            border: .5px solid $clr3;
+            border-radius: 8px 8px 0px 0px;
+
         }
 
+    }
+    ///
+    .guest-number-container{
+     position: relative;
+        button{
+            background-color: transparent;
+            color: $clr3;
+            margin: 0px;
+            padding: 12px 20px;
+            border: .5px solid $clr3;
+            border-top: none;
+            border-radius: 0px 0px 8px 8px;
+            font-size: 12px;
+            font-family: Circular;
+            font-weight: 600;
+            text-align: left;
+            outline: none;
+        }
+    }
+    //////
+    .guests-inputs-container{
+        position: absolute ;
+        z-index: 11;
+        top:45px;
+        left: 0;
+        right: 0;
+        padding: 8px 24px;
+   
+        border: 1px solid rgb(176, 176, 176);
+        border-radius: 8px;
+        background-color:white;
+   
+       .input-div{
+          padding:8px 0px 8px 0px;
+          font-size: 12px;
+          p{
+            font-size: 12px;
+        }
+          &:first-of-type{
+          border-bottom: 1px solid $clr4;
+          }
+   
+          input{
+              border: none;
+             
+          }
+           
+          .el-input-number{
+           width: 120px;
+
+          }
+   
+          .el-input-number__increase{
+              font-size: 10px;
+              border:1px solid $clr4;
+              border-radius: 100%;
+              color:$clr4;
+              background-color: white;
+   
+              &:hover{
+              border:1px solid black;
+              color:black;
+              }
+       }
+          .el-input-number__decrease{
+           font-size: 10px;
+           border:1px solid $clr4;
+           border-radius: 100%;
+           color:$clr4;
+           background-color: white;
+         
+           &:hover{
+           border:1px solid black;
+           color:black;
+           }
+       }
+    }
+    }
         
     }
-}
+
 
 .content-column {
     position: relative !important;

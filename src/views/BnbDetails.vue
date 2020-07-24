@@ -29,34 +29,27 @@
 
         <div class="booking-column">
           <section class="booking-sticky">
-            <div
-              style="border: 1px solid rgb(221, 221, 221); border-radius: 12px; padding: 24px; box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;"
-            >
+            <!-- <div>   style="border: 1px solid rgb(221, 221, 221); border-radius: 12px; padding: 24px; box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;"</div> -->
+            <div>
               <div class="price-rating flex space-between align-center">
-                <p>${{houseToShow.price}} / night</p>
+                <p><span class="price">${{houseToShow.price}}</span> / night</p>
                 <prev-scores :scores="houseToShow.scores.rating" :reviewcount="houseToShow.reviews.length"/>
               </div>
 
               <section class="date-picker-container flex">
-                <el-date-picker  type="date" placeholder="CHECK IN"></el-date-picker>
-                <el-date-picker  type="date" placeholder="CHECK OUT"></el-date-picker>
+                <el-date-picker class="check-in"  type="date" placeholder="CHECK-IN"></el-date-picker>
+                <el-date-picker class="check-out" type="date" placeholder="CHECKOUT"></el-date-picker>
               </section>
 
-              <div class="guests">here goes guests</div>
+        <section class="guest-number-container">
+      <button @click="isShowInputs = !isShowInputs"> GUESTS {{getGuestNum}}</button>
+            <div class="guests-inputs-container" v-if="isShowInputs">
+                <div class="input-div flex align-center space-between">  <p> ADULTS </p>   <el-input-number @click="getGuestNum"  class="flex align-center" v-model="guests.adultNumber" placeholder="ADULTS" :min="1" :max="10"></el-input-number> </div>
+                <div class="input-div flex align-center space-between">  <p> CHILDREN </p>   <el-input-number @click="getGuestNum" v-model="guests.childrenNumber" placeholder="CHILDREN" :min="0" :max="10"></el-input-number> </div>
+            </div>
+    </section> 
               <button>Check Availability</button>
-<!--            
-              <div class="call-to-action">
-                <form action method="post">
-                  <input type="hidden" name="house_id" value />
-                  <input type="hidden" name="guest_currency" value="USD" />
-                  <input type="hidden" name="checkin" value="undefined" />
-                  <input type="hidden" name="checkout" value="undefined" />
-                  <input type="hidden" name="number_of_guests" value="1" />
-                  <button type="submit" class>
-                    <span class>Check availability</span>
-                  </button>
-                </form>
-              </div> -->
+
             </div>
           </section>
         </div>
@@ -82,6 +75,11 @@ export default {
   name: "BnbDetails",
   data() {
     return {
+      isShowInputs:false,
+      guests:{
+        adultNumber:1,
+        childrenNumber:0,
+      },
       houseToShow: null,
     };
   },
@@ -103,6 +101,12 @@ export default {
       }
     },
   },
+    computed:{
+        getGuestNum(){
+          let guestNumber = this.guests.adultNumber + this.guests.childrenNumber;
+          return guestNumber;
+        }
+    },
   created() {
     this.loadHouse();
   },

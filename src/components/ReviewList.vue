@@ -28,7 +28,7 @@ export default {
      "_id" : "fake101", "createdAt":  Date.now(),
      "byUser": { 
      "imgUrl": "https://res.cloudinary.com/dinlnfywr/image/upload/v1595532211/download_nqnvgz.jpg",
-     "name": "Donald J Trump", 
+     "name": "Donald", 
      },
      "description": "THIS WAS AMAZING.TREMENDOUS VACATION. GREAT PLACE! HIGHLY RECOMMEND. MAKE AMERICA GREAT AGAIN!"
     },
@@ -36,7 +36,7 @@ export default {
      "_id" : "fake102", "createdAt": Date.now(), 
      "byUser": { 
      "imgUrl": "https://res.cloudinary.com/dinlnfywr/image/upload/v1595535388/download_jwjvnt.jpg",
-     "name": "Barack Obama", 
+     "name": "Barack", 
      },
      "description": "Had a blast Thank you for your hospitality. Yes we can!"
     },
@@ -44,7 +44,7 @@ export default {
      "_id" : "fake103", "createdAt": Date.now(), 
      "byUser": { 
      "imgUrl": "https://res.cloudinary.com/dinlnfywr/image/upload/v1595536853/download-1_srmhoh.jpg",
-     "name": "Vladimir Putin", 
+     "name": "Vladimir", 
      },
      "description": "Da!"
     },
@@ -52,7 +52,7 @@ export default {
      "_id" : "fake104", "createdAt": Date.now(), 
      "byUser": { 
      "imgUrl": "https://res.cloudinary.com/dinlnfywr/image/upload/v1595536961/download-2_wkilio.jpg",
-     "name": "Angela Merkel", 
+     "name": "Angela", 
      },
      "description": "Was ist der Unterschied zwischen einem Saxen und einem Ausländer? Den Ausländer versteht man, wenn er Deutsch spricht."
     },
