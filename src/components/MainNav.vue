@@ -69,13 +69,13 @@
               <div class="logout" @click="onToggleMenu">Sign up</div>
               <div class="logout" @click="onToggleMenu">Logout</div>
             </div>
-            <div  v-show="toggleScreen" class="post-modal">
+            <div v-show="toggleScreen" class="post-modal">
               <div class="login-modal">
                 <div class="form-group">
                   <label for="usrname">
                     <span class="glyphicon glyphicon-user"></span> Username
                   </label>
-                  <input type="text" class="form-control" id="usrname"  placeholder="Enter email" />
+                  <input type="text" class="form-control" id="usrname" placeholder="Enter email" />
                 </div>
                 <div class="form-group">
                   <label for="psw">
@@ -117,6 +117,14 @@ export default {
       toggleScreen: false,
       toggleMenu: false
     };
+  },
+  created() {
+    console.log("this.loggedInUser", this.loggedInUser);
+  },
+  computed: {
+    loggedInUser() {
+      return this.$store.getters.loggedInUser;
+    }
   },
   methods: {
     onToggleScreen() {
