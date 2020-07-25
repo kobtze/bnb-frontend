@@ -1,144 +1,94 @@
 /* HEADER */
 
 .main-header {
-    height: 150px;
-}
-
-.logo-word {
-    font-size: 1.875rem;
-    color: rgb(255, 56, 92);
-    letter-spacing: 1.5px;
-    font-weight: 3;
-    line-height: 1.1;
-}
-
-.menu-open .main-nav {
-    transform: translateX(0);
-    box-shadow: -6px 0px 14px rgba(0, 0, 0, 0.2);
-}
-
-.menu-open .screen {
-    visibility: visible;
-    opacity: 1;
-}
-
-.main-nav {
-    width: 50%
-}
-
-.btn-menu {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    background: transparent;
-    border: 1px solid #DDDDDD;
-    color: #222222;
-    cursor: pointer;
-    font-size: inherit;
-    font-weight: inherit;
-    line-height: inherit;
-    margin: 0px;
-    outline: none;
-    overflow: visible;
-    padding: 5px 5px 5px 12px;
-    text-align: inherit;
-    user-select: auto;
-    align-items: center;
-    background-color: #FFFFFF;
-    border-radius: 21px;
-    position: relative;
-    vertical-align: middle;
-    transition: box-shadow 0.2s ease;
-    z-index: 1;
-}
-
-.btn-container {
-    display: inline;
-    position: relative;
-}
-
-.profile-picture {
-    background-color: currentcolor;
-    display: block;
-    width: 40%;
-    border-radius: 50%;
-}
-
-.logo-symbol {
-    color: rgb(255, 56, 92);
-    display: inline;
-}
-
-li a {
-    color: #222222;
-}
-
-.notifications {
-    background-color: var(--header-brand-color, #FF385C) !important;
-    background-color: rgb(255, 56, 92) !important;
-    box-shadow: rgb(255, 255, 255) 0px 0px 0px 1.5px !important;
-    position: absolute !important;
-    z-index: 1 !important;
-    color: rgb(255, 255, 255) !important;
-    font-size: 10px !important;
-    font-weight: 800 !important;
-    height: 16px !important;
-    left: 100% !important;
-    line-height: 16px !important;
-    margin-left: -14px !important;
-    min-width: 16px !important;
-    text-align: center !important;
-    top: -2px !important;
-    border-radius: 9px !important;
-    padding: 0px 5px !important;
-}
-
-.menu-modal {
-    width: 300px;
-    height: 215px;
-    background-color: white;
-    border: 1px solid rgba(230, 227, 227, 0.5);
-    border-radius: 20px;
-    position: absolute;
-    z-index: 3000;
-    top: 52px;
-    right: -104px;
-}
-
-.login,
-.logout {
-    font: inherit;
-    margin-top: 16px;
-    line-height: normal;
-    margin-left: 10px;
-    width: 98%;
-    margin-left: 2px;
-    height: 50px;
-    &:hover {
-        cursor: pointer;
-        background-color: rgba(228, 238, 237, 0.568);
-        ;
+    height: 80px;
+    border-bottom: .5px solid $clr4;
+    div.container {
+        height: 100%;
     }
-}
-
-.post-modal {
-    background: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    z-index: 2999;
-    .login-modal {
-        margin: 0 auto;
+    .house-filter {
+        position: absolute;
+        top: 30px;
+    }
+    .logo-word {
+        font-size: 1.875rem;
+        color: rgb(255, 56, 92);
+        letter-spacing: 1.5px;
+        font-weight: 3;
+        line-height: 1.1;
+    }
+    .menu-open .main-nav {
+        transform: translateX(0);
+        box-shadow: -6px 0px 14px rgba(0, 0, 0, 0.2);
+    }
+    .menu-open .screen {
+        visibility: visible;
+        opacity: 1;
+    }
+    .main-nav {
+        width: 50%
+    }
+    .btn-menu {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        background: transparent;
+        border: 1px solid #DDDDDD;
+        color: #222222;
+        cursor: pointer;
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        margin: 0px;
+        outline: none;
+        overflow: visible;
+        padding: 5px 5px 5px 12px;
+        text-align: inherit;
+        user-select: auto;
+        align-items: center;
+        background-color: #FFFFFF;
+        border-radius: 21px;
+        position: relative;
+        vertical-align: middle;
+        transition: box-shadow 0.2s ease;
+        z-index: 1;
+    }
+    .btn-container {
+        display: inline;
+        position: relative;
+    }
+    .profile-picture {
+        background-color: currentcolor;
+        display: block;
+        width: 40%;
+        border-radius: 50%;
+    }
+    .logo-symbol {
+        color: rgb(255, 56, 92);
+        display: inline;
+    }
+    li a {
+        color: #222222;
+    }
+    .notifications {
+        background-color: var(--header-brand-color, #FF385C) !important;
+        background-color: rgb(255, 56, 92) !important;
+        box-shadow: rgb(255, 255, 255) 0px 0px 0px 1.5px !important;
+        position: absolute !important;
+        z-index: 1 !important;
+        color: rgb(255, 255, 255) !important;
+        font-size: 10px !important;
+        font-weight: 800 !important;
+        height: 16px !important;
+        left: 100% !important;
+        line-height: 16px !important;
+        margin-left: -14px !important;
+        min-width: 16px !important;
+        text-align: center !important;
+        top: -2px !important;
+        border-radius: 9px !important;
+        padding: 0px 5px !important;
+    }
+    .menu-modal {
         width: 300px;
         height: 215px;
         background-color: white;
@@ -147,14 +97,58 @@ li a {
         position: absolute;
         z-index: 3000;
         top: 52px;
+        right: -104px;
     }
-}
-
-.close-modal {
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    &:hover {
-        cursor: pointer;
+    .login,
+    .logout {
+        font: inherit;
+        margin-top: 16px;
+        line-height: normal;
+        margin-left: 10px;
+        width: 98%;
+        margin-left: 2px;
+        height: 50px;
+        &:hover {
+            cursor: pointer;
+            background-color: rgba(228, 238, 237, 0.568);
+            ;
+        }
+    }
+    .post-modal {
+        background: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        z-index: 2999;
+        .login-modal {
+            margin: 0 auto;
+            width: 300px;
+            height: 215px;
+            background-color: white;
+            border: 1px solid rgba(230, 227, 227, 0.5);
+            border-radius: 20px;
+            position: absolute;
+            z-index: 3000;
+            top: 52px;
+        }
+    }
+    .close-modal {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        &:hover {
+            cursor: pointer;
+        }
     }
 }

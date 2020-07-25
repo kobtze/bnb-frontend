@@ -1,5 +1,6 @@
 <template>
   <div v-if="houseToShow" class="house-details" :id="houseToShow._id">
+    <main-nav/>
     <section class="container">
       <section class="details-header">
         <h1 class="alt">{{houseToShow.name}}</h1>
