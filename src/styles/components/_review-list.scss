@@ -7,7 +7,9 @@
         padding-inline-start: 0px; // fix for default setting
         // padding: 0px 8px;
         // margin-right: 8.333%;
-        
+        @include for-narrow-layout {
+            display: block;
+        }
     }
     button{
         padding: 13px 23px;

@@ -1,7 +1,7 @@
 <template>
-  <section :class="{ isFlat: isFilterFlatten}" class="house-filter">
+  <section :class="{ isFlat: isFilterFlatten , compact: isCompact }" class="house-filter">
 
-    <h1>Find places to stay in Tel Aviv-Yafo on Airbnb</h1>
+    <h1>Find places to stay around the world  on Airbgc</h1>
     <p>Discover entire homes and private rooms perfect for any trip.</p>
 
     <form @keyup.enter="onSubmit">
@@ -64,6 +64,8 @@ export default {
   
   data() {
     return {
+   
+      windowWidth: window.innerWidth,
       filterBy: {
         location: "",
         checkIn: "",
@@ -99,16 +101,29 @@ export default {
     console.log("isFilterFlatten", this.isFilterFlatten);
     //  this.setFilter();
   },
+  mounted() {
+    window.addEventListener('resize', () => {
+      this.windowWidth = window.innerWidth
+      console.log(this.isMobile)
+    })
+  },
   methods: {
     onSubmit() {
       this.setFilter()
       this.$router.push("/app");
-      console.log("submit!");
+
     },
     setFilter() {
       console.log('setFilter.filterBy:',this.filterBy );
-      //  console.log("filterBy", this.filterBy);
       this.$emit("setFilter", this.filterBy);
+    }
+  },
+  computed: {
+    // isMobile() {
+    //   return this.windowWidth <= 768
+    // },
+    isCompact(){
+       return this.windowWidth <= 950
     }
   }
 };

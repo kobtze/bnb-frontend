@@ -152,4 +152,42 @@
             cursor: pointer;
         }
     }
+
+
+    .show-filter-btn {
+        width: 133px;
+        height: 48px;
+        background-color: white;
+        border: 1px solid $clr4;
+        border-radius: 300px;
+        padding: 0px 18px 0px 10px;
+        outline: none;
+        cursor: pointer;
+
+         &:hover{
+         background-color: rgba(241, 241, 241, 0.945);
+         border: 1px solid transparent;
+
+        }
+      
+            .mangifying{
+                margin: 0px;
+                width: 32px;
+                height: 32px;
+                border-radius: 100px;
+                padding: 8px;
+                background-color: $clr1;
+                color: white;
+            
+                p{
+                line-height: 20px;
+                font-size: 1rem;
+                margin: 0px;
+                padding: 0px;
+                font-family:Circular;
+                }
+        }
+      
+
+    }
 }
