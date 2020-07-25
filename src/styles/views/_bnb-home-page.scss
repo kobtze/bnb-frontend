@@ -1,19 +1,17 @@
-.bnb-home-page{
-   
-    .hero-container{ 
+.bnb-home-page {
+    .hero-container {
         //  background: url("../assets/img/telaviv.jpg");
         //  background: url("https://res.cloudinary.com/dinlnfywr/image/upload/v1595603548/airbnb_luxe_announcement.0_sijuuw.jpg");
-         background: url("https://res.cloudinary.com/dinlnfywr/image/upload/v1595610027/d95f18e8-c24e-4441-a8a1-6ad08eaf3d17-min_mdqzng.jpg");
+        background: url("https://res.cloudinary.com/dinlnfywr/image/upload/v1595610027/d95f18e8-c24e-4441-a8a1-6ad08eaf3d17-min_mdqzng.jpg");
 
-         background-repeat: no-repeat;
-         background-size: cover;
-         background-position: center center;
-         position: relative;
-         padding: 0 0 2% 0; 
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        position: relative;
+        padding: 0 0 2% 0;
+    }
 }
- 
-}
-.p-under-filter{
+.p-under-filter {
     width: 510px;
     padding: 16px 0px;
     margin: 8px 0px 0px;
@@ -21,23 +19,60 @@
     border: 1px solid rgb(255, 255, 255);
     border-radius: 10px;
     font-size: 14px;
-   
-     p{
-        margin:0px;
-     }
-    p:first-child{
+
+    p {
+        margin: 0px;
+    }
+    p:first-child {
         width: 290px;
         height: 36px;
         padding: 0px 16px 0px 0px;
-        border-right: 1px solid #9b9b9b;;
+        border-right: 1px solid #9b9b9b;
     }
-    p:nth-child(2)  {
-  
-       margin: 0px 7px 0px 0px;
+    p:nth-child(2) {
+        margin: 0px 7px 0px 0px;
     }
-    
 }
-        .home-page-content{
-         margin-left: 10%;
-         margin-right: 10%
+.home-page-content {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.homepage-section {
+    padding-top: 10px;
+    &:last-of-type {
+        padding-bottom: 32px;
+    }
+    &>h2 {
+        padding: 0px 10px;
+    }
+    .list-3 {
+        display: flex;
+
+        .card {
+            width: 100%;
+            border-radius: 12px;
+        &:not(:first-child) {
+            margin-left: 15px;
         }
+            p {
+                margin: 0px;
+                font-size: 14px;
+                &:first-of-type {
+                    margin-bottom: 4px;
+                    font-size: 18px;
+                }
+            }
+        }
+        @include for-narrow-layout {
+            flex-direction: column;
+            .card {
+                width: inherit;
+                margin: 8px;
+                &:not(:first-child) {
+                    margin-left: 8px;
+                }
+            }
+        }
+    }
+}

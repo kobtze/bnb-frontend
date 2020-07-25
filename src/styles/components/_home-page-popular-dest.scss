@@ -1,16 +1,18 @@
-.home-page-popular-dest{
+.home-page-popular-dest {
+    padding-top: 10px;
 
-padding-top: 10px 0px;
-
-    .img-container {
-        section{
-            width: 100%;
+    .list-3 {
+        section {
+            // width: inherit;
             border-radius: 15px;
-          cursor: pointer;
+            cursor: pointer;
         }
-    section:not(:first-child){
-          margin-left: 10px;
-    }
-        
+        section:not(:first-child) {
+            margin-left: 15px;
+            @include for-narrow-layout {
+                // width: inherit;
+                margin-left: 0px;
+            }
+        }
     }
 }
