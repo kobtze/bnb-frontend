@@ -1,18 +1,18 @@
 <template>
   <div v-if="houseToShow" class="house-details" :id="houseToShow._id">
-    <main-nav/>
-    <section class="container">
-      <section class="details-header">
-        <h1 class="alt">{{houseToShow.name}}</h1>
-        <div class="second-row">
-          <prev-scores
-            :scores="houseToShow.scores.rating"
-            :reviewcount="houseToShow.reviews.length"
-          />
-          <span class="seperator" aria-hidden="true">·</span>
-          <div class="location">{{houseToShow.location.name}}</div>
-        </div>
-      </section>
+   <main-nav />
+      <section class="container">
+        <section class="details-header">
+          <h1 class="alt">{{houseToShow.name}}</h1>
+          <div class="second-row">
+            <prev-scores
+              :scores="houseToShow.scores.rating"
+              :reviewcount="houseToShow.reviews.length"
+            />
+            <span class="seperator" aria-hidden="true">·</span>
+            <div class="location">{{houseToShow.location.name}}</div>
+          </div>
+        </section>
 
       <image-gallery :images="houseToShow.imgUrls" />
 
