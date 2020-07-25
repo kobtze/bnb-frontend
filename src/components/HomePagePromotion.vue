@@ -38,7 +38,7 @@
             </svg>
           </span>
         </h2>
-        <p>All hosts must meet hosting requirements and maintain a minimum rating to be on Airbnb.</p>
+        <p>All hosts must meet hosting requirements and maintain a minimum rating to be on Airbgc.</p>
       </div>
 
       <div>

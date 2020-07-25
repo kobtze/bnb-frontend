@@ -4,9 +4,9 @@
       <main-nav @onShowFilter="onShowFilter" />
 
       <div v-show="isFilterShow" class="filter-modal ">
-        <section class="container flex column space-around">
-            <button class="hide-filter-btn align-end" @click="onShowFilter">X</button>
+        <section class="container flex space-between align-center">
             <house-filter @setFilter="setFilter" :isFilterFlatten="isFilterFlatten" />
+            <button class="hide-filter-btn" @click="onShowFilter">X</button>
         </section>
       </div>
     </div>

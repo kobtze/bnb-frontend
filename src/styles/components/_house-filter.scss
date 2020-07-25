@@ -87,7 +87,7 @@
     height: 70px; 
     padding: 0px;
     max-width: 100%;
-    
+    margin: 50px 0px;
 
     input{
     border: transparent;
@@ -184,3 +184,15 @@
 }
 
 
+.house-filter.isFlat.compact{
+    margin:50px  auto;
+    height: max-content;
+  
+    form{
+        height: max-content;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        border-radius: 12px;
+    }
+}
