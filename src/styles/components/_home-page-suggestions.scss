@@ -3,23 +3,32 @@
     padding-top: 10px;
     
     .img-container {
+        display: flex;
         .card{
             width: 100%;
             border-radius: 12px;
-
             p{
             margin: 0px;
             font-size: 14px;
 
-            &:first-of-type{
-                margin-bottom: 4px;
-                font-size: 18px;
-            }
+                &:first-of-type{
+                    margin-bottom: 4px;
+                    font-size: 18px;
+                }
             }
         }
        .card:not(:first-child){
        margin-left: 15px;
        }
-        
+       
+       @include for-narrow-layout {
+        flex-direction: column;
+        .card {
+            margin: 8px
+        }
+        .card:not(:first-child){
+            margin-left: 8px;
+            }
+    }
     }
 }
