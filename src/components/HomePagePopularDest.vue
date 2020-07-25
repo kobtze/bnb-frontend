@@ -28,7 +28,7 @@
           </el-card>
      </section>
      
-       <section v-on:click="sendCategory('tel')">
+       <section v-on:click="sendCategory('tel aviv')">
             <el-card  class="card" :body-style="{ padding: '0px' }">
             <img src="https://israel.travel/wp-content/uploads/2019/03/jaffa-inside-min.jpg" class="image">
             <div style="padding: 14px;">
@@ -59,10 +59,9 @@ export default {
   },
   methods:{
     sendCategory(city){
-      console.log('in');
          this.filterBy.location = city;
-         console.log(this.filterBy)
-         this.$emit("setFilter", this.filterBy);
+         console.log(city)
+         this.$emit("setPopular", this.filterBy);
          this.$router.push("/app");
     }
   }

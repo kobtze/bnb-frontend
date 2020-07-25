@@ -15,7 +15,7 @@
 
     <homePageSuggestions/>
     <homePagePromotion></homePagePromotion>
-    <homePagePopularDest @setFilter="setFilter"/>
+    <homePagePopularDest @setPopular="setFilter"/>
       
           
   </section>
@@ -32,6 +32,7 @@ export default {
    data() {
     return{
       isFilterFlatten:'',
+      popularClick:'',
     }
   },
   components:{
@@ -50,7 +51,7 @@ export default {
     setFilter(filterBy) {
       this.$store.commit({type: "setFilter", filterBy: _.cloneDeep(filterBy)});
       this.$store.dispatch({ type: "loadHouses" });
-    }
+    },
   },
 
 }

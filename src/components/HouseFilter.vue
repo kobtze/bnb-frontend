@@ -97,7 +97,7 @@ export default {
   },
   created() {
     console.log("isFilterFlatten", this.isFilterFlatten);
-    this.setFilter();
+    // this.setFilter();
   },
   methods: {
     onSubmit() {

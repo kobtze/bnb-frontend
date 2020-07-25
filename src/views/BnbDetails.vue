@@ -74,6 +74,7 @@ import Amenities from "@/components/Amenities.vue";
 import HouseReviews from "@/components/HouseReviews.vue";
 import DatePicker from "@/components/DatePicker.vue";
 import GoogleMap from "@/components/GoogleMap.vue";
+import MainNav from "@/components/MainNav.vue";
 
 export default {
   name: "BnbDetails",
@@ -97,6 +98,7 @@ export default {
     HouseReviews,
     DatePicker,
     GoogleMap,
+    MainNav,
   },
   methods: {
     async loadHouse() {
