@@ -3,11 +3,12 @@
 .main-header {
     height: 80px;
     border-bottom: .5px solid $clr4;
+    background-color: white;
+    top: 0;
     div.container {
         height: 100%;
     }
     .house-filter {
-        position: absolute;
         top: 30px;
     }
     .logo-word {
