@@ -2,9 +2,12 @@
   <section>
     <div class="app-header sticky">
       <main-nav @onShowFilter="onShowFilter" />
-      <div v-show="isFilterShow" class="filter-modal flex column space-around">
-        <button @click="onShowFilter">X</button>
-        <house-filter @setFilter="setFilter" :isFilterFlatten="isFilterFlatten" />
+
+      <div v-show="isFilterShow" class="filter-modal ">
+        <section class="container flex column space-around">
+            <button class="hide-filter-btn align-end" @click="onShowFilter">X</button>
+            <house-filter @setFilter="setFilter" :isFilterFlatten="isFilterFlatten" />
+        </section>
       </div>
     </div>
     <div class="container">
