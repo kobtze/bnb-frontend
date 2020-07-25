@@ -18,7 +18,9 @@
     grid-template-rows: repeat(2, 1fr);
     grid-row-gap: 8px;
     grid-column-gap: 8px;
-
+    @include for-normal-layout {
+        display: block;
+    }
     border-radius: 12px;
     overflow-y: hidden !important;
     
