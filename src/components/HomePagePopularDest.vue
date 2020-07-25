@@ -28,7 +28,7 @@
           </el-card>
      </section>
      
-       <section v-on:click="sendCategory('tel aviv')">
+       <section v-on:click="sendCategory('tel')">
             <el-card  class="card" :body-style="{ padding: '0px' }">
             <img src="https://israel.travel/wp-content/uploads/2019/03/jaffa-inside-min.jpg" class="image">
             <div style="padding: 14px;">

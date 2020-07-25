@@ -18,8 +18,6 @@
     <homePagePopularDest @setFilter="setFilter"/>
       
           
-    
-    
   </section>
 
 </template>
@@ -44,7 +42,7 @@ export default {
     homePagePopularDest,
   },
   created() {
-    this.isFilterFlatten=false;
+    this.isFilterFlatten = false;
     this.$store.commit({type: "setFilter", filterBy: ''});
     
   },
