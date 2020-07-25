@@ -2,7 +2,7 @@
     
 
   <div v-if="houseToShow" class="house-details" :id="houseToShow._id">
-    <div class="app-header fixed">
+    <div class="app-header sticky">
       <main-nav @onShowFilter="onShowFilter" />
       <div v-show="isFilterShow" class="filter-modal flex column space-around">
         <button @click="onShowFilter">X</button>
