@@ -9,6 +9,7 @@
       </div>
     </div>
 
+
     <p class="review-description">{{trucateText}}</p>
     <button v-if="isShowBtn" class="read-more-btn" @click="isReadMore=!isReadMore">read more</button>
   </section>
