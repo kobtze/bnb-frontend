@@ -5,7 +5,9 @@
         grid-template-columns: repeat(2, minmax(225px,1fr));
         grid-gap:15px;
         padding-inline-start: 0px; // fix for default setting
-  
+        @include for-narrow-layout {
+            display: block;
+        }
 
         li{
             padding: 0px 0px 16px 0px;
