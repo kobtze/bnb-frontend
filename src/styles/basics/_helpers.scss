@@ -1,12 +1,15 @@
 // Aspect ratios
-
 // .ratio-2-3 { @include aspect-ratio(200, 300); }
 // .ratio-square { @include aspect-ratio(100, 100); }
-
-
 // FLEX HELPERS//
 .grid {
     display: grid;
+}
+
+.fixed {
+    z-index: 3000;
+    top: 0;
+    position: sticky;
 }
 
 .grid-template-columns {

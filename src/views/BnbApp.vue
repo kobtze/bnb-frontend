@@ -1,8 +1,13 @@
 <template>
   <section>
-    <main-nav />
+    <div class="app-header fixed">
+      <main-nav @onShowFilter="onShowFilter" />
+      <div v-show="isFilterShow" class="filter-modal flex column space-around">
+        <button @click="onShowFilter">X</button>
+        <house-filter @setFilter="setFilter" :isFilterFlatten="isFilterFlatten" />
+      </div>
+    </div>
     <div class="container">
-      <house-filter @setFilter="setFilter" :isFilterFlatten="isFilterFlatten"/> 
       <house-list :houses="houses" />
     </div>
   </section>
@@ -16,12 +21,13 @@ import MainNav from "@/components/MainNav.vue";
 
 export default {
   data() {
-    return{
-      isFilterFlatten:'',
-    }
+    return {
+      isFilterFlatten: "",
+      isFilterShow: false
+    };
   },
   created() {
-    this.isFilterFlatten=true;
+    this.isFilterFlatten = true;
     this.$store.dispatch({ type: "loadHouses" });
   },
   computed: {
@@ -30,8 +36,12 @@ export default {
     }
   },
   methods: {
+    onShowFilter() {
+      // console.log("isFilterShow", toggleFilter);
+      this.isFilterShow =  !this.isFilterShow ;
+    },
     setFilter(filterBy) {
-      console.log('filterby',filterBy);
+      console.log("filterby", filterBy);
       this.$store.commit({
         type: "setFilter",
         filterBy: _.cloneDeep(filterBy)
