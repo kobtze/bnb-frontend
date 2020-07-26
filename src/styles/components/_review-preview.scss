@@ -3,6 +3,11 @@
      padding:0px 8px 8px;
      margin-right: 8.333%;
      margin-bottom: 40px;
+    @include for-narrow-layout {
+        text-align: justify;
+        margin-right: 0px;
+        padding: 0px;
+    }
      
     .reviewer-details{
     height:  56px;

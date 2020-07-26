@@ -55,6 +55,9 @@
         word-break: break-word;
         padding-top: 32px;
         padding-bottom: 32px;
+        @include for-normal-layout {
+            text-align: justify;
+        }
     }
 
     h3.amenities {
@@ -74,6 +77,9 @@
     justify-content: flex-start !important;
     flex-wrap: wrap !important;
     width: 100% !important;
+    @include for-normal-layout {
+
+    }
 }
 
 .booking-column {
@@ -81,6 +87,9 @@
     width: 33.3333% !important;
     margin-left: 8.33333% !important;
     margin-right: 0% !important;
+    @include for-normal-layout {
+        display: none;
+    }
 
     .booking-sticky {
         position: -webkit-sticky !important;
@@ -237,10 +246,12 @@
 
 .content-column {
     position: relative !important;
-    width: 58.3333% !important;
+    width: 58.3333%;
     margin-left: 0% !important;
     margin-right: 0% !important;
-
+    @include for-normal-layout {
+        width: 100%;
+    }
 }
 
 h3.house-reviews {

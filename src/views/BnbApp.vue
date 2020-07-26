@@ -5,7 +5,7 @@
 
       <div v-show="isFilterShow" class="filter-modal ">
         <section class="container flex space-between align-center">
-            <house-filter @setFilter="setFilter" :isFilterFlatten="isFilterFlatten" />
+            <house-filter @setFilter="setFilter" :isFilterFlatten="isFilterFlatten" :isBnbPage="isBnbPage"/>
             <button class="hide-filter-btn" @click="onShowFilter">X</button>
         </section>
       </div>
@@ -25,13 +25,14 @@ import MainNav from "@/components/MainNav.vue";
 export default {
   data() {
     return {
+      isBnbPage:true,
       isFilterFlatten: "",
       isFilterShow: false
     };
   },
   created() {
     this.isFilterFlatten = true;
-    this.$store.dispatch({ type: "loadHouses" });
+    this.$store.dispatch({ type: "loadHouses", filterBy : null });
   },
   computed: {
     houses() {
@@ -44,12 +45,8 @@ export default {
       this.isFilterShow =  !this.isFilterShow ;
     },
     setFilter(filterBy) {
-      console.log("filterby", filterBy);
-      this.$store.commit({
-        type: "setFilter",
-        filterBy: _.cloneDeep(filterBy)
-      });
-      this.$store.dispatch({ type: "loadHouses" });
+    //   this.$store.commit({ type: "setFilter", filterBy: _.cloneDeep(filterBy)});
+      this.$store.dispatch({ type: "loadHouses", filterBy : filterBy });
     }
   },
 

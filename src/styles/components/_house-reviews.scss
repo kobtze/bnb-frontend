@@ -25,7 +25,20 @@
     .el-progress {
         width: 180px;
     }
-       
+    @include for-narrow-layout {
+        display: flex;
+        flex-direction: column;
+        .left, .right {
+            padding: 0px;
+            margin-right: 0px;
+        };
+        section {
+            // flex-direction: row-reverse ;
+        }
+        .el-progress {
+            width: 120px;
+        }
+    }
 }
 
 

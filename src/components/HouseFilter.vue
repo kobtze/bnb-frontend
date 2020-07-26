@@ -60,7 +60,7 @@
 <script>
 export default {
   name: "HouseFilter",
-  props: ["isFilterFlatten"],
+  props: ["isFilterFlatten","isBnbPage"],
   
   data() {
     return {
@@ -98,23 +98,22 @@ export default {
     };
   },
   created() {
-    console.log("isFilterFlatten", this.isFilterFlatten);
-    // this.setFilter();
+    this.filterBy = this.$store.getters.filterBy;
   },
   mounted() {
     window.addEventListener('resize', () => {
       this.windowWidth = window.innerWidth
-      console.log(this.isMobile)
+    //   console.log(this.isMobile)
     })
   },
   methods: {
     onSubmit() {
       this.setFilter()
-      this.$router.push("/app");
+      if(!this.isBnbPage)this.$router.push("/app");
 
     },
     setFilter() {
-      console.log('setFilter.filterBy:',this.filterBy );
+    //   console.log('setFilter.filterBy:',this.filterBy );
       this.$emit("setFilter", this.filterBy);
     }
   },

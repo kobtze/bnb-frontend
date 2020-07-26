@@ -7,7 +7,7 @@
 
       <div v-show="isFilterShow" class="filter-modal ">
         <section class="container flex space-between align-center">
-            <house-filter @setFilter="setFilter" :isFilterFlatten="isFilterFlatten" />
+            <house-filter @setFilter="setFilter" :isFilterFlatten="isFilterFlatten" :isBnbPage="isBnbPage"/>
             <button class="hide-filter-btn" @click="onShowFilter">X</button>
         </section>
       </div>
@@ -126,6 +126,7 @@ export default {
   name: "BnbDetails",
   data() {
     return {
+      isBnbPage:false,
       isFilterShow: false,
       isShowInputs: false,
       checkIn: "",
@@ -154,7 +155,7 @@ export default {
       this.isFilterShow = !this.isFilterShow;
     },
     setFilter(filterBy) {
-      console.log("filterby", filterBy);
+    //   console.log("filterby", filterBy);
       this.$store.commit({
         type: "setFilter",
         filterBy: _.cloneDeep(filterBy)
