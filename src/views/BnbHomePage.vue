@@ -44,13 +44,13 @@ export default {
   },
   created() {
     this.isFilterFlatten = false;
-    this.$store.commit({type: "setFilter", filterBy: ''});
+    // this.$store.commit({type: "setFilter", filterBy: ''});
     
   },
    methods: {
     setFilter(filterBy) {
-      this.$store.commit({type: "setFilter", filterBy: _.cloneDeep(filterBy)});
-      this.$store.dispatch({ type: "loadHouses" });
+    //   this.$store.commit({type: "setFilter", filterBy: _.cloneDeep(filterBy)});
+      this.$store.dispatch({ type: "loadHouses", filterBy : filterBy });
     },
   },
 

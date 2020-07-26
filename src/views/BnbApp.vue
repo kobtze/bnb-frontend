@@ -31,7 +31,7 @@ export default {
   },
   created() {
     this.isFilterFlatten = true;
-    this.$store.dispatch({ type: "loadHouses" });
+    this.$store.dispatch({ type: "loadHouses", filterBy : null });
   },
   computed: {
     houses() {
@@ -44,12 +44,8 @@ export default {
       this.isFilterShow =  !this.isFilterShow ;
     },
     setFilter(filterBy) {
-      console.log("filterby", filterBy);
-      this.$store.commit({
-        type: "setFilter",
-        filterBy: _.cloneDeep(filterBy)
-      });
-      this.$store.dispatch({ type: "loadHouses" });
+    //   this.$store.commit({ type: "setFilter", filterBy: _.cloneDeep(filterBy)});
+      this.$store.dispatch({ type: "loadHouses", filterBy : filterBy });
     }
   },
 
