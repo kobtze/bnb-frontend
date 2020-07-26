@@ -10,6 +10,8 @@ export default {
             checkOut: '',
             adultNumber: 0,
             childrenNumber: 0,
+            rating: "",
+            type: "",
         },
     },
     getters: {

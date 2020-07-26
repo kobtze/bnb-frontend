@@ -1,23 +1,48 @@
 <template>
-        <form class="list-second-filter flex" @keyup.enter="search" @submit="search">
+  <form class="list-second-filter flex" @keyup.enter="search" @submit="search">
+    <input
+      class="destination-picker"
+      type="text"
+      placeholder="LOCATION"
+      v-model="filterBy.location"
+    />
 
-            <input class="destination-picker" type="text" placeholder="LOCATION" v-model="filterBy.location">
+    <section class="date-picker-container flex">
+      <el-date-picker
+        clear-icon
+        v-model="filterBy.checkIn"
+        prefix-icon="none"
+        type="date"
+        placeholder="CHECK IN"
+      ></el-date-picker>
 
-        <section class="date-picker-container flex">
-            <el-date-picker clear-icon  v-model="filterBy.checkIn" prefix-icon="none" type="date" placeholder="CHECK IN"></el-date-picker>
+      <el-date-picker
+        clear-icon
+        v-model="filterBy.checkOut"
+        prefix-icon="none"
+        type="date"
+        placeholder="CHECK OUT"
+      ></el-date-picker>
+    </section>
 
-            <el-date-picker clear-icon v-model="filterBy.checkOut" prefix-icon="none" type="date" placeholder="CHECK OUT"></el-date-picker>
-        </section>
-        
-   <section class="guest-number-container">
-      <button @click="isShowInputs = !isShowInputs"> guests {{getGuestNum}}</button>
-            <div class="guests-inputs-container" v-if="isShowInputs">
-                <div class="input-div flex align-center space-between">  <p> ADULTS </p>   <el-input-number v-model="filterBy.adultNumber" placeholder="ADULTS" :min="1" :max="10"></el-input-number> </div>
-                <div class="input-div flex align-center space-between">  <p> CHILDREN </p>   <el-input-number v-model="filterBy.childrenNumber" placeholder="CHILDREN" :min="1" :max="10"></el-input-number> </div>
-            </div>
-    </section> 
-        
-      
+    <section class="guest-number-container">
+      <button @click="isShowInputs = !isShowInputs">guests {{getGuestNum}}</button>
+      <div class="guests-inputs-container" v-if="isShowInputs">
+        <div class="input-div flex align-center space-between">
+          <p>ADULTS</p>
+          <el-input-number v-model="filterBy.adultNumber" placeholder="ADULTS" :min="1" :max="10"></el-input-number>
+        </div>
+        <div class="input-div flex align-center space-between">
+          <p>CHILDREN</p>
+          <el-input-number
+            v-model="filterBy.childrenNumber"
+            placeholder="CHILDREN"
+            :min="1"
+            :max="10"
+          ></el-input-number>
+        </div>
+      </div>
+    </section>
 
     <el-button @click="search" class="search-btn">
       <svg
@@ -33,28 +58,25 @@
           />
         </g>
       </svg>
-    
-       <span>Search</span>
 
+      <span>Search</span>
     </el-button>
-
-</form>
-
+  </form>
 </template>
 <script>
-
 export default {
   data() {
     return {
-     isShowInputs:false,
+      isShowInputs: false,
       filterBy: {
         location: "",
         checkIn: "",
         checkOut: "",
         adultNumber: "",
-        childrenNumber: ""
+        childrenNumber: "",
+        rating: "",
+        type: "",
       },
-
     };
   },
   methods: {
@@ -63,16 +85,16 @@ export default {
       console.log("search!!!!!!!");
     },
     setFilter() {
-    //  console.log("filterBy", this.filterBy);
+      //  console.log("filterBy", this.filterBy);
       this.$emit("setFilter", this.filterBy);
-    }
+    },
   },
-        computed:{
-            getGuestNum(){
-              let guestNumber = this.adultNumber + this.childrenNumber;
-              if (guestNumber="") return 0
-              else return guestNumber;
-            }
-        }
+  computed: {
+    getGuestNum() {
+      let guestNumber = this.adultNumber + this.childrenNumber;
+      if ((guestNumber = "")) return 0;
+      else return guestNumber;
+    },
+  },
 };
 </script>

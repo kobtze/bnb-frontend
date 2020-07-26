@@ -1,21 +1,17 @@
 <template>
   <section :class="{ isFlat: isFilterFlatten , compact: isCompact }" class="house-filter">
-
-    <h1>Find places to stay around the world  on Airbgc</h1>
+    <h1>Find places to stay around the world on Airbgc</h1>
     <p>Discover entire homes and private rooms perfect for any trip.</p>
 
     <form @keyup.enter="onSubmit">
-      
       <section class="destination-picker">
         <el-input placeholder="LOCATION" v-model="filterBy.location" type="search"></el-input>
       </section>
 
       <section class="date-picker-container flex">
-        <el-date-picker v-model="filterBy.checkIn" type="date" placeholder="CHECK IN"> </el-date-picker>
+        <el-date-picker v-model="filterBy.checkIn" type="date" placeholder="CHECK IN"></el-date-picker>
 
-        <el-date-picker
-          v-model="filterBy.checkOut" type="date" placeholder="CHECK OUT">  
-        </el-date-picker>
+        <el-date-picker v-model="filterBy.checkOut" type="date" placeholder="CHECK OUT"></el-date-picker>
       </section>
 
       <section class="guest-number-container flex">
@@ -60,70 +56,70 @@
 <script>
 export default {
   name: "HouseFilter",
-  props: ["isFilterFlatten","isBnbPage"],
-  
+  props: ["isFilterFlatten", "isBnbPage"],
+
   data() {
     return {
-   
       windowWidth: window.innerWidth,
       filterBy: {
         location: "",
         checkIn: "",
         checkOut: "",
         adultNumber: "",
-        childrenNumber: ""
+        childrenNumber: "",
+        rating: "",
+        type: "",
       },
       options: [
         {
           value: "1",
-          label: "1"
+          label: "1",
         },
         {
           value: "2",
-          label: "2"
+          label: "2",
         },
         {
           value: "3",
-          label: "3"
+          label: "3",
         },
         {
           value: "4",
-          label: "4"
+          label: "4",
         },
         {
           value: "5",
-          label: "5"
-        }
-      ]
+          label: "5",
+        },
+      ],
     };
   },
   created() {
     this.filterBy = this.$store.getters.filterBy;
   },
   mounted() {
-    window.addEventListener('resize', () => {
-      this.windowWidth = window.innerWidth
-    //   console.log(this.isMobile)
-    })
+    window.addEventListener("resize", () => {
+      this.windowWidth = window.innerWidth;
+      //   console.log(this.isMobile)
+    });
   },
   methods: {
     onSubmit() {
-      this.setFilter()
-      if(!this.isBnbPage)this.$router.push("/app");
-
+      this.setFilter();
+      if (!this.isBnbPage) this.$router.push("/app");
     },
     setFilter() {
-    //   console.log('setFilter.filterBy:',this.filterBy );
+      //   console.log('setFilter.filterBy:',this.filterBy );
       this.$emit("setFilter", this.filterBy);
-    }
+    },
   },
   computed: {
     // isMobile() {
     //   return this.windowWidth <= 768
     // },
-    isCompact(){
-       return this.windowWidth <= 950
-    }
-  }
+    isCompact() {
+      return this.windowWidth <= 950;
+    },
+  },
 };
 </script>
