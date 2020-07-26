@@ -98,13 +98,13 @@ export default {
     };
   },
   created() {
-    console.log("isFilterFlatten", this.isFilterFlatten);
+    // console.log("isFilterFlatten", this.isFilterFlatten);
     //  this.setFilter();
   },
   mounted() {
     window.addEventListener('resize', () => {
       this.windowWidth = window.innerWidth
-      console.log(this.isMobile)
+    //   console.log(this.isMobile)
     })
   },
   methods: {
@@ -114,7 +114,7 @@ export default {
 
     },
     setFilter() {
-      console.log('setFilter.filterBy:',this.filterBy );
+    //   console.log('setFilter.filterBy:',this.filterBy );
       this.$emit("setFilter", this.filterBy);
     }
   },

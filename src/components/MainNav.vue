@@ -144,15 +144,15 @@ export default {
     onToggleScreen() {
       this.toggleMenu = false;
       this.toggleScreen = !this.toggleScreen;
-      console.log(this.toggleScreen, " this.toggleScreen");
+    //   console.log(this.toggleScreen, " this.toggleScreen");
     },
     onToggleMenu() {
       this.toggleMenu = !this.toggleMenu;
-      console.log(this.toggleMenu, " this.toggleMenu");
+    //   console.log(this.toggleMenu, " this.toggleMenu");
     },
     onShowFilter() {
       this.toggleFilter = !this.toggleFilter;
-       console.log(" this.toggleFilter",  this.toggleFilter);
+    //    console.log(" this.toggleFilter",  this.toggleFilter);
       this.$emit("onShowFilter", this.toggleFilter);
     }
   }

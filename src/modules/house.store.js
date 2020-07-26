@@ -50,19 +50,14 @@ export default {
     },
     actions: {
         async loadHouses(context, { filterBy }) {
-            // commit({ type: 'setIsLoading', isLoading: true })
             try {
                 console.log('state.filterBy',context.state)
                 if (!filterBy){
                     filterBy = { ...context.state.filterBy };
-                    console.log(filterBy)
-
                 } 
                 context.commit({ type: "setFilter", filterBy });
                 const houses = await houseService.query(filterBy);
-                console.log("houses!!!!", houses);
                 context.commit({ type: "setHouses", houses });
-                // commit({ type: 'setIsLoading', isLoading: false })
                 return houses;
             } catch (err) {
                 console.log("Store.loadHouses error:", err);

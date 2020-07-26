@@ -66,16 +66,16 @@ export default {
     },
     getGuestOrders(){
       const orders = this.allOrders.filter(order => order.guest.id === this.currUser._id)
-      console.log('host orders::::' ,orders);
+    //   console.log('host orders::::' ,orders);
       return orders
     }
   },
   created() {
-    console.log("this.loggedInUser", this.loggedInUser);
+    // console.log("this.loggedInUser", this.loggedInUser);
     this.$store.dispatch({ type: "loadOrders"});
   },
   mounted() {
-    console.log("Orders (all):", this.orders);
+    // console.log("Orders (all):", this.orders);
   },
   methods: {
     async doLogin() {

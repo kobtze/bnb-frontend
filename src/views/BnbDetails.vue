@@ -154,7 +154,7 @@ export default {
       this.isFilterShow = !this.isFilterShow;
     },
     setFilter(filterBy) {
-      console.log("filterby", filterBy);
+    //   console.log("filterby", filterBy);
       this.$store.commit({
         type: "setFilter",
         filterBy: _.cloneDeep(filterBy)

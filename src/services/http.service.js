@@ -1,9 +1,9 @@
 import router from '@/router'
 // import store from '@/store'
 
-const BASE_URL = process.env.NODE_ENV === 'production' ?
-    '/api/' :
-    '//localhost:3000/api/'
+const BASE_URL = process.env.NODE_ENV === 'production'
+    ? '/api/'
+    : '//localhost:3000/api/';
 
 
 import Axios from 'axios';
