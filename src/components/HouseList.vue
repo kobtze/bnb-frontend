@@ -1,5 +1,6 @@
 <template>
   <section class="house-list">
+    
     <ul class="house-list-ul">
         <house-preview v-for="house in houses" :key="house._id" :house="house"/>
     </ul>
