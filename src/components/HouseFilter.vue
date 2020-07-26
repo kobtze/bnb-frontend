@@ -60,7 +60,7 @@
 <script>
 export default {
   name: "HouseFilter",
-  props: ["isFilterFlatten"],
+  props: ["isFilterFlatten","isBnbPage"],
   
   data() {
     return {
@@ -98,8 +98,7 @@ export default {
     };
   },
   created() {
-    // console.log("isFilterFlatten", this.isFilterFlatten);
-    //  this.setFilter();
+    this.filterBy = this.$store.getters.filterBy;
   },
   mounted() {
     window.addEventListener('resize', () => {
@@ -110,7 +109,7 @@ export default {
   methods: {
     onSubmit() {
       this.setFilter()
-      this.$router.push("/app");
+      if(!this.isBnbPage)this.$router.push("/app");
 
     },
     setFilter() {

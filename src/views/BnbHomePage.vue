@@ -3,7 +3,7 @@
     <div class="hero-container">
       <home-page-navbar></home-page-navbar>
       <section class="container">
-        <house-filter @setFilter="setFilter" :isFilterFlatten="isFilterFlatten"/> 
+        <house-filter @setFilter="setFilter" :isFilterFlatten="isFilterFlatten" :isBnbPage="isBnbPage"/> 
       </section>
       
       <!-- <div class="home-page-content p-under-filter flex space-around align-center">
@@ -31,8 +31,10 @@ import homePagePopularDest from "@/components/HomePagePopularDest.vue";
 export default {
    data() {
     return{
+      isBnbPage:false,
       isFilterFlatten:'',
       popularClick:'',
+     
     }
   },
   components:{

@@ -5,7 +5,7 @@
 
       <div v-show="isFilterShow" class="filter-modal ">
         <section class="container flex space-between align-center">
-            <house-filter @setFilter="setFilter" :isFilterFlatten="isFilterFlatten" />
+            <house-filter @setFilter="setFilter" :isFilterFlatten="isFilterFlatten" :isBnbPage="isBnbPage"/>
             <button class="hide-filter-btn" @click="onShowFilter">X</button>
         </section>
       </div>
@@ -25,6 +25,7 @@ import MainNav from "@/components/MainNav.vue";
 export default {
   data() {
     return {
+      isBnbPage:true,
       isFilterFlatten: "",
       isFilterShow: false
     };

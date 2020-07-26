@@ -13,6 +13,9 @@ export default {
         },
     },
     getters: {
+        filterBy(state) {
+            return state.filterBy;
+        },
         houses(state) {
             return state.houses;
         },
@@ -30,6 +33,9 @@ export default {
         setFilter(state, { filterBy }) {
             state.filterBy = filterBy;
         },
+        // getFilter(state) {
+        //     return state.filterBy;
+        // },
         setHouses(state, { houses }) {
             state.houses = houses;
             // console.log('mutations setHouses:',houses);
@@ -51,10 +57,10 @@ export default {
     actions: {
         async loadHouses(context, { filterBy }) {
             try {
-                console.log('state.filterBy',context.state)
-                if (!filterBy){
-                    filterBy = { ...context.state.filterBy };
-                } 
+                console.log('state.filterBy', context.state)
+                if (!filterBy) {
+                    filterBy = {...context.state.filterBy };
+                }
                 context.commit({ type: "setFilter", filterBy });
                 const houses = await houseService.query(filterBy);
                 context.commit({ type: "setHouses", houses });
@@ -63,6 +69,18 @@ export default {
                 console.log("Store.loadHouses error:", err);
                 throw err;
             }
+            // },
+            // async getFilter(context, { filterBy }) {
+            //     try {
+            //         filterBy = {...context.state.filterBy };
+            //         console.log('getFilter!!', getFilter)
+            //         return filterBy;
+            //     } catch (err) {
+            //         console.log("Store.getFilter error:", err);
+            //         throw err;
+            //     }
+            // }
+
         },
         async removeHouse({ commit }, { id }) {
             try {
@@ -84,4 +102,4 @@ export default {
             }
         },
     },
-};
+}
