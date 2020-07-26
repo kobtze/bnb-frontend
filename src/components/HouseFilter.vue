@@ -99,7 +99,7 @@ export default {
   },
   created() {
     console.log("isFilterFlatten", this.isFilterFlatten);
-    // this.setFilter();
+    //  this.setFilter();
   },
   mounted() {
     window.addEventListener('resize', () => {
