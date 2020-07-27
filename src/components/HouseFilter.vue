@@ -15,7 +15,7 @@
       </section>
 
       <section class="guest-number-container flex">
-        <el-select v-model="filterBy.adultNumber"  placeholder="ADULTS">
+        <el-select v-model="filterBy.adultNumber" placeholder="ADULTS">
           <el-option
             v-for="item in options"
             :key="item.value"
@@ -73,7 +73,7 @@ export default {
       options: [
         {
           value: "0",
-          label: "0"
+          label: "0",
         },
         {
           value: "1",
@@ -99,9 +99,9 @@ export default {
     };
   },
   created() {
-    this.filterBy = this.$store.getters.filterBy;
-      this.filterBy.childrenNumber='CHILDREN'
-      this.filterBy.adultNumber='ADULTS'
+    this.filterBy = {...this.$store.getters.filterBy};
+    this.filterBy.childrenNumber = "CHILDREN";
+    this.filterBy.adultNumber = "ADULTS";
   },
   mounted() {
     window.addEventListener("resize", () => {
@@ -111,16 +111,22 @@ export default {
   },
   methods: {
     onSubmit() {
-      //we dont want to send 'ADULTS OR CHILDREN' to the guset filter so:
-      if(this.filterBy.adultNumber==='ADULTS')this.filterBy.adultNumber=0;
-       if(this.filterBy.childrenNumber==='CHILDREN')this.filterBy.childrenNumber=0;
-       
+      var patt = new RegExp(this.filterBy.location, "i");
+      if (patt.test("tokyo mokyo bokyo tolyo trlyo tokio jokyo tolyo"))
+        this.filterBy.location = "Tokyo";
+      if (patt.test("new york nyk nyc ny new-york big apple"))
+        this.filterBy.location = "New York";
+      if (patt.test("Tel aviv tel tlv tle abyb trl tlb aviv tle aviv tel-aviv tlv-aviv tle-aviv tle-abiv le aviv"))
+        this.filterBy.location = "Tel Aviv";
+     if (patt.test(""))
+        this.filterBy.location = "";
+      
       this.setFilter();
+
       if (!this.isBnbPage) this.$router.push("/app");
     },
     setFilter() {
-      //   console.log('setFilter.filterBy:',this.filterBy );
-      this.$emit("setFilter", this.filterBy);
+      this.$emit("setFilter", {...this.filterBy});
     },
   },
   computed: {

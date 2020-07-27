@@ -71,17 +71,6 @@ export default {
                 console.log("Store.loadHouses error:", err);
                 throw err;
             }
-            // },
-            // async getFilter(context, { filterBy }) {
-            //     try {
-            //         filterBy = {...context.state.filterBy };
-            //         console.log('getFilter!!', getFilter)
-            //         return filterBy;
-            //     } catch (err) {
-            //         console.log("Store.getFilter error:", err);
-            //         throw err;
-            //     }
-            // }
 
         },
         async removeHouse({ commit }, { id }) {
