@@ -21,7 +21,7 @@
         <div class="second-row flex align-center">
           <prev-scores
             :scores="houseToShow.scores.rating"
-            :reviewcount="houseToShow.reviews.length"
+            :reviewcount="houseToShow.reviewCount"
           />
           <span class="seperator" aria-hidden="true">·</span>
           <div class="location">{{houseToShow.location.name}}</div>
@@ -113,7 +113,7 @@
             <h4 class="content-header">{{houseToShow.type}} hosted by {{houseToShow.host.name}}</h4>
             <prev-scores
               :scores="houseToShow.scores.rating"
-              :reviewcount="houseToShow.reviews.length"
+              :reviewcount="houseToShow.reviewCount"
             />
           </div>
 

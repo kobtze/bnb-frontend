@@ -8,7 +8,7 @@
         </svg>
       </span>
       
-     {{scores.rating.toFixed(2)}} ({{reviews.length}} reviews)
+     {{scores.rating.toFixed(2)}} ({{house.reviewCount}} reviews)
     </h3>
    
 
