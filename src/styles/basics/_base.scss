@@ -36,7 +36,13 @@ h3 { // secondary heading for details page
     line-height: rem(26px);
 }
 
-h4 { // Footer: ABOUT, COMMUNITY, HOST, SUPPORT
+h4 { // Homepage cards
+    font-size: rem(18px);
+    font-weight: 600;
+    line-height: rem(22px);
+}
+
+h5 { // Footer: ABOUT, COMMUNITY, HOST, SUPPORT
     font-size: rem(12px);
     font-weight: 700;
 }

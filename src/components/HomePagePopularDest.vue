@@ -10,7 +10,7 @@
             class="image"
           />
           <div style="padding: 14px;">
-            <p>New York</p>
+            <h4 class="no-text-underneath">New York</h4>
             <div class="bottom clearfix"></div>
           </div>
         </el-card>
@@ -23,7 +23,7 @@
             class="image"
           />
           <div style="padding: 14px;">
-            <p>Tokyo</p>
+            <h4 class="no-text-underneath">Tokyo</h4>
             <div class="bottom clearfix"></div>
           </div>
         </el-card>
@@ -36,7 +36,7 @@
             class="image"
           />
           <div style="padding: 14px;">
-            <p>Tel Aviv</p>
+            <h4 class="no-text-underneath">Tel Aviv</h4>
             <div class="bottom clearfix"></div>
           </div>
         </el-card>

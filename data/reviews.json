@@ -1,0 +1,166 @@
+{
+    "reviews": [
+        {
+            "_id": "r-r100",
+            "createdAt" : "2020-07-20T10:00:00.000Z",
+            "byUser" : {
+                "name" : "Elena",
+                "imgUrl" : "https://a0.muscache.com/im/pictures/user/34a10a70-e155-4fe4-bae1-ec1bbc4c1434.jpg?im_w=240"
+            },
+            "description" : "A fabulous place for a soothing getaway. Would stay again. Absolutely gorgeous. Truly a lovely fresh space with a little magic in it"
+        },
+        {
+            "_id": "r-r101",
+            "createdAt" : "2020-07-14T14:00:00.000Z",
+            "byUser" : {
+                "name" : "Fela",
+                "imgUrl" : "https://a0.muscache.com/im/pictures/user/27f1b4ea-5341-45b3-a228-9a5a8cecc696.jpg?im_w=240"
+            },
+            "description" : "Great place to stay ! I enjoyed it extremely."
+        },
+        {
+            "_id": "r-r102",
+            "createdAt" : "2020-06-28T03:00:00.000Z",
+            "byUser" : {
+                "name" : "Sarah",
+                "imgUrl" : "https://a0.muscache.com/im/pictures/user/622f0e8a-db13-4307-b7ef-2f9f74bbb0d8.jpg?im_w=240"
+            },
+            "description" : "Very clean and looks exactly like in the picture."
+        },
+        {
+            "_id": "r-r103",
+            "createdAt" : "2020-06-18T08:00:00.000Z",
+            "byUser" : {
+                "name" : "Marann",
+                "imgUrl" : "https://a0.muscache.com/im/pictures/user/78aecf11-f1d7-48c8-b97e-861fbec570a9.jpg?im_w=240"
+            },
+            "description" : "Loved my stay here! Super convenient location with lots of cute little bars around. I also enjoyed the fact that the host allowed me to leave my luggage there during the day after checking out."
+        },
+        {
+            "_id": "r-r104",
+            "createdAt" : "2020-06-05T15:00:00.000Z",
+            "byUser" : {
+                "name" : "Stuart",
+                "imgUrl" : "https://a0.muscache.com/im/users/39526901/profile_pic/1437843471/original.jpg?im_w=240"
+            },
+            "description" : "Very modern place, nicely laid out, clean and tidy. Clearly been thought about very well. Excellent value for money would highly recommend."
+        },
+        {
+            "_id": "r-r105",
+            "createdAt" : "2020-05-30T10:30:00.000Z",
+            "byUser" : {
+                "name" : "Vanessa",
+                "imgUrl" : "https://a0.muscache.com/im/pictures/user/0a985ca7-1b97-47fa-87be-a448f85f142e.jpg?im_w=240"
+            },
+            "description" : "Thanks, this was very convenient to stay at. The host was great with communication, everything was as explained."
+        },
+        {
+            "_id": "r-r106",
+            "createdAt" : "2020-05-26T12:20:00.000Z",
+            "byUser" : {
+                "name" : "Vishal",
+                "imgUrl" : "https://a0.muscache.com/im/pictures/user/dc9ecb83-308c-4bec-b67d-20080bcbc27d.jpg?im_w=240"
+            },
+            "description" : "Bed was comfortable and apartment was clean. Location is right next to a subway station which makes it easy to get anywhere in the city."
+        },
+        {
+            "_id": "r-r107",
+            "createdAt" : "2020-05-23T15:16:00.000Z",
+            "byUser" : {
+                "name" : "Simone",
+                "imgUrl" : "https://a0.muscache.com/im/pictures/user/366be1a1-0907-4ef7-99ce-188a6d3786c9.jpg?im_w=240"
+            },
+            "description" : "Bed was comfortable and apartment was clean. Location is right next to a subway station which makes it easy to get anywhere in the city."
+        },
+        {
+            "_id": "r-r108",
+            "createdAt" : "2020-05-19T13:55:00.000Z",
+            "byUser" : {
+                "name" : "Jenkkul",
+                "imgUrl" : "https://a0.muscache.com/im/pictures/user/3e43c3e7-625b-477b-b6b1-eaf70dfae6da.jpg?im_w=240"
+            },
+            "description" : "Great location. Great room. Modern look to the place. A secure code lock for entry into the building space and shared apartment space. Great deal in comparison to local hotels. I would do it again."
+        },
+        {
+            "_id": "r-r109",
+            "createdAt" : "2020-05-14T18:23:00.000Z",
+            "byUser" : {
+                "name" : "Lydia",
+                "imgUrl" : "https://a0.muscache.com/im/pictures/user/d9dfd256-b258-44bb-b7f6-0cd91b668639.jpg?im_w=240"
+            },
+            "description" : "Great value and location, check in and out was easy and we had no issues during our stay!"
+        },
+        {
+            "_id": "r-r110",
+            "createdAt" : "2020-05-11T12:01:00.000Z",
+            "byUser" : {
+                "name" : "Jordan",
+                "imgUrl" : "https://a0.muscache.com/im/pictures/user/e0bf2a05-beca-4b3c-960b-e03086a13af5.jpg?im_w=240"
+            },
+            "description" : "Great space and clean, easy to find, outstanding neighborhood."
+        },
+        {
+            "_id": "r-r111",
+            "createdAt" : "2020-04-28T15:46:00.000Z",
+            "byUser" : {
+                "name" : "Ashley",
+                "imgUrl" : "https://a0.muscache.com/im/pictures/user/e842c4c1-0443-437a-b88d-3a9f9c2079ea.jpg?im_w=240"
+            },
+            "description" : "Easy to access. Great location close to coffee and local eats. Clean and comfortable."
+        },
+        {
+            "_id": "r-r112",
+            "createdAt" : "2020-04-16T07:46:00.000Z",
+            "byUser" : {
+                "name" : "Raúl",
+                "imgUrl" : "https://a0.muscache.com/im/pictures/user/a45fd4bf-077c-4cb6-9c29-55d5a8add424.jpg?im_w=240"
+            },
+            "description" : "Great stay! Would return again in the future! Thanks!!!!"
+        },
+        {
+            "_id": "r-r113",
+            "createdAt" : "2020-03-25T09:05:00.000Z",
+            "byUser" : {
+                "name" : "Marylise",
+                "imgUrl" : "https://a0.muscache.com/im/pictures/user/0451777e-cea3-4620-b85a-43851df9f35f.jpg?im_w=240"
+            },
+            "description" : "Great place. The room is cozy. Appartment as anything you need. Clean bathrooms and showers. Keyless entry to the building and the appartement. Subway 2 minutes by walking. Grocery store across the street. Parking in the streets. Nice neighboorhood. Mira had good references for restaurants and bars close by. Would stay there again."
+        },
+        {
+            "_id": "r-r114",
+            "createdAt" : "2020-03-02T12:05:00.000Z",
+            "byUser" : {
+                "name" : "Sarah",
+                "imgUrl" : "https://a0.muscache.com/im/pictures/user/d6e83e75-5157-465e-9221-503189f9a6d1.jpg?im_w=240"
+            },
+            "description" : "Place is awesome. Perfect location. Wonderful host. I’d absolutely recommend staying!"
+        },
+        {
+            "_id": "r-r115",
+            "createdAt" : "2020-02-15T15:41:00.000Z",
+            "byUser" : {
+                "name" : "Orly",
+                "imgUrl" : "https://a0.muscache.com/im/pictures/user/daa22c64-5712-4f8f-afcf-08a6fd445081.jpg?im_w=240"
+            },
+            "description" : "It was really fun and pleasant to have a great apartment. Thank you very much for everything. you're great!"
+        },
+        {
+            "_id": "r-r116",
+            "createdAt" : "2020-01-15T15:41:00.000Z",
+            "byUser" : {
+                "name" : "Nicole",
+                "imgUrl" : "https://a0.muscache.com/im/pictures/user/82136150-e581-404d-be89-bc74c49de82c.jpg?im_w=240"
+            },
+            "description" : "Responsive very nice host in a prime location in the city."
+        },
+        {
+            "_id": "r-r117",
+            "createdAt" : "2020-01-03T22:41:00.000Z",
+            "byUser" : {
+                "name" : "Leela",
+                "imgUrl" : "https://a0.muscache.com/im/pictures/user/dee35f0a-e3e1-4a7d-b4c3-9cfe7a315bc7.jpg?im_w=240"
+            },
+            "description" : "The place was lovely. The host was super accommodating and responsive. The place is an awesome spot in the area, walking distance from several restaurants, bars, and city parks. Definitely enjoyed my stay, and would recommend!"
+        },
+    ]
+}
