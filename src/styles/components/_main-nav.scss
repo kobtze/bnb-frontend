@@ -29,7 +29,7 @@
     // }
     .menu-open .main-nav {
         transform: translateX(0);
-        box-shadow: -6px 0px 14px rgba(0, 0, 0, 0.2);
+        box-shadow: -6px 0px 14px rgba(0, 0, 0, 0.2); 
     }
     .menu-open .screen {
         visibility: visible;
@@ -174,9 +174,9 @@
         cursor: pointer;
 
          &:hover{
-         background-color: rgba(241, 241, 241, 0.945);
+        //  background-color: rgba(241, 241, 241, 0.945);
          border: 1px solid transparent;
-
+         box-shadow: 0px 1px 3px 2px #c4c4c486;
         }
       
             .mangifying{
@@ -184,10 +184,10 @@
                 width: 32px;
                 height: 32px;
                 border-radius: 100px;
-                padding: 8px;
+                padding: 9px;
                 background-color: $clr1;
                 color: white;
-            
+                
                 p{
                 line-height: 20px;
                 font-size: 1rem;

@@ -16,7 +16,7 @@
     <section class="container">
       <section class="details-header">
         <h1 class="alt">{{houseToShow.name}}</h1>
-        <div class="second-row ">
+        <div class="second-row flex align-center">
           <prev-scores
             :scores="houseToShow.scores.rating"
             :reviewcount="houseToShow.reviews.length"
@@ -73,7 +73,7 @@
               </section>
 
               <section class="guest-number-container">
-                <button @click="isShowInputs = !isShowInputs">GUESTS {{getGuestNum}}</button>
+                <button @click="isShowInputs = !isShowInputs"> {{getGuestNum}}</button>
                 <div class="guests-inputs-container" v-if="isShowInputs">
                   <div class="input-div flex align-center space-between">
                     <p>ADULTS</p>
@@ -106,7 +106,7 @@
       <house-reviews :reviews="houseToShow.reviews" :scores="houseToShow.scores" />
 
       <google-map :location="houseToShow.location"></google-map>
-      <date-picker />
+      <!-- <date-picker /> -->
     </section>
   </div>
 </template>
@@ -173,9 +173,14 @@ export default {
     }
   },
   computed: {
+
+     
+   
+
     getGuestNum() {
       let guestNumber = this.guests.adultNumber + this.guests.childrenNumber;
-      return guestNumber;
+   if (guestNumber > 1) return `${guestNumber} guests`;
+      else return `1 guest`;
     }
   },
   created() {
