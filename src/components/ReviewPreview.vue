@@ -29,7 +29,7 @@ export default {
 
   computed: {
     getTime() {
-      return moment(this.review.createdAt).format("MMM Do");
+      return moment(this.review.createdAt).format("MMMM YYYY");
     },
 
     trucateText() {

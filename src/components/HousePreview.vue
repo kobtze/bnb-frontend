@@ -14,7 +14,9 @@
               <span class="rating">{{house.scores.rating}}</span>
               <span class="review-count">({{house.reviews.length}})</span>
             </div>
-            <div class="prev-type">{{house.type}}</div>
+            <section class="flex" >
+            <div class="prev-type">{{house.type}}{{getCityName}}</div>
+            </section>
             <div class="prev-name">{{house.name}}</div>
             <div class="prev-price">
               <span class="bold">${{house.price}}</span>
@@ -45,11 +47,16 @@ export default {
       const guestNum = this.house.capacity;
       if (guestNum > 1) return `${guestNum} guests`;
       else return `1 guest`;
+    },
+      getCityName(){
+     const locationStrs = this.house.location.name.split(',');
+     return  " · " + locationStrs[0] ;
     }
   },
   components: {
     PreviewCarousel
   }
+
 };
 </script>
 

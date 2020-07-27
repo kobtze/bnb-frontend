@@ -3,8 +3,8 @@
     <h2>Destinations for future trips</h2>
 
     <section class="list-3">
-      <section v-on:click.prevent="sendCategory('new york')">
-        <el-card class="card" :body-style="{ padding: '0px' }">
+      <section v-on:click="sendCategory('new york')">
+        <el-card  class="card" :body-style="{ padding: '0px' }">
           <img
             src="@/assets/img/new-york-small.jpg"
             class="image"
@@ -16,7 +16,7 @@
         </el-card>
       </section>
 
-      <section v-on:click.prevent="sendCategory('tokyo')">
+      <section v-on:click="sendCategory('tokyo')">
         <el-card class="card" :body-style="{ padding: '0px' }">
           <img
             src="@/assets/img/tokyo.jpg"
@@ -29,7 +29,7 @@
         </el-card>
       </section>
 
-      <section v-on:click.prevent="sendCategory('tel')">
+      <section v-on:click="sendCategory('tel')">
         <el-card class="card" :body-style="{ padding: '0px' }">
           <img
             src="@/assets/img/tel-aviv-small.jpg"
@@ -54,7 +54,9 @@ export default {
         checkIn: "",
         checkOut: "",
         adultNumber: "",
-        childrenNumber: ""
+        childrenNumber: "",
+        rating:"",
+        type:"", 
       }
     };
   },

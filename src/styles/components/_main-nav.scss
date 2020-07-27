@@ -11,13 +11,22 @@
     .house-filter {
         top: 30px;
     }
-    .logo-word {
-        font-size: 1.875rem;
-        color: rgb(255, 56, 92);
-        letter-spacing: 1.5px;
-        font-weight: 3;
-        line-height: 1.1;
+    div.logo{
+        height: 80px;
+        width: 133px;
+
+
+         svg{
+            margin-right: 10px;
+        }
     }
+    // .logo-word {
+    //     font-size: 1.875rem;
+    //     color: rgb(255, 56, 92);
+    //     letter-spacing: 1.5px;
+    //     font-weight: 3;
+    //     line-height: 1.1;
+    // }
     .menu-open .main-nav {
         transform: translateX(0);
         box-shadow: -6px 0px 14px rgba(0, 0, 0, 0.2);
@@ -160,7 +169,7 @@
         background-color: white;
         border: 1px solid $clr4;
         border-radius: 300px;
-        padding: 0px 18px 0px 10px;
+        padding: 0px 10px 0px 18px;
         outline: none;
         cursor: pointer;
 
