@@ -11,12 +11,10 @@
     .house-filter {
         top: 30px;
     }
-    div.logo{
+    div.logo {
         height: 80px;
         width: 133px;
-
-
-         svg{
+        svg {
             margin-right: 10px;
         }
     }
@@ -29,7 +27,7 @@
     // }
     .menu-open .main-nav {
         transform: translateX(0);
-        box-shadow: -6px 0px 14px rgba(0, 0, 0, 0.2);
+        box-shadow: -6px 0px 14px rgba(0, 0, 0, 0.2); 
     }
     .menu-open .screen {
         visibility: visible;
@@ -124,45 +122,6 @@
             ;
         }
     }
-    .post-modal {
-        background: rgba(0, 0, 0, 0.5);
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100vw;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        z-index: 2999;
-        .login-modal {
-            margin: 0 auto;
-            width: 300px;
-            height: 215px;
-            background-color: white;
-            border: 1px solid rgba(230, 227, 227, 0.5);
-            border-radius: 20px;
-            position: absolute;
-            z-index: 3000;
-            top: 52px;
-        }
-    }
-    .close-modal {
-        position: absolute;
-        top: 15px;
-        right: 25px;
-        &:hover {
-            cursor: pointer;
-        }
-    }
-
-
     .show-filter-btn {
         width: 133px;
         height: 48px;
@@ -175,7 +134,7 @@
 
          &:hover{
          border: 1px solid transparent;
-
+         box-shadow: 0px 1px 3px 2px #c4c4c486;
         }
       
             .mangifying{
@@ -183,19 +142,17 @@
                 width: 32px;
                 height: 32px;
                 border-radius: 100px;
-                padding: 8px;
+                padding: 9px;
                 background-color: $clr1;
                 color: white;
-            
+                
                 p{
                 line-height: 20px;
                 font-size: 1rem;
                 margin: 0px;
                 padding: 0px;
-                font-family:Circular;
-                }
+                font-family: Circular;
+            }
         }
-      
-
     }
 }
