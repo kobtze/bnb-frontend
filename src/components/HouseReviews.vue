@@ -29,7 +29,7 @@
          </div>
 
        </section>
-       <review-list :reviews="reviews" />
+       <review-list :reviews="reviews" :house="house" />
 
   </section>
 </template>
@@ -40,7 +40,7 @@ import ReviewList from "@/components/ReviewList.vue";
 import PrevScores from '@/components/PrevScores.vue';
 export default {
   name: "HouseReviews",
-  props: ['reviews','scores'],
+  props: ['reviews','scores', 'house'],
 
   methods: {
     //making 5 to be the 100% 

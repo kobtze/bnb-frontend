@@ -1,6 +1,6 @@
 <template>
   <section class="house-list">
-    <!-- <h3>Stays in {{getLocationName}}</h3> -->
+    <h3 v-if="houses.length>0">Stays in {{getLocation}}</h3>
     <ul v-if="houses" class="house-list-ul">
       <house-preview v-for="house in houses" :key="house._id" :house="house" />
     </ul>
@@ -17,32 +17,31 @@ export default {
       type: Array,
       required: true,
     },
-    locationToShow: {
-      type: String,
-      required: false,
-    },
   },
-  // computed: {
-  //   getLocationName() {
-  //     const locationName = this.locationToShow;
-  //     var patt = new RegExp(locationName, "i");
+  data() {
+    return {
+      filterBy: {
+        location: "",
+        checkIn: "",
+        checkOut: "",
+        adultNumber: "",
+        childrenNumber: "",
+        rating: "",
+        type: "",
+      },
+    };
+  },
 
-  //     if (patt.match("tokyo")) return "Tokyo";
-  //     if (patt.test("new york new-york")) return "New York";
-   
-  //       // var str = "new york new-york";
-  //       // var res = patt.test(str);
-  //       // if (res) return "New York";
-
-      
-  //   },
-  // },
   components: {
     HousePreview,
   },
-  created() {
-    console.log(this.locationToShow);
-  },
+  computed: {
+    getLocation(){
+    console.log(this.$store.getters.filterBy, "this.$store.getters.filterBy");
+    this.filterBy = this.$store.getters.filterBy;
+    return this.filterBy.location
+    }
+  }
 };
 </script>
 

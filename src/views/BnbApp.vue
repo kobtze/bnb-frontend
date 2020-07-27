@@ -12,7 +12,7 @@
 
     </div>
     <div class="container">
-      <house-list :houses="houses" :locationToShow="locationToShow"/>
+      <house-list :houses="houses"/>
     </div>
   </section>
 </template>
@@ -29,7 +29,6 @@ export default {
       isBnbPage: true,
       isFilterFlatten: '',
       isFilterShow: false,
-      locationToShow : '',
     };
   },
   created() {
@@ -38,7 +37,7 @@ export default {
   },
   computed: {
     houses() {
-      return this.$store.getters.houses;
+      return this.$store.getters.houses;  
     }
   },
   methods: {
@@ -47,7 +46,6 @@ export default {
     },
     setFilter(filterBy) {
        this.isFilterShow =  !this.isFilterShow ;
-       this.locationToShow = filterBy.location
     //   this.$store.commit({ type: "setFilter", filterBy: _.cloneDeep(filterBy)});
       this.$store.dispatch({ type: "loadHouses", filterBy : filterBy });
     }
