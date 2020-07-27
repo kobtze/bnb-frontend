@@ -1,25 +1,64 @@
-
 .container {
     padding: 0px 80px;
     max-width: $max-width-wide;
     margin-left: auto;
     margin-right: auto;
-    
     // @include for-wide-layout {
     //     max-width: $max-width-wide;
     // }
-    
     @include for-normal-layout {
         max-width: $max-width-normal;
         padding: 0px 40px;
         margin-left: auto;
         margin-right: auto;
     }
-    
     @include for-narrow-layout {
         max-width: 100%;
         padding: 0px 20px;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+.screen {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2999;
+    .login-modal {
+        margin: 0 auto;
+        width: 300px;
+        height: 215px;
+        background-color: white;
+        border: 1px solid rgba(230, 227, 227, 0.5);
+        border-radius: 20px;
+        position: absolute;
+        z-index: 3001;
+        top: 52px;
+    }
+    .booking-modal {
+        margin: 0 auto;
+        width: 300px;
+        height: 215px;
+        background-color: white;
+        border: 1px solid rgba(230, 227, 227, 0.5);
+        border-radius: 20px;
+        position: absolute;
+        z-index: 3000;
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    &:hover {
+        cursor: pointer;
     }
 }

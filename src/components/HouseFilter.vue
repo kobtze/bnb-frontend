@@ -15,7 +15,7 @@
       </section>
 
       <section class="guest-number-container flex">
-        <el-select v-model="filterBy.adultNumber" placeholder="ADULTS">
+        <el-select v-model="filterBy.adultNumber"  placeholder="ADULTS">
           <el-option
             v-for="item in options"
             :key="item.value"
@@ -100,6 +100,8 @@ export default {
   },
   created() {
     this.filterBy = this.$store.getters.filterBy;
+      this.filterBy.childrenNumber='CHILDREN'
+      this.filterBy.adultNumber='ADULTS'
   },
   mounted() {
     window.addEventListener("resize", () => {
@@ -109,6 +111,10 @@ export default {
   },
   methods: {
     onSubmit() {
+      //we dont want to send 'ADULTS OR CHILDREN' to the guset filter so:
+      if(this.filterBy.adultNumber==='ADULTS')this.filterBy.adultNumber=0;
+       if(this.filterBy.childrenNumber==='CHILDREN')this.filterBy.childrenNumber=0;
+       
       this.setFilter();
       if (!this.isBnbPage) this.$router.push("/app");
     },

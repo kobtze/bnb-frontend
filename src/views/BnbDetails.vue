@@ -1,14 +1,16 @@
 <template>
-    
-
   <div v-if="houseToShow" class="house-details" :id="houseToShow._id">
     <div class="app-header sticky">
-          <main-nav @onShowFilter="onShowFilter" />
+      <main-nav @onShowFilter="onShowFilter" />
 
-      <div v-show="isFilterShow" class="filter-modal ">
+      <div v-show="isFilterShow" class="filter-modal">
         <section class="container flex space-between align-center">
-            <house-filter @setFilter="setFilter" :isFilterFlatten="isFilterFlatten" :isBnbPage="isBnbPage"/>
-            <button class="hide-filter-btn" @click="onShowFilter">X</button>
+          <house-filter
+            @setFilter="setFilter"
+            :isFilterFlatten="isFilterFlatten"
+            :isBnbPage="isBnbPage"
+          />
+          <button class="hide-filter-btn" @click="onShowFilter">X</button>
         </section>
       </div>
     </div>
@@ -16,7 +18,7 @@
     <section class="container">
       <section class="details-header">
         <h1 class="alt">{{houseToShow.name}}</h1>
-        <div class="second-row ">
+        <div class="second-row">
           <prev-scores
             :scores="houseToShow.scores.rating"
             :reviewcount="houseToShow.reviews.length"
@@ -98,15 +100,24 @@
                   </div>
                 </div>
               </section>
-              <button>Check Availability</button>
+              <button @click="onToggleScreen(true)">Check Availability</button>
             </div>
           </section>
         </div>
       </div>
+
+      <div @click="onToggleScreen(false)" v-show="toggleScreen" class="screen">
+        <div @click.stop="stopPrp" class="booking-modal">
+          <p>checkIn:{{checkIn}}</p>
+          <p>checkOut:{{checkOut}}</p>
+          <p>adultNumber:{{guests.adultNumber}}</p>
+          <p>childrenNumber:{{guests.childrenNumber}}</p>
+        </div>
+      </div>
+
       <house-reviews :reviews="houseToShow.reviews" :scores="houseToShow.scores" />
 
       <google-map :location="houseToShow.location"></google-map>
-      <date-picker />
     </section>
   </div>
 </template>
@@ -126,17 +137,18 @@ export default {
   name: "BnbDetails",
   data() {
     return {
-      isBnbPage:false,
+      toggleScreen: false,
+      isBnbPage: false,
       isFilterShow: false,
       isShowInputs: false,
       checkIn: "",
       checkOut: "",
       guests: {
         adultNumber: 1,
-        childrenNumber: 0
+        childrenNumber: 0,
       },
 
-      houseToShow: null
+      houseToShow: null,
     };
   },
   components: {
@@ -147,18 +159,22 @@ export default {
     DatePicker,
     GoogleMap,
     MainNav,
-    HouseFilter
+    HouseFilter,
   },
   methods: {
+    stopPrp(){},
+    onToggleScreen(isScreenShow) {
+      this.toggleScreen = isScreenShow;
+    },
     onShowFilter() {
       // console.log("isFilterShow", toggleFilter);
       this.isFilterShow = !this.isFilterShow;
     },
     setFilter(filterBy) {
-    this.isFilterShow =  !this.isFilterShow ;
+      this.isFilterShow = !this.isFilterShow;
       this.$store.commit({
         type: "setFilter",
-        filterBy: _.cloneDeep(filterBy)
+        filterBy: _.cloneDeep(filterBy),
       });
       this.$store.dispatch({ type: "loadHouses" });
     },
@@ -170,18 +186,18 @@ export default {
       } catch (err) {
         console.log("didnt get any house");
       }
-    }
+    },
   },
   computed: {
     getGuestNum() {
       let guestNumber = this.guests.adultNumber + this.guests.childrenNumber;
       return guestNumber;
-    }
+    },
   },
   created() {
     this.isFilterFlatten = true;
     this.loadHouse();
-  }
+  },
 };
 </script>
 
