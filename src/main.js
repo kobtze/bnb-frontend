@@ -12,10 +12,10 @@ var moment = require('moment'); // require
 
 // Element UI
 import Element from 'element-ui'
+import locale from 'element-ui/lib/locale/lang/en'
 // import 'element-ui/lib/theme-chalk/index.css';
-Vue.use(Element)
-
-// VueGoogleMaps
+Vue.use(Element, { locale })
+    // VueGoogleMaps
 import * as VueGoogleMaps from 'vue2-google-maps'
 Vue.use(VueGoogleMaps, {
     load: {
