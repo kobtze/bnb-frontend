@@ -103,7 +103,11 @@
           </section>
         </div>
       </div>
-      <house-reviews :reviews="houseToShow.reviews" :scores="houseToShow.scores" />
+      <house-reviews
+      :reviews="houseToShow.reviews"
+      :scores="houseToShow.scores"
+      :house="houseToShow"
+      />
 
       <google-map :location="houseToShow.location"></google-map>
       <date-picker />

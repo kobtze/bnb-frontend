@@ -12,7 +12,7 @@
                 </svg>
               </span>
               <span class="rating">{{house.scores.rating}}</span>
-              <span class="review-count">({{house.reviews.length}})</span>
+              <span class="review-count">({{house.reviewCount}})</span>
             </div>
             <section class="flex" >
             <div class="prev-type">{{house.type}}{{getCityName}}</div>
