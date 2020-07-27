@@ -1,17 +1,18 @@
 <template>
   <section>
     <div class="app-header sticky">
-      <main-nav @onShowFilter="onShowFilter" />
+      <main-nav @onShowFilter="onShowFilter"/>
 
-      <div v-show="isFilterShow" class="filter-modal ">
-        <section class="container flex space-between align-center">
+      <div v-show="isFilterShow" class="filter-modal">
+        <section class="container flex space-around align-center">
             <house-filter @setFilter="setFilter" :isFilterFlatten="isFilterFlatten" :isBnbPage="isBnbPage"/>
-            <button class="hide-filter-btn" @click="onShowFilter">X</button>
+            <button class="hide-filter-btn" @click="onShowFilter"> X </button>
         </section>
       </div>
+
     </div>
     <div class="container">
-      <house-list :houses="houses" />
+      <house-list :houses="houses" :locationToShow="locationToShow"/>
     </div>
   </section>
 </template>
@@ -25,9 +26,10 @@ import MainNav from "@/components/MainNav.vue";
 export default {
   data() {
     return {
-      isBnbPage:true,
-      isFilterFlatten: "",
-      isFilterShow: false
+      isBnbPage: true,
+      isFilterFlatten: '',
+      isFilterShow: false,
+      locationToShow : '',
     };
   },
   created() {
@@ -41,10 +43,11 @@ export default {
   },
   methods: {
     onShowFilter() {
-      // console.log("isFilterShow", toggleFilter);
       this.isFilterShow =  !this.isFilterShow ;
     },
     setFilter(filterBy) {
+       this.isFilterShow =  !this.isFilterShow ;
+       this.locationToShow = filterBy.location
     //   this.$store.commit({ type: "setFilter", filterBy: _.cloneDeep(filterBy)});
       this.$store.dispatch({ type: "loadHouses", filterBy : filterBy });
     }

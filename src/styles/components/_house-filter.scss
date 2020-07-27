@@ -185,14 +185,40 @@
 
 
 .house-filter.isFlat.compact{
-    margin:50px  auto;
+    margin:0px auto;
     height: max-content;
-  
+
+    .filter-modal{
+        
+        padding: 20px 20px;
+    }
     form{
+
         height: max-content;
-        width: 100%;
+        width: max-content  ;
         background-color: white;
         flex-direction: column;
         border-radius: 12px;
+        padding: 5px;
+        margin: 10px 0px;
+
+        & * {
+            flex-direction: column;
+        }
+        div , section{
+            height: max-content;
+            width: max-content;
+            padding: 0px;
+            margin: 0px;
+        }
+      .el-input__inner {
+            width: 200px;
+            height: 40px;
+            padding: 5px 10px 5px 10px;
+            margin: 5px;
+            border: 1px solid $clr4;
+            border-radius: 10px;
+            text-align: left;
+        }
     }
 }

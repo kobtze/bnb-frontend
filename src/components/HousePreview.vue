@@ -15,8 +15,7 @@
               <span class="review-count">({{house.reviews.length}})</span>
             </div>
             <section class="flex" >
-            <div class="prev-type">{{house.type}} </div>
-            <div class="prev-location">{{getCityName}}</div>
+            <div class="prev-type">{{house.type}}{{getCityName}}</div>
             </section>
             <div class="prev-name">{{house.name}}</div>
             <div class="prev-price">
@@ -50,8 +49,8 @@ export default {
       else return `1 guest`;
     },
       getCityName(){
-     const locationStrs= this.house.location.name.split(',');
-     return   "  " + locationStrs[0] ;
+     const locationStrs = this.house.location.name.split(',');
+     return  " · " + locationStrs[0] ;
     }
   },
   components: {

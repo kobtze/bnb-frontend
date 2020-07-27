@@ -1,10 +1,14 @@
 <template>
+
   <section class="review-list">
     <ul>
       <review-preview v-for="review in reviews" :key="review._id" :review="review" />
     </ul>
+
     <button @click="addReviews">Show all reviews</button>
+
   </section>
+
 </template>
 <script>
 
