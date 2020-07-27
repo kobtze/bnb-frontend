@@ -13,7 +13,7 @@
      </div> -->
     </div>
 
-    <homePageSuggestions/>
+    <homePageSuggestions @setSuggested="setFilter"/>
     <homePagePromotion></homePagePromotion>
     <homePagePopularDest @setPopular="setFilter"/>
       
@@ -51,6 +51,7 @@ export default {
   },
    methods: {
     setFilter(filterBy) {
+      console.log(filterBy,'filterBy');
     //   this.$store.commit({type: "setFilter", filterBy: _.cloneDeep(filterBy)});
       this.$store.dispatch({ type: "loadHouses", filterBy : filterBy });
     },
