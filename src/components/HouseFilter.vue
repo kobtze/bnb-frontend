@@ -1,6 +1,6 @@
 <template>
   <section :class="{ isFlat: isFilterFlatten , compact: isCompact }" class="house-filter">
-    <h1>Find places to stay around the world on Airbgc</h1>
+    <h1>Find places to stay around the world on airbgc</h1>
     <p>Discover entire homes and private rooms perfect for any trip.</p>
 
     <form @keyup.enter="onSubmit">

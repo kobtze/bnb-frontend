@@ -75,7 +75,7 @@
               </section>
 
               <section class="guest-number-container">
-                <button @click="isShowInputs = !isShowInputs"> {{getGuestNum}}</button>
+                <button @click="isShowInputs = !isShowInputs">{{getGuestNum}}</button>
                 <div class="guests-inputs-container" v-if="isShowInputs">
                   <div class="input-div flex align-center space-between">
                     <p>ADULTS</p>
@@ -108,15 +108,44 @@
 
       <div @click="onToggleScreen(false)" v-show="toggleScreen" class="screen">
         <div @click.stop="stopPrp" class="booking-modal">
-          <p>checkIn:{{checkIn}}</p>
-          <p>checkOut:{{checkOut}}</p>
-          <p>adultNumber:{{guests.adultNumber}}</p>
-          <p>childrenNumber:{{guests.childrenNumber}}</p>
+          <h3>Your Reservation Details</h3>
+          <div class="price-rating flex space-between align-center">
+            <h4 class="content-header">{{houseToShow.type}} hosted by {{houseToShow.host.name}}</h4>
+            <prev-scores
+              :scores="houseToShow.scores.rating"
+              :reviewcount="houseToShow.reviews.length"
+            />
+          </div>
+
+          <div class="location">{{houseToShow.location.name}}</div>
+
+          <div class="booking-details">
+            <section class="flex space-between">
+              <p>
+                <br />
+                {{formatTime(checkIn)}}
+              </p>
+              <p>
+                <br />
+                {{formatTime(checkOut)}}
+              </p>
+            </section>
+
+            <section class="flex space-between">
+              <p>Adults : {{guests.adultNumber}}</p>
+              <p>Children : {{guests.childrenNumber}}</p>
+            </section>
+            <section class="totalCalc">
+             <span>Total</span>  : {{getTotalDays}} X {{houseToShow.price}} = {{getTotalAmount}}
+            </section>
+          </div>
+            <router-link :to="{path:'/'}">
+            <button class="book-it-btn">Book it!</button>
+            </router-link>
         </div>
       </div>
 
       <house-reviews :reviews="houseToShow.reviews" :scores="houseToShow.scores" />
-
       <google-map :location="houseToShow.location"></google-map>
     </section>
   </div>
@@ -132,11 +161,13 @@ import DatePicker from "@/components/DatePicker.vue";
 import GoogleMap from "@/components/GoogleMap.vue";
 import MainNav from "@/components/MainNav.vue";
 import HouseFilter from "@/components/HouseFilter.vue";
+var moment = require("moment"); // require
 
 export default {
   name: "BnbDetails",
   data() {
     return {
+      totalDays:'',
       toggleScreen: false,
       isBnbPage: false,
       isFilterShow: false,
@@ -162,12 +193,11 @@ export default {
     HouseFilter,
   },
   methods: {
-    stopPrp(){},
+    stopPrp() {},
     onToggleScreen(isScreenShow) {
       this.toggleScreen = isScreenShow;
     },
     onShowFilter() {
-      // console.log("isFilterShow", toggleFilter);
       this.isFilterShow = !this.isFilterShow;
     },
     setFilter(filterBy) {
@@ -187,13 +217,28 @@ export default {
         console.log("didnt get any house");
       }
     },
+    formatTime(time) {
+      return moment(time).format("MMMM Do YYYY");
+    },
+   
   },
   computed: {
     getGuestNum() {
       let guestNumber = this.guests.adultNumber + this.guests.childrenNumber;
       if (guestNumber > 1) return `${guestNumber} guests`;
       else return `1 guest`;
+    },
+    getTotalDays(){
+    var a = moment(this.checkOut);
+    var b = moment(this.checkIn);
+    const days = a.diff(b, 'days')   
+    this.totalDays = days
+    return days
+    },
+    getTotalAmount(){
+    return '$' + this.totalDays * this.houseToShow.price 
     }
+
   },
   created() {
     this.isFilterFlatten = true;

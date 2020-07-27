@@ -31,6 +31,7 @@
     justify-content: center;
     align-items: center;
     z-index: 2999;
+
     .login-modal {
         margin: 0 auto;
         width: 300px;
@@ -42,15 +43,59 @@
         z-index: 3001;
         top: 52px;
     }
+
     .booking-modal {
-        margin: 0 auto;
-        width: 300px;
-        height: 215px;
-        background-color: white;
-        border: 1px solid rgba(230, 227, 227, 0.5);
-        border-radius: 20px;
+        min-width: 330px;
+        width: max-content;
+        height: max-content;
         position: absolute;
         z-index: 3000;
+        background-color: white;
+        border: 1px solid $clr4;
+        border-radius: 12px;
+        padding: 16px 48px;
+
+        .price-rating{
+            margin-bottom: 5px;
+            .content-header{
+            margin:10px 5px 6px 0px
+            }  
+        }
+
+
+        .booking-details{
+            // border-bottom: 1px solid $clr4;
+
+            span.price{
+                font-size: 16px;
+                font-weight: 600;
+            }
+
+            .totalCalc{
+            padding: 10px 0px;
+            border-top: 1px solid $clr4;
+            span{
+                font-weight:600 ;
+            }
+         }
+        }
+        .book-it-btn{
+            margin:5px auto;
+            width: 100%;
+            padding: 18px;
+            font-family: Circular;
+            font-size: 1rem;
+            color:white;
+            background-color: $clr1;
+            border: 1px solid $clr4;
+            border-radius: 10px;
+            outline: none;
+            &:hover{
+            border: 1px solid transparent;
+            box-shadow: 0px 1px 3px 4px #c4c4c486;    
+            }
+        }
+
     }
 }
 

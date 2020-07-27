@@ -58,6 +58,7 @@
         .card {
             width: 100%;
             border-radius: 12px;
+            cursor: pointer;
         &:not(:first-child) {
             margin-left: 15px;
         }

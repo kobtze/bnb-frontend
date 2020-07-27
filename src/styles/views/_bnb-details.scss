@@ -6,7 +6,6 @@
     }
 }
 
-
 .second-row {
      padding-top: 12px;
     .prev-scores {
@@ -15,7 +14,6 @@
         font-size: 14px;
          margin: 0px ;
          text-decoration: underline white;
-
     }
     .seperator {
         color: $clr3;
@@ -54,7 +52,6 @@
             object-fit: cover;
         }
     }
-
     .content-desc {
         border-bottom: 1px solid $clr4;
         line-height: 24px;
@@ -65,13 +62,10 @@
             text-align: justify;
         }
     }
-
     h3.amenities {
         padding-top: 48px;
         padding-bottom: 24px;
     }
-
-
 }
 
 // THIS is where the magic happens:
@@ -110,10 +104,8 @@
         margin-top: 24px;
         padding:24px;
 
-
         //ori design
         p{
-           
             font-size: 14px;
             font-weight: 400; 
         }
@@ -132,18 +124,17 @@
             border: none;
             border-radius: 8px;
             cursor: pointer;
+            font-family: Circular;
+            font-weight: 400;
+            outline: none;
         }
-
         input{
             border:transparent;
             font-size: 10px;
             font-weight: 600;
             font-family: Circular;
             color: $clr3;
-          
             cursor: pointer;
-
-            
         }
         .el-input--prefix .el-input__inner{
             padding: 25px 0px 25px 20px;
@@ -264,4 +255,15 @@
 h3.house-reviews {
     padding-top: 48px;
     padding-bottom: 24px;
+}
+
+div.booking-modal{
+
+    border:1px solid $clr4;
+    border-radius: 12px;
+    margin-bottom: 48px;
+    margin-top: 24px;
+    padding:24px;
+    height: 500px;
+    width: 500px;
 }
