@@ -1,13 +1,14 @@
 <template>
   <section class>
     <div v-if="loggedInUser">
-      <h1>Welcome {{loggedInUser.fullName}}</h1>
+      <h1>Welcome {{loggedInUser.name}}</h1>
       <p>{{loggedInUser}}</p>
-        
+        <!-- Orders per user -->
+        <h2>Orders for user</h2>
         <p>{{orders}}</p>
-        {{getHostOrders}}
-        {{getGuestOrders}}
-      <!-- Orders per user -->
+
+        <!-- <h2>hostOrders</h2>
+        <p>{{getHostOrders}}</p> -->
 
       <form class="flex column" @submit.prevent="doLogout">
         <button>Logout</button>
@@ -37,45 +38,23 @@ export default {
   name: "login-page",
   data() {
     return {
-      currUser:'',
-      allOrders:'',
-      guestOrders:'',
-      ownerOrders:'',
-
       loginCred: {},
       signupCred: {},
       msg: "",
-      userToEdit: {}
     };
   },
   computed: {
     loggedInUser() {
-      const user = this.$store.getters.loggedInUser;
-      this.currUser = user
-      return user
+      return this.$store.getters.loggedInUser;
     },
     orders() {
-        const orders = this.$store.getters.orders;
-        this.allOrders = orders;
-        return orders
+      return this.$store.getters.orders;
     },
-
-    getHostOrders(){
-      const orders = this.allOrders.filter(order => order.host.id === this.currUser._id)
-      return orders
-    },
-    getGuestOrders(){
-      const orders = this.allOrders.filter(order => order.guest.id === this.currUser._id)
-    //   console.log('host orders::::' ,orders);
-      return orders
-    }
   },
   created() {
-    // console.log("this.loggedInUser", this.loggedInUser);
-    this.$store.dispatch({ type: "loadOrders"});
-  },
-  mounted() {
-    // console.log("Orders (all):", this.orders);
+    if (this.loggedInUser) {
+        this.$store.dispatch({ type: "loadOrders", userId : this.loggedInUser._id});
+        }
   },
   methods: {
     async doLogin() {
@@ -83,10 +62,12 @@ export default {
       if (!cred.email || !cred.password)
         return (this.msg = "Please enter user/password");
       await this.$store.dispatch({ type: "login", userCred: cred });
+      this.$store.dispatch({ type: "loadOrders", userId : this.loggedInUser._id});
       this.loginCred = {};
     },
     async doLogout() {
       await this.$store.dispatch({ type: "logout"});
+      await this.$store.dispatch({ type: "clearOrders"})
       this.loginCred = {};
     },
     doSignup() {

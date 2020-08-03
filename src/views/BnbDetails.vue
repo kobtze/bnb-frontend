@@ -136,12 +136,12 @@
               <p>Children : {{guests.childrenNumber}}</p>
             </section>
             <section class="totalCalc">
-             <span>Total</span>  : {{getTotalDays}} X {{houseToShow.price}} = {{getTotalAmount}}
+             <span>Total</span>  : {{getNightCount}} X {{houseToShow.price}} = ${{getTotalAmount}}
             </section>
           </div>
-            <router-link :to="{path:'/'}">
-            <button class="book-it-btn">Book it!</button>
-            </router-link>
+            <!-- <router-link :to="{path:'/'}"> -->
+            <button class="book-it-btn" @click="createOrder">Book it!</button>
+            <!-- </router-link> -->
         </div>
       </div>
 
@@ -167,11 +167,12 @@ export default {
   name: "BnbDetails",
   data() {
     return {
-      totalDays:'',
+      nightCount:'',
       toggleScreen: false,
       isBnbPage: false,
       isFilterShow: false,
       isShowInputs: false,
+      loggedInUser: null,
       checkIn: "",
       checkOut: "",
       guests: {
@@ -220,6 +221,21 @@ export default {
     formatTime(time) {
       return moment(time).format("MMMM Do YYYY");
     },
+    createOrder() {
+        const order = {
+            checkIn : this.checkIn,
+            checkOut : this.checkOut,
+            nightCount : this.nightCount,
+            guestCount : this.guests.adultNumber + this.guests.childrenNumber,
+            totalPrice : this.getTotalAmount,
+            houseId : this.houseToShow._id,
+            guest : this.loggedInUser,
+            host : this.houseToShow.host
+        };
+        console.log('methods createOrder:', order);
+        this.$store.dispatch({type: 'createOrder', order})
+        this.$router.push('/')
+    }
    
   },
   computed: {
@@ -228,21 +244,22 @@ export default {
       if (guestNumber > 1) return `${guestNumber} guests`;
       else return `1 guest`;
     },
-    getTotalDays(){
+    getNightCount(){
     var a = moment(this.checkOut);
     var b = moment(this.checkIn);
     const days = a.diff(b, 'days')   
-    this.totalDays = days
+    this.nightCount = days
     return days
     },
     getTotalAmount(){
-    return '$' + this.totalDays * this.houseToShow.price 
-    }
+    return this.nightCount * this.houseToShow.price 
+    },
 
   },
   created() {
     this.isFilterFlatten = true;
     this.loadHouse();
+    this.loggedInUser = this.$store.getters.loggedInUser
   },
 };
 </script>
