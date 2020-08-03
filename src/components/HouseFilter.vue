@@ -99,7 +99,7 @@ export default {
     };
   },
   created() {
-    this.filterBy = {...this.$store.getters.filterBy};
+    this.filterBy = { ...this.$store.getters.filterBy };
     this.filterBy.childrenNumber = "CHILDREN";
     this.filterBy.adultNumber = "ADULTS";
   },
@@ -114,19 +114,28 @@ export default {
       var patt = new RegExp(this.filterBy.location, "i");
       if (patt.test("tokyo mokyo bokyo tolyo trlyo tokio jokyo tolyo"))
         this.filterBy.location = "Tokyo";
-      if (patt.test("new york nyk nyc ny new-york big apple"))
+      else if (patt.test("new york nyk nyc ny new-york big apple"))
         this.filterBy.location = "New York";
-      if (patt.test("Tel aviv tel tlv tle abyb trl tlb aviv tle aviv tel-aviv tlv-aviv tle-aviv tle-abiv le aviv"))
+      else if (
+        patt.test(
+          "telaviv Tel aviv tel tlv tle abyb trl tlb aviv tle aviv tel-aviv tlv-aviv tle-aviv tle-abiv le aviv"
+        )
+      ) {
         this.filterBy.location = "Tel Aviv";
-     if (patt.test(""))
-        this.filterBy.location = "";
-      
+      }
+      else if (patt.test("")) this.filterBy.location = "";
+      //if nothing entered to the location field set
+      else this.filterBy.location = ""; //if no matches to the search sets 'all' to be default
+
       this.setFilter();
 
       if (!this.isBnbPage) this.$router.push("/app");
     },
     setFilter() {
-      this.$emit("setFilter", {...this.filterBy});
+      if (this.filterBy.childrenNumber === "CHILDREN")
+        this.filterBy.childrenNumber = 0;
+      if (this.filterBy.adultNumber === "ADULTS") this.filterBy.adultNumber = 0;
+      this.$emit("setFilter", { ...this.filterBy });
     },
   },
   computed: {

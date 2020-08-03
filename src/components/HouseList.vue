@@ -1,6 +1,6 @@
 <template>
   <section class="house-list">
-    <h3 v-if="houses.length>0">Stays in {{getLocation}}</h3>
+    <h3 v-if="getLocation">Stays in {{getLocation}}</h3>
     <ul v-if="houses" class="house-list-ul">
       <house-preview v-for="house in houses" :key="house._id" :house="house" />
     </ul>
